@@ -1,0 +1,16 @@
+PODS:
+  - WSTagsField (5.4.0)
+
+DEPENDENCIES:
+  - WSTagsField
+
+SPEC REPOS:
+  trunk:
+    - WSTagsField
+
+SPEC CHECKSUMS:
+  WSTagsField: a4e91b7d866e8c9755332ebcf8123f42f2abd4a0
+
+PODFILE CHECKSUM: c3059432a5acfeb98117751036abff72a09a41cc
+
+COCOAPODS: 1.11.2
