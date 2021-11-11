@@ -37,12 +37,9 @@ class TestTagsViewController: UIViewController {
         tagsField.textColor = .blue
         tagsField.selectedColor = .black
         tagsField.selectedTextColor = .red
-        tagsField.delimiter = ","
         tagsField.isDelimiterVisible = false
         tagsField.placeholderColor = .green
         tagsField.placeholderAlwaysVisible = true
-        tagsField.keyboardAppearance = .dark
-        tagsField.textField.returnKeyType = .next
         tagsField.acceptTagOption = .space
         tagsField.shouldTokenizeAfterResigningFirstResponder = true
         tagsField.placeholder = "Categoria"
