@@ -2,10 +2,7 @@ import UIKit
 import WSTagsField
 
 class teste {
-    var categoria: WSTag
-    var data: Date
-    
-    init() { categoria = WSTag("", context: nil) ; data = Date() }
+    var categoria: WSTag = WSTag("", context: nil)
     
     func addCategoria(_ categoria: WSTag) {
         self.categoria = categoria
@@ -37,47 +34,33 @@ class TestTagsViewController: UIViewController {
         tagsField.textColor = .blue
         tagsField.selectedColor = .black
         tagsField.selectedTextColor = .red
-        tagsField.delimiter = ","
         tagsField.isDelimiterVisible = false
         tagsField.placeholderColor = .green
         tagsField.placeholderAlwaysVisible = true
-        tagsField.keyboardAppearance = .dark
-        tagsField.textField.returnKeyType = .next
         tagsField.acceptTagOption = .space
         tagsField.shouldTokenizeAfterResigningFirstResponder = true
         tagsField.placeholder = "Categoria"
         tagsField.numberOfLines = 3
         tagsField.enableScrolling = true
+
+        tagsField.onDidRemoveTag = { tagField, tag in
+            // Adicionar código para retirar as tags de todas os inputs realizados
+            if self.categoriaTeste.categoria == tag {
+                self.categoriaTeste.categoria = WSTag("", context: nil)
+            }
+            self.pageTitle.text = self.categoriaTeste.categoria.text
+        }
         
-        // Events
-        tagsField.onDidAddTag = { field, tag in
-            print("DidAddTag", tag.text)
-        }
-
-        tagsField.onDidRemoveTag = { field, tag in
-            print("DidRemoveTag", tag.text)
-        }
-
-        tagsField.onDidChangeText = { _, text in
-            print("DidChangeText")
-        }
-
-        tagsField.onDidChangeHeightTo = { _, height in
-            print("HeightTo", height)
-        }
-
         tagsField.onValidateTag = { tag, tags in
-            // custom validations, called before tag is added to tags list
             return tag.text != "#" && !tags.contains(where: { $0.text.uppercased() == tag.text.uppercased() })
         }
         
         tagsField.onDidSelectTagView = { field, tag in
             let tagText = tagsField.tagViews.filter{ $0 == tag }.first!.displayText
+            // Tem como passar por referência? Ao excluir, tira do input também
             self.categoriaTeste.addCategoria(tagsField.tags.first(where: { $0.text == tagText })!)
             self.pageTitle.text = self.categoriaTeste.categoria.text
         }
-
-        print("List of Tags Strings:", tagsField.tags.map({$0.text}))
         
         return tagsField
     }()
