@@ -6,7 +6,8 @@ target 'croins' do
   use_frameworks!
 
   # Pods for croins
-pod 'DropDown'
+  pod 'DropDown'
+  pod 'WSTagsField'
 
   target 'croinsTests' do
     inherit! :search_paths
