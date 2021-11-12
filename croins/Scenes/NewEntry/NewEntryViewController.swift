@@ -279,14 +279,12 @@ class NewEntryViewController: UIViewController {
 private extension NewEntryViewController {
 
     func saveButtonTap() {
-        inputViewModel.dataInputInList.append(DataInputIn(
-            title: spentEntryTextField.text ?? "",
-            gain: amountSpentTextField.text ?? "",
-            method: Method(title: WSTag(paymentMethodTextField.text ?? "", context: nil), installments: 0),
-            category: WSTag("lancho", context: nil),
-            date: datePicker.date,
-            isRecurrent: false))
-        print(inputViewModel.dataInputInList.count)
+        inputViewModel.writeIncomeData(title: spentEntryTextField.text ?? "",
+                                       gain: amountSpentTextField.text ?? "",
+                                       method: Method(title: WSTag(paymentMethodTextField.text ?? "", context: nil), installments: 0),
+                                       category: WSTag("lancho", context: nil),
+                                       date: datePicker.date,
+                                       isRecurrent: false)
         print(inputViewModel.dataInputInList.first?.title)
     }
     
