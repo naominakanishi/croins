@@ -1,10 +1,3 @@
-//
-//  ViewCode.swift
-//  croins
-//
-//  Created by Naomi Nakanishi on 10/11/21.
-//
-
 import UIKit
 
 @resultBuilder
