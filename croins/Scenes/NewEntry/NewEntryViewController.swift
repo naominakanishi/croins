@@ -74,17 +74,44 @@ class NewEntryViewController: UIViewController {
         return view
     }()
     
-    private lazy var categoryTextField: UITextField = {
-        let view = TextField(inset: 15)
+    private lazy var categoryTextField: WSTagsField = {
+        let view = WSTagsField()
+        view.layoutMargins = UIEdgeInsets(top: 2, left: 6, bottom: 2, right: 6)
+        view.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        view.spaceBetweenLines = 5.0
+        view.spaceBetweenTags = 10.0
+        view.font = .systemFont(ofSize: 12.0)
         view.backgroundColor = .white
-        view.attributedPlaceholder = .init(string: "tag",
-                                           attributes: [
-                                            .font: UIFont.systemFont(ofSize: 12),
-                                            .foregroundColor: UIColor(ciColor: .black)
-        ])
-        view.font = UIFont.systemFont(ofSize: 14)
-        view.layer.cornerRadius = 10
-        view.addTarget(self, action: #selector(dismissKeyboard), for: .editingDidEndOnExit)
+        view.tintColor = .green
+        view.textColor = .black
+        view.textColor = .blue
+        view.selectedColor = .black
+        view.selectedTextColor = .red
+        view.isDelimiterVisible = false
+        view.placeholderColor = .green
+        view.placeholderAlwaysVisible = true
+        view.acceptTagOption = .space
+        view.shouldTokenizeAfterResigningFirstResponder = true
+        view.placeholder = "Categoria"
+        view.numberOfLines = 1
+        view.enableScrolling = true
+        
+        view.onDidRemoveTag = { tagField, tag in
+            // Adicionar código para retirar as tags de todas os inputs realizados
+            // inputViewModel.dataInputInList.filter({ $0.category == tag })
+        }
+        
+        view.onValidateTag = { tag, tags in
+            return tag.text != "#" && !tags.contains(where: { $0.text.uppercased() == tag.text.uppercased() })
+        }
+        
+        /*view.onDidSelectTagView = { field, tag in
+            let tagText = tagsField.tagViews.filter{ $0 == tag }.first!.displayText
+            // Tem como passar por referência? Ao excluir, tira do input também
+            self.categoriaTeste.addCategoria(tagsField.tags.first(where: { $0.text == tagText })!)
+            self.pageTitle.text = self.categoriaTeste.categoria.text
+        }*/
+        
         return view
     }()
 
@@ -279,13 +306,14 @@ class NewEntryViewController: UIViewController {
 private extension NewEntryViewController {
 
     func saveButtonTap() {
+        
         inputViewModel.writeIncomeData(title: spentEntryTextField.text ?? "",
                                        gain: amountSpentTextField.text ?? "",
                                        method: Method(title: WSTag(paymentMethodTextField.text ?? "", context: nil), installments: 0),
-                                       category: WSTag("lancho", context: nil),
+                                       category: WSTag("", context: nil),
                                        date: datePicker.date,
                                        isRecurrent: false)
-        print(inputViewModel.dataInputInList.first?.title)
+        print(inputViewModel.dataInputInList.first?.category)
     }
     
     
