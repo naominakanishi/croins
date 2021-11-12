@@ -19,6 +19,9 @@
 		110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF12273C46C200F9E6CD /* ViewCode.swift */; };
 		110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF14273C57A400F9E6CD /* NewInputViewController.swift */; };
 		119F7498273D8990005DF419 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F7497273D8990005DF419 /* TextField.swift */; };
+		119F749D273EEA0D005DF419 /* DataInputIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749C273EEA0D005DF419 /* DataInputIn.swift */; };
+		119F749F273EEB54005DF419 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749E273EEB54005DF419 /* Method.swift */; };
+		119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F74A1273EECAC005DF419 /* InputViewModel.swift */; };
 		49C653E2273EE6AE0049897F /* TagsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C653E1273EE6AE0049897F /* TagsTestViewController.swift */; };
 		865D58D30D12F02D785D8ECF /* Pods_croins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A297F7B12748508788E83111 /* Pods_croins.framework */; };
 		8A4DEBC71C1F3F9DBE4806CD /* Pods_croins_croinsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B094576EE31C183ACAB452 /* Pods_croins_croinsUITests.framework */; };
@@ -59,6 +62,9 @@
 		110ECF12273C46C200F9E6CD /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		110ECF14273C57A400F9E6CD /* NewInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInputViewController.swift; sourceTree = "<group>"; };
 		119F7497273D8990005DF419 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		119F749C273EEA0D005DF419 /* DataInputIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputIn.swift; sourceTree = "<group>"; };
+		119F749E273EEB54005DF419 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		119F74A1273EECAC005DF419 /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
 		1C71BE60511392F6377A2F28 /* Pods-croinsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croinsTests.debug.xcconfig"; path = "Target Support Files/Pods-croinsTests/Pods-croinsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		47EE7C3B6CA5AADBEFAAF825 /* Pods-croins-croinsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins-croinsUITests.release.xcconfig"; path = "Target Support Files/Pods-croins-croinsUITests/Pods-croins-croinsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		49C653E1273EE6AE0049897F /* TagsTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTestViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +130,8 @@
 		110ECEDC273C3DAB00F9E6CD /* croins */ = {
 			isa = PBXGroup;
 			children = (
+				119F74A0273EEC9C005DF419 /* ViewModels */,
+				119F7499273EE9D3005DF419 /* Data */,
 				110ECF11273C46B700F9E6CD /* UI */,
 				110ECF0D273C3EA500F9E6CD /* Scenes */,
 				119F7496273D8978005DF419 /* DesignSystem */,
@@ -186,6 +194,23 @@
 				119F7497273D8990005DF419 /* TextField.swift */,
 			);
 			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		119F7499273EE9D3005DF419 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				119F749C273EEA0D005DF419 /* DataInputIn.swift */,
+				119F749E273EEB54005DF419 /* Method.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		119F74A0273EEC9C005DF419 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				119F74A1273EECAC005DF419 /* InputViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		9D47272C4AA528ABC3C675CE /* Frameworks */ = {
@@ -449,14 +474,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119F749F273EEB54005DF419 /* Method.swift in Sources */,
 				110ECEE2273C3DAB00F9E6CD /* ViewController.swift in Sources */,
 				110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */,
 				110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */,
 				119F7498273D8990005DF419 /* TextField.swift in Sources */,
+				119F749D273EEA0D005DF419 /* DataInputIn.swift in Sources */,
 				110ECEDE273C3DAB00F9E6CD /* AppDelegate.swift in Sources */,
 				49C653E2273EE6AE0049897F /* TagsTestViewController.swift in Sources */,
 				110ECF10273C3EF200F9E6CD /* NewEntryViewController.swift in Sources */,
 				110ECEE0273C3DAB00F9E6CD /* SceneDelegate.swift in Sources */,
+				119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

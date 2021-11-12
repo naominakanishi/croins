@@ -1,8 +1,11 @@
 import UIKit
 import DropDown
+import WSTagsField
 
 class NewEntryViewController: UIViewController {
 
+    let inputViewModel = InputViewModel()
+    
     let pageTitle: UILabel = {
         let pageTitle = UILabel()
         pageTitle.text = "Perdoa, gastei a grana"
@@ -35,7 +38,9 @@ class NewEntryViewController: UIViewController {
         return view
     }()
     
-    var name: String? { spentEntryTextField.text }
+    
+    
+    
     
     let costTitle: UILabel = {
         let costTitle = UILabel()
@@ -82,6 +87,7 @@ class NewEntryViewController: UIViewController {
         view.addTarget(self, action: #selector(dismissKeyboard), for: .editingDidEndOnExit)
         return view
     }()
+
     
     private lazy var paymentMethodTextField: UITextField = {
         let view = TextField(inset: 15)
@@ -142,7 +148,16 @@ class NewEntryViewController: UIViewController {
     
     let recurrencyOptions = ["Não é recorrente", "Mensal", "Quinzenal", "Mensal", "Anual"]
     
-    
+    let saveButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
+        button.setTitle("Salvar", for: .normal)
+        button.backgroundColor = .blue
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        button.titleLabel?.textAlignment = .center
+        return button
+    }()
     
     init () {
         super.init(nibName: nil, bundle: nil)
@@ -171,6 +186,7 @@ class NewEntryViewController: UIViewController {
         view.addSubview(datePicker)
         view.addSubview(recurrentPicker)
         view.addSubview(recurrentPickerLabel)
+        view.addSubview(saveButton)
     }
     
     func setupConstraints() {
@@ -244,6 +260,13 @@ class NewEntryViewController: UIViewController {
             $0.centerYAnchor.constraint(equalTo: recurrentPicker.centerYAnchor, constant: 20)
             $0.heightAnchor.constraint(equalToConstant: 40)
         }
+        
+        saveButton.layout{
+            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
+        
+            $0.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
+            $0.heightAnchor.constraint(equalToConstant: 40)
+        }
     }
     
     
@@ -255,6 +278,19 @@ class NewEntryViewController: UIViewController {
 @objc
 private extension NewEntryViewController {
 
+    func saveButtonTap() {
+        inputViewModel.dataInputInList.append(DataInputIn(
+            title: spentEntryTextField.text ?? "",
+            gain: amountSpentTextField.text ?? "",
+            method: Method(title: WSTag(paymentMethodTextField.text ?? "", context: nil), installments: 0),
+            category: WSTag("lancho", context: nil),
+            date: datePicker.date,
+            isRecurrent: false))
+        print(inputViewModel.dataInputInList.count)
+        print(inputViewModel.dataInputInList.first?.title)
+    }
+    
+    
     func handlePickerTap(_ sender: UITapGestureRecognizer? = nil){
         dropDown.show()
     }
