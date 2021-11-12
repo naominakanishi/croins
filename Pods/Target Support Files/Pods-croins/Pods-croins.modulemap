@@ -1,0 +1,6 @@
+framework module Pods_croins {
+  umbrella header "Pods-croins-umbrella.h"
+
+  export *
+  module * { export * }
+}
