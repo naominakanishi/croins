@@ -134,9 +134,12 @@ class NewEntryViewController: UIViewController {
         let view = UIDatePicker()
         view.datePickerMode = .date
         view.preferredDatePickerStyle = .compact
+        view.backgroundColor = .white
+//        view.tintColor = .white
+        
         view.locale = .current
         view.backgroundColor = .white
-        view.layer.cornerRadius = 10
+        view.layer.cornerRadius = 30
         view.addTarget(self, action: #selector(handleDateDidChange), for: .valueChanged)
         return view
     }()
@@ -154,9 +157,9 @@ class NewEntryViewController: UIViewController {
     
     private lazy var recurrentPickerLabel: UILabel = {
         let view = UILabel()
-        pageTitle.text = "Essa transação é recorrente?"
-        pageTitle.font = UIFont.systemFont(ofSize: 14)
-        pageTitle.numberOfLines = 0
+        view.text = "Essa transação é recorrente?"
+        view.font = UIFont.systemFont(ofSize: 14)
+        view.numberOfLines = 0
         return view
     }()
     
@@ -284,10 +287,10 @@ class NewEntryViewController: UIViewController {
         recurrentPickerLabel.layout{
             $0.widthAnchor.constraint(equalTo: inputStackView.widthAnchor, multiplier: 0.8)
             $0.centerXAnchor.constraint(equalTo: inputStackView.centerXAnchor)
-            $0.centerYAnchor.constraint(equalTo: recurrentPicker.centerYAnchor, constant: 20)
+            $0.centerYAnchor.constraint(equalTo: recurrentPicker.centerYAnchor)
             $0.heightAnchor.constraint(equalToConstant: 40)
         }
-        
+
         saveButton.layout{
             $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
         
