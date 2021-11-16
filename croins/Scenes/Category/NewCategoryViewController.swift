@@ -61,7 +61,7 @@ class NewCategoryViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
         addSubviews()
-        setupConstrains()
+        setupConstraints()
     }
     
     func addSubviews() {
@@ -71,7 +71,7 @@ class NewCategoryViewController: UIViewController {
         view.addSubview(saveButton)
     }
     
-    func setupConstrains() {
+    func setupConstraints() {
         pageTitle.layout {
             $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 100)
             $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
