@@ -1,4 +1,5 @@
 import UIKit
+import Intents
 
 class NewInputViewController: UIViewController {
     
@@ -53,6 +54,7 @@ class NewInputViewController: UIViewController {
         addSubviews()
         setupConstraints()
         view.backgroundColor = .white
+        donateInteraction()
     }
 
     
@@ -96,6 +98,23 @@ class NewInputViewController: UIViewController {
             $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             $0.titleLabel?.centerXAnchor.constraint(equalTo: $0.centerXAnchor)
             $0.titleLabel?.centerYAnchor.constraint(equalTo: $0.centerYAnchor)
+        }
+    }
+    
+    func donateInteraction() {
+        let intent = CreateExpenseIntent()
+        intent.suggestedInvocationPhrase = "Add new expense"
+        intent.title = "hot dog"
+        intent.value = 14.50
+        intent.date = DateComponents.init(calendar: .current, timeZone: .current, year: 2021, month: 11, day: 17)
+        let interaction = INInteraction(intent: intent, response: nil)
+        
+        interaction.donate { (error) in
+            if let error = error as NSError? {
+                print("Interaction donation failed: \(error.description)")
+            } else {
+                print("Successfully donated interaction")
+            }
         }
     }
     
