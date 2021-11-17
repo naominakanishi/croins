@@ -18,13 +18,29 @@
 	<array>
 		<dict>
 			<key>INIntentCategory</key>
-			<string>create</string>
+			<string>generic</string>
+			<key>INIntentConfigurable</key>
+			<true/>
 			<key>INIntentDescription</key>
 			<string>Create and add expenses to the list</string>
 			<key>INIntentDescriptionID</key>
 			<string>spGCMK</string>
 			<key>INIntentLastParameterTag</key>
 			<integer>5</integer>
+			<key>INIntentManagedParameterCombinations</key>
+			<dict>
+				<key>title,value,date</key>
+				<dict>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>New Expense</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>FwqlFC</string>
+					<key>INIntentParameterCombinationUpdatesLinked</key>
+					<true/>
+				</dict>
+			</dict>
 			<key>INIntentName</key>
 			<string>CreateExpense</string>
 			<key>INIntentParameterCombinations</key>
@@ -32,7 +48,7 @@
 				<key>title,value,date</key>
 				<dict>
 					<key>INIntentParameterCombinationSubtitle</key>
-					<string>Create and add expenses to the list</string>
+					<string>Spent ${value} with ${title} ${date}</string>
 					<key>INIntentParameterCombinationSubtitleID</key>
 					<string>XfBnyF</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
@@ -347,7 +363,7 @@
 				</array>
 			</dict>
 			<key>INIntentTitle</key>
-			<string>Create Expense</string>
+			<string>New Expense</string>
 			<key>INIntentTitleID</key>
 			<string>t9ASik</string>
 			<key>INIntentType</key>
@@ -355,7 +371,7 @@
 			<key>INIntentUserConfirmationRequired</key>
 			<true/>
 			<key>INIntentVerb</key>
-			<string>Create</string>
+			<string>Do</string>
 		</dict>
 	</array>
 	<key>INTypes</key>

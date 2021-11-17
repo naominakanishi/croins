@@ -104,9 +104,9 @@ class NewInputViewController: UIViewController {
     func donateInteraction() {
         let intent = CreateExpenseIntent()
         intent.suggestedInvocationPhrase = "Add new expense"
-        intent.title = "hot dog"
-        intent.value = 14.50
-        intent.date = DateComponents.init(calendar: .current, timeZone: .current, year: 2021, month: 11, day: 17)
+        intent.title = "newExpense"
+        intent.value = 0.0
+        intent.date = Calendar.current.dateComponents([.year, .month, .day], from: Date())
         let interaction = INInteraction(intent: intent, response: nil)
         
         interaction.donate { (error) in

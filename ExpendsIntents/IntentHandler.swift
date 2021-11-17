@@ -40,6 +40,7 @@ class GetNewSpendIntentHandler: NSObject, CreateExpenseIntentHandling {
                   return
               }
         inputViewModel.addNewExpense(title: expenseTitle, value: expenseValue.doubleValue, date: expenseDate.date ?? Date())
+        print(inputViewModel.expensesList.first!)
         completion(CreateExpenseIntentResponse.success(result: "successfully"))
     }
     
