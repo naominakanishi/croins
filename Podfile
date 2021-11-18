@@ -7,7 +7,6 @@ target 'croins' do
 
   # Pods for croins
   pod 'DropDown'
-  pod 'WSTagsField'
 
   target 'croinsTests' do
     inherit! :search_paths

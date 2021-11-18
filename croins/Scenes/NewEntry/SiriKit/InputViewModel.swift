@@ -9,7 +9,7 @@ class InputViewModel {
     init() { expensesList = []; voiceShortcuts = [] }
     
     func addNewExpense(title: String, value: Double, date: Date) {
-        expensesList.append(DataInputIn(title: title, value: value, date: date))
+        //expensesList.append(DataInputIn(title: title, value: value, date: date))
     }
     
     func getAllShortcuts() {

@@ -1,12 +1,11 @@
 import UIKit
-import WSTagsField
 
 class Method {
-    let title: WSTag
+    let title: String
     //let color: UIColor
     let installments: Int
 
-    init (title: WSTag, installments: Int) {
+    init (title: String, installments: Int) {
         self.title = title
         self.installments = installments
     }

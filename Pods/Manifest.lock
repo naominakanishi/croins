@@ -1,20 +1,16 @@
 PODS:
   - DropDown (2.3.13)
-  - WSTagsField (5.4.0)
 
 DEPENDENCIES:
   - DropDown
-  - WSTagsField
 
 SPEC REPOS:
   trunk:
     - DropDown
-    - WSTagsField
 
 SPEC CHECKSUMS:
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
-  WSTagsField: a4e91b7d866e8c9755332ebcf8123f42f2abd4a0
 
-PODFILE CHECKSUM: 3c476afe0e83fe2b7e8c6dfc6675385f47c1bb0e
+PODFILE CHECKSUM: b43b52c8ea37f49f6ce8fb7149add7f51946be6e
 
 COCOAPODS: 1.11.2

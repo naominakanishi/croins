@@ -312,11 +312,9 @@ private extension NewEntryViewController {
         
         inputViewModel.writeIncomeData(title: spentEntryTextField.text ?? "",
                                        gain: amountSpentTextField.text ?? "",
-                                       method: Method(title: WSTag(paymentMethodTextField.text ?? "", context: nil), installments: 0),
-                                       category: WSTag("", context: nil),
+                                       method: Method(title: paymentMethodTextField.text ?? "", installments: 0),
                                        date: datePicker.date,
                                        isRecurrent: false)
-        print(inputViewModel.dataInputInList.first?.category)
     }
     
     

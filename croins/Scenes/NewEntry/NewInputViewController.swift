@@ -180,8 +180,8 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
     
     @objc func editShortcut(_ sender: Any) {
         inputViewModel.getAllShortcuts()
-        let shortcut2 = inputViewModel.voiceShortcuts.first!
-        let vc = INUIEditVoiceShortcutViewController(voiceShortcut: shortcut2)
+        let shortcut = inputViewModel.shortcutList.first!
+        let vc = INUIEditVoiceShortcutViewController(voiceShortcut: shortcut)
         vc.delegate = self
         self.present(vc, animated: true, completion: nil)
     }
