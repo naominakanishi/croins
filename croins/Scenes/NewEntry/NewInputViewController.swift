@@ -2,7 +2,23 @@ import UIKit
 import Intents
 import IntentsUI
 
-class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControllerDelegate {
+class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControllerDelegate, INUIEditVoiceShortcutViewControllerDelegate {
+    
+    let inputViewModel = InputViewModel()
+    
+    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController, didUpdate voiceShortcut: INVoiceShortcut?, error: Error?) {
+        inputViewModel.getAllShortcuts()
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController, didDeleteVoiceShortcutWithIdentifier deletedVoiceShortcutIdentifier: UUID) {
+        inputViewModel.getAllShortcuts()
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func editVoiceShortcutViewControllerDidCancel(_ controller: INUIEditVoiceShortcutViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
     
     func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
@@ -16,7 +32,6 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
         addVoiceShortcutViewController.delegate = self
         self.present(addVoiceShortcutViewController, animated: true, completion: nil)
     }
-    
     
     let pageTitle: UILabel = {
         let pageTitle = UILabel()
@@ -36,7 +51,8 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
     
     let spentMoneyButton: UIButton = {
         let button = UIButton()
-        button.addTarget(self, action: #selector(handleSpentMoneyButtonTap), for: .touchUpInside)
+        //button.addTarget(self, action: #selector(handleSpentMoneyButtonTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(editShortcut(_:)), for: .touchUpInside)
         button.setTitle("Perdoa, gastei a grana", for: .normal)
         button.backgroundColor = .blue
         button.setTitleColor(.white, for: .normal)
@@ -159,5 +175,14 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
             viewController.delegate = self
             present(viewController, animated: true, completion: nil)
         }
+        inputViewModel.getAllShortcuts()
+    }
+    
+    @objc func editShortcut(_ sender: Any) {
+        inputViewModel.getAllShortcuts()
+        let shortcut2 = inputViewModel.voiceShortcuts.first!
+        let vc = INUIEditVoiceShortcutViewController(voiceShortcut: shortcut2)
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
     }
 }
