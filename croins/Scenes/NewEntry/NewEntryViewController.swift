@@ -1,6 +1,5 @@
 import UIKit
 import DropDown
-import WSTagsField
 
 class NewEntryViewController: UIViewController {
 
@@ -74,7 +73,8 @@ class NewEntryViewController: UIViewController {
         return view
     }()
     
-    private lazy var categoryTextField: WSTagsField = {
+    /// Substituir por um DropDown de categorias
+    /*private lazy var categoryTextField: WSTagsField = {
         let view = WSTagsField()
         view.layoutMargins = UIEdgeInsets(top: 2, left: 6, bottom: 2, right: 6)
         view.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -113,7 +113,7 @@ class NewEntryViewController: UIViewController {
         }*/
         
         return view
-    }()
+    }()*/
 
     
     private lazy var paymentMethodTextField: UITextField = {
@@ -168,11 +168,6 @@ class NewEntryViewController: UIViewController {
         view.anchorView = recurrentPicker
         view.dataSource = recurrencyOptions
         view.bottomOffset = CGPoint(x: 0, y:(view.anchorView?.plainView.bounds.height)!)
-//        view.selectionAction = { [unowned self] (index: Int, item: String) in
-//          print("Selected item: \(item) at index: \(index)"))
-//            recurrentPickerLabel.text = recurrencyOptions[index]
-//        }
-        
         return view
     }()
     
@@ -211,7 +206,6 @@ class NewEntryViewController: UIViewController {
         view.addSubview(costTitle)
         view.addSubview(categoryTitle)
         view.addSubview(amountSpentTextField)
-        view.addSubview(categoryTextField)
         view.addSubview(paymentMethodTextField)
         view.addSubview(datePicker)
         view.addSubview(recurrentPicker)
@@ -259,16 +253,10 @@ class NewEntryViewController: UIViewController {
             $0.topAnchor.constraint(equalTo: costTitle.bottomAnchor, constant: 10)
         }
         
-        categoryTextField.layout{
-            $0.widthAnchor.constraint(equalTo: inputStackView.widthAnchor, multiplier: 0.3)
-            $0.centerXAnchor.constraint(equalTo: categoryTitle.centerXAnchor, constant: 0)
-            $0.topAnchor.constraint(equalTo: categoryTitle.bottomAnchor, constant: 10)
-        }
-        
         paymentMethodTextField.layout {
             $0.widthAnchor.constraint(equalTo: inputStackView.widthAnchor, multiplier: 0.8)
             $0.centerXAnchor.constraint(equalTo: inputStackView.centerXAnchor)
-            $0.topAnchor.constraint(equalTo: categoryTextField.bottomAnchor, constant: 20)
+            $0.topAnchor.constraint(equalTo: amountSpentTextField.bottomAnchor, constant: 20)
         }
         
         datePicker.layout{

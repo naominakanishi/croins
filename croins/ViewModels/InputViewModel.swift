@@ -1,6 +1,5 @@
 import UIKit
 import Combine
-import WSTagsField
 import Intents
 
 class InputViewModel {
