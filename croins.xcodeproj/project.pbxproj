@@ -30,6 +30,15 @@
 		49C552B227443D8300A30E2C /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552B127443D8300A30E2C /* CategoriesViewController.swift */; };
 		49C552B427443FD100A30E2C /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552B327443FD100A30E2C /* CategoryViewCell.swift */; };
 		49C653E2273EE6AE0049897F /* TagsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C653E1273EE6AE0049897F /* TagsTestViewController.swift */; };
+		49F6355C27457C7D0033972E /* InputDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6355B27457C7D0033972E /* InputDataClass.swift */; };
+		49F6355F274582F80033972E /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49F6355E274582F80033972E /* Intents.intentdefinition */; };
+		49F6356827458ABA0033972E /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F6356727458ABA0033972E /* Intents.framework */; };
+		49F6356B27458ABA0033972E /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6356A27458ABA0033972E /* IntentHandler.swift */; };
+		49F6356F27458ABB0033972E /* ExpendsIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49F6356627458ABA0033972E /* ExpendsIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49F6357427458AEF0033972E /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49F6355E274582F80033972E /* Intents.intentdefinition */; };
+		49F63576274593350033972E /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F63575274593350033972E /* InputViewModel.swift */; };
+		49F635792745943B0033972E /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F63575274593350033972E /* InputViewModel.swift */; };
+		49F6357A2745944E0033972E /* InputDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6355B27457C7D0033972E /* InputDataClass.swift */; };
 		865D58D30D12F02D785D8ECF /* Pods_croins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A297F7B12748508788E83111 /* Pods_croins.framework */; };
 		8A4DEBC71C1F3F9DBE4806CD /* Pods_croins_croinsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B094576EE31C183ACAB452 /* Pods_croins_croinsUITests.framework */; };
 		B36DC3C588AE7F7846AB17C6 /* Pods_croinsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E309F717E3F12C5456CF6D /* Pods_croinsTests.framework */; };
@@ -50,7 +59,28 @@
 			remoteGlobalIDString = 110ECED9273C3DAB00F9E6CD;
 			remoteInfo = croins;
 		};
+		49F6356D27458ABB0033972E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 110ECED2273C3DAB00F9E6CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49F6356527458ABA0033972E;
+			remoteInfo = ExpendsIntents;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		49F6357327458ABB0033972E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				49F6356F27458ABB0033972E /* ExpendsIntents.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		110ECEDA273C3DAB00F9E6CD /* croins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = croins.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +112,14 @@
 		49C552B127443D8300A30E2C /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		49C552B327443FD100A30E2C /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		49C653E1273EE6AE0049897F /* TagsTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTestViewController.swift; sourceTree = "<group>"; };
+		49F6355B27457C7D0033972E /* InputDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDataClass.swift; sourceTree = "<group>"; };
+		49F6355D274582BD0033972E /* croins.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = croins.entitlements; sourceTree = "<group>"; };
+		49F6355E274582F80033972E /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		49F6356627458ABA0033972E /* ExpendsIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ExpendsIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		49F6356727458ABA0033972E /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		49F6356A27458ABA0033972E /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		49F6356C27458ABA0033972E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F63575274593350033972E /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
 		4E987DC78DB2176FD8E8C4F4 /* Pods-croinsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croinsTests.release.xcconfig"; path = "Target Support Files/Pods-croinsTests/Pods-croinsTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A0ED4B45B5730BCC16DC0AE /* Pods-croins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins.release.xcconfig"; path = "Target Support Files/Pods-croins/Pods-croins.release.xcconfig"; sourceTree = "<group>"; };
 		A297F7B12748508788E83111 /* Pods_croins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_croins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +154,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49F6356327458ABA0033972E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49F6356827458ABA0033972E /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -125,6 +171,7 @@
 				110ECEDC273C3DAB00F9E6CD /* croins */,
 				110ECEF3273C3DAE00F9E6CD /* croinsTests */,
 				110ECEFD273C3DAE00F9E6CD /* croinsUITests */,
+				49F6356927458ABA0033972E /* ExpendsIntents */,
 				110ECEDB273C3DAB00F9E6CD /* Products */,
 				A514651789FCCA7DA3DFBBD5 /* Pods */,
 				9D47272C4AA528ABC3C675CE /* Frameworks */,
@@ -137,6 +184,7 @@
 				110ECEDA273C3DAB00F9E6CD /* croins.app */,
 				110ECEF0273C3DAE00F9E6CD /* croinsTests.xctest */,
 				110ECEFA273C3DAE00F9E6CD /* croinsUITests.xctest */,
+				49F6356627458ABA0033972E /* ExpendsIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +194,7 @@
 			children = (
 				119F74A0273EEC9C005DF419 /* ViewModels */,
 				119F7499273EE9D3005DF419 /* Data */,
+				49F6355D274582BD0033972E /* croins.entitlements */,
 				110ECF11273C46B700F9E6CD /* UI */,
 				110ECF0D273C3EA500F9E6CD /* Scenes */,
 				119F7496273D8978005DF419 /* DesignSystem */,
@@ -188,6 +237,7 @@
 		110ECF0E273C3EAF00F9E6CD /* NewEntry */ = {
 			isa = PBXGroup;
 			children = (
+				49F6355A27457C5B0033972E /* SiriKit */,
 				110ECF0F273C3EF200F9E6CD /* NewEntryViewController.swift */,
 				110ECF14273C57A400F9E6CD /* NewInputViewController.swift */,
 				49C653E1273EE6AE0049897F /* TagsTestViewController.swift */,
@@ -242,12 +292,32 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		49F6355A27457C5B0033972E /* SiriKit */ = {
+			isa = PBXGroup;
+			children = (
+				49F6355B27457C7D0033972E /* InputDataClass.swift */,
+				49F6355E274582F80033972E /* Intents.intentdefinition */,
+				49F63575274593350033972E /* InputViewModel.swift */,
+			);
+			path = SiriKit;
+			sourceTree = "<group>";
+		};
+		49F6356927458ABA0033972E /* ExpendsIntents */ = {
+			isa = PBXGroup;
+			children = (
+				49F6356A27458ABA0033972E /* IntentHandler.swift */,
+				49F6356C27458ABA0033972E /* Info.plist */,
+			);
+			path = ExpendsIntents;
+			sourceTree = "<group>";
+		};
 		9D47272C4AA528ABC3C675CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				A297F7B12748508788E83111 /* Pods_croins.framework */,
 				A9B094576EE31C183ACAB452 /* Pods_croins_croinsUITests.framework */,
 				D1E309F717E3F12C5456CF6D /* Pods_croinsTests.framework */,
+				49F6356727458ABA0033972E /* Intents.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -277,10 +347,12 @@
 				110ECED7273C3DAB00F9E6CD /* Frameworks */,
 				110ECED8273C3DAB00F9E6CD /* Resources */,
 				8C56103DDA0F4B6A9B5C0EED /* [CP] Embed Pods Frameworks */,
+				49F6357327458ABB0033972E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				49F6356E27458ABB0033972E /* PBXTargetDependency */,
 			);
 			name = croins;
 			productName = croins;
@@ -326,6 +398,23 @@
 			productReference = 110ECEFA273C3DAE00F9E6CD /* croinsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		49F6356527458ABA0033972E /* ExpendsIntents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49F6357027458ABB0033972E /* Build configuration list for PBXNativeTarget "ExpendsIntents" */;
+			buildPhases = (
+				49F6356227458ABA0033972E /* Sources */,
+				49F6356327458ABA0033972E /* Frameworks */,
+				49F6356427458ABA0033972E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExpendsIntents;
+			productName = ExpendsIntents;
+			productReference = 49F6356627458ABA0033972E /* ExpendsIntents.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -347,6 +436,9 @@
 						CreatedOnToolsVersion = 13.1;
 						TestTargetID = 110ECED9273C3DAB00F9E6CD;
 					};
+					49F6356527458ABA0033972E = {
+						CreatedOnToolsVersion = 13.1;
+					};
 				};
 			};
 			buildConfigurationList = 110ECED5273C3DAB00F9E6CD /* Build configuration list for PBXProject "croins" */;
@@ -365,6 +457,7 @@
 				110ECED9273C3DAB00F9E6CD /* croins */,
 				110ECEEF273C3DAE00F9E6CD /* croinsTests */,
 				110ECEF9273C3DAE00F9E6CD /* croinsUITests */,
+				49F6356527458ABA0033972E /* ExpendsIntents */,
 			);
 		};
 /* End PBXProject section */
@@ -387,6 +480,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		110ECEF8273C3DAE00F9E6CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49F6356427458ABA0033972E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -505,8 +605,10 @@
 			files = (
 				119F749F273EEB54005DF419 /* Method.swift in Sources */,
 				49C552B027442BF200A30E2C /* NewCategoryViewController.swift in Sources */,
+				49F6355C27457C7D0033972E /* InputDataClass.swift in Sources */,
 				110ECEE2273C3DAB00F9E6CD /* ViewController.swift in Sources */,
 				110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */,
+				49F6355F274582F80033972E /* Intents.intentdefinition in Sources */,
 				110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */,
 				49C552B427443FD100A30E2C /* CategoryViewCell.swift in Sources */,
 				119F7498273D8990005DF419 /* TextField.swift in Sources */,
@@ -541,6 +643,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49F6356227458ABA0033972E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49F6357427458AEF0033972E /* Intents.intentdefinition in Sources */,
+				49F6356B27458ABA0033972E /* IntentHandler.swift in Sources */,
+				49F635792745943B0033972E /* InputViewModel.swift in Sources */,
+				49F6357A2745944E0033972E /* InputDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -553,6 +666,11 @@
 			isa = PBXTargetDependency;
 			target = 110ECED9273C3DAB00F9E6CD /* croins */;
 			targetProxy = 110ECEFB273C3DAE00F9E6CD /* PBXContainerItemProxy */;
+		};
+		49F6356E27458ABB0033972E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49F6356527458ABA0033972E /* ExpendsIntents */;
+			targetProxy = 49F6356D27458ABB0033972E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -688,13 +806,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDA02E67301C436BCED16C3A /* Pods-croins.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = croins/croins.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UL74FQ825B;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = croins/Info.plist;
+				INFOPLIST_KEY_NSSiriUsageDescription = "This is a Siri demo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -717,13 +838,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A0ED4B45B5730BCC16DC0AE /* Pods-croins.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = croins/croins.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UL74FQ825B;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = croins/Info.plist;
+				INFOPLIST_KEY_NSSiriUsageDescription = "This is a Siri demo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -842,6 +966,56 @@
 			};
 			name = Release;
 		};
+		49F6357127458ABB0033972E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExpendsIntents/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ExpendsIntents;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins.ExpendsIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49F6357227458ABB0033972E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExpendsIntents/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ExpendsIntents;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins.ExpendsIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -877,6 +1051,15 @@
 			buildConfigurations = (
 				110ECF0B273C3DAE00F9E6CD /* Debug */,
 				110ECF0C273C3DAE00F9E6CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49F6357027458ABB0033972E /* Build configuration list for PBXNativeTarget "ExpendsIntents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49F6357127458ABB0033972E /* Debug */,
+				49F6357227458ABB0033972E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
