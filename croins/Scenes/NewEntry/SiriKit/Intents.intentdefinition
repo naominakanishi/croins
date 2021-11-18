@@ -48,13 +48,13 @@
 				<key>title,value,date</key>
 				<dict>
 					<key>INIntentParameterCombinationSubtitle</key>
-					<string>Spent ${value} with ${title} ${date}</string>
+					<string>Done ${date} with value of ${value}</string>
 					<key>INIntentParameterCombinationSubtitleID</key>
 					<string>XfBnyF</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>New Expense</string>
+					<string>Expense with ${title}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>CvDiog</string>
 				</dict>
