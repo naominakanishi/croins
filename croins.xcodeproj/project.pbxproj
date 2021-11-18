@@ -18,6 +18,7 @@
 		110ECF10273C3EF200F9E6CD /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF0F273C3EF200F9E6CD /* NewEntryViewController.swift */; };
 		110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF12273C46C200F9E6CD /* ViewCode.swift */; };
 		110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF14273C57A400F9E6CD /* NewInputViewController.swift */; };
+		1134FE9A2744927D005953B2 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134FE992744927D005953B2 /* ProgressView.swift */; };
 		119F7498273D8990005DF419 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F7497273D8990005DF419 /* TextField.swift */; };
 		119F749D273EEA0D005DF419 /* DataInputIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749C273EEA0D005DF419 /* DataInputIn.swift */; };
 		119F749F273EEB54005DF419 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749E273EEB54005DF419 /* Method.swift */; };
@@ -67,6 +68,7 @@
 		110ECF0F273C3EF200F9E6CD /* NewEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
 		110ECF12273C46C200F9E6CD /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		110ECF14273C57A400F9E6CD /* NewInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInputViewController.swift; sourceTree = "<group>"; };
+		1134FE992744927D005953B2 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressView.swift; path = croins/Scenes/TesteTags/ProgressView.swift; sourceTree = SOURCE_ROOT; };
 		119F7497273D8990005DF419 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		119F749C273EEA0D005DF419 /* DataInputIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputIn.swift; sourceTree = "<group>"; };
 		119F749E273EEB54005DF419 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				49C552AF27442BF200A30E2C /* NewCategoryViewController.swift */,
 				49C552B127443D8300A30E2C /* CategoriesViewController.swift */,
 				49C552B327443FD100A30E2C /* CategoryViewCell.swift */,
+				1134FE992744927D005953B2 /* ProgressView.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */,
 				49C552B227443D8300A30E2C /* CategoriesViewController.swift in Sources */,
 				49C552A72744299800A30E2C /* Category.swift in Sources */,
+				1134FE9A2744927D005953B2 /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

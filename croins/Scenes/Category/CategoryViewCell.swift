@@ -2,10 +2,11 @@ import UIKit
 
 class CategoryViewCell: UICollectionViewCell {
     
-    let graph: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(systemName: "circle.circle")
-        view.backgroundColor = .red
+    let graph: ProgressView = {
+        let view = ProgressView(setup: .init(
+            backgroundColor: .red.withAlphaComponent(0.1),
+            tintColor: .blue
+        ))
         return view
     }()
     let title: UILabel = {
@@ -25,6 +26,9 @@ class CategoryViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addSubviews()
+        setupConstraints()
+        setupAdditionalSettings()
     }
     
     required init?(coder: NSCoder) {
@@ -42,6 +46,7 @@ class CategoryViewCell: UICollectionViewCell {
             $0.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 100)
             $0.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8)
             $0.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+            $0.heightAnchor.constraint(equalTo: $0.widthAnchor)
         }
         
         target.layout {
@@ -52,8 +57,13 @@ class CategoryViewCell: UICollectionViewCell {
         
         title.layout {
             $0.topAnchor.constraint(equalTo: graph.bottomAnchor, constant: 20)
-            $0.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8)
             $0.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         }
+    }
+    
+    func setupAdditionalSettings() {
+        graph.render(progress: .init(
+            total: 10,
+            progress: 20.5))
     }
 }
