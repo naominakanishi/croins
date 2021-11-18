@@ -18,7 +18,7 @@
 	<array>
 		<dict>
 			<key>INIntentCategory</key>
-			<string>generic</string>
+			<string>create</string>
 			<key>INIntentConfigurable</key>
 			<true/>
 			<key>INIntentDescription</key>
@@ -26,7 +26,7 @@
 			<key>INIntentDescriptionID</key>
 			<string>spGCMK</string>
 			<key>INIntentLastParameterTag</key>
-			<integer>5</integer>
+			<integer>7</integer>
 			<key>INIntentManagedParameterCombinations</key>
 			<dict>
 				<key>title,value,date</key>
@@ -54,7 +54,7 @@
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Expense with ${title}</string>
+					<string>${title}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>CvDiog</string>
 				</dict>
@@ -76,10 +76,8 @@
 					<dict>
 						<key>INIntentParameterMetadataCapitalization</key>
 						<string>Sentences</string>
-						<key>INIntentParameterMetadataDefaultValue</key>
-						<string>Novo Gasto</string>
 						<key>INIntentParameterMetadataDefaultValueID</key>
-						<string>ru0abZ</string>
+						<string>5Wh5Jn</string>
 					</dict>
 					<key>INIntentParameterName</key>
 					<string>title</string>
@@ -95,7 +93,7 @@
 							<key>INIntentParameterPromptDialogCustom</key>
 							<true/>
 							<key>INIntentParameterPromptDialogFormatString</key>
-							<string>What did you spend?</string>
+							<string>What was you expense?</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
 							<string>Z7zpni</string>
 							<key>INIntentParameterPromptDialogType</key>
@@ -135,7 +133,7 @@
 					<key>INIntentParameterSupportsResolution</key>
 					<true/>
 					<key>INIntentParameterTag</key>
-					<integer>1</integer>
+					<integer>7</integer>
 					<key>INIntentParameterType</key>
 					<string>String</string>
 				</dict>
@@ -371,7 +369,7 @@
 			<key>INIntentUserConfirmationRequired</key>
 			<true/>
 			<key>INIntentVerb</key>
-			<string>Do</string>
+			<string>Add</string>
 		</dict>
 	</array>
 	<key>INTypes</key>

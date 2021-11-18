@@ -156,7 +156,7 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
         if let shortcut = INShortcut(intent: CreateExpenseIntent()) {
             let viewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
             viewController.modalPresentationStyle = .formSheet
-            viewController.delegate = self // Object conforming to `INUIAddVoiceShortcutViewControllerDelegate`.
+            viewController.delegate = self
             present(viewController, animated: true, completion: nil)
         }
     }
