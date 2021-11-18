@@ -1,8 +1,11 @@
 import UIKit
 import DropDown
+import WSTagsField
 
 class NewEntryViewController: UIViewController {
 
+    let inputViewModel = InputViewModel()
+    
     let pageTitle: UILabel = {
         let pageTitle = UILabel()
         pageTitle.text = "Perdoa, gastei a grana"
@@ -35,7 +38,9 @@ class NewEntryViewController: UIViewController {
         return view
     }()
     
-    var name: String? { spentEntryTextField.text }
+    
+    
+    
     
     let costTitle: UILabel = {
         let costTitle = UILabel()
@@ -69,19 +74,47 @@ class NewEntryViewController: UIViewController {
         return view
     }()
     
-    private lazy var categoryTextField: UITextField = {
-        let view = TextField(inset: 15)
+    private lazy var categoryTextField: WSTagsField = {
+        let view = WSTagsField()
+        view.layoutMargins = UIEdgeInsets(top: 2, left: 6, bottom: 2, right: 6)
+        view.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        view.spaceBetweenLines = 5.0
+        view.spaceBetweenTags = 10.0
+        view.font = .systemFont(ofSize: 12.0)
         view.backgroundColor = .white
-        view.attributedPlaceholder = .init(string: "tag",
-                                           attributes: [
-                                            .font: UIFont.systemFont(ofSize: 12),
-                                            .foregroundColor: UIColor(ciColor: .black)
-        ])
-        view.font = UIFont.systemFont(ofSize: 14)
-        view.layer.cornerRadius = 10
-        view.addTarget(self, action: #selector(dismissKeyboard), for: .editingDidEndOnExit)
+        view.tintColor = .green
+        view.textColor = .black
+        view.textColor = .blue
+        view.selectedColor = .black
+        view.selectedTextColor = .red
+        view.isDelimiterVisible = false
+        view.placeholderColor = .green
+        view.placeholderAlwaysVisible = true
+        view.acceptTagOption = .space
+        view.shouldTokenizeAfterResigningFirstResponder = true
+        view.placeholder = "Categoria"
+        view.numberOfLines = 1
+        view.enableScrolling = true
+        
+        view.onDidRemoveTag = { tagField, tag in
+            // Adicionar código para retirar as tags de todas os inputs realizados
+            // inputViewModel.dataInputInList.filter({ $0.category == tag })
+        }
+        
+        view.onValidateTag = { tag, tags in
+            return tag.text != "#" && !tags.contains(where: { $0.text.uppercased() == tag.text.uppercased() })
+        }
+        
+        /*view.onDidSelectTagView = { field, tag in
+            let tagText = tagsField.tagViews.filter{ $0 == tag }.first!.displayText
+            // Tem como passar por referência? Ao excluir, tira do input também
+            self.categoriaTeste.addCategoria(tagsField.tags.first(where: { $0.text == tagText })!)
+            self.pageTitle.text = self.categoriaTeste.categoria.text
+        }*/
+        
         return view
     }()
+
     
     private lazy var paymentMethodTextField: UITextField = {
         let view = TextField(inset: 15)
@@ -101,9 +134,12 @@ class NewEntryViewController: UIViewController {
         let view = UIDatePicker()
         view.datePickerMode = .date
         view.preferredDatePickerStyle = .compact
+        view.backgroundColor = .white
+//        view.tintColor = .white
+        
         view.locale = .current
         view.backgroundColor = .white
-        view.layer.cornerRadius = 10
+        view.layer.cornerRadius = 30
         view.addTarget(self, action: #selector(handleDateDidChange), for: .valueChanged)
         return view
     }()
@@ -121,9 +157,9 @@ class NewEntryViewController: UIViewController {
     
     private lazy var recurrentPickerLabel: UILabel = {
         let view = UILabel()
-        pageTitle.text = "Essa transação é recorrente?"
-        pageTitle.font = UIFont.systemFont(ofSize: 14)
-        pageTitle.numberOfLines = 0
+        view.text = "Essa transação é recorrente?"
+        view.font = UIFont.systemFont(ofSize: 14)
+        view.numberOfLines = 0
         return view
     }()
     
@@ -142,7 +178,16 @@ class NewEntryViewController: UIViewController {
     
     let recurrencyOptions = ["Não é recorrente", "Mensal", "Quinzenal", "Mensal", "Anual"]
     
-    
+    let saveButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
+        button.setTitle("Salvar", for: .normal)
+        button.backgroundColor = .blue
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        button.titleLabel?.textAlignment = .center
+        return button
+    }()
     
     init () {
         super.init(nibName: nil, bundle: nil)
@@ -171,6 +216,7 @@ class NewEntryViewController: UIViewController {
         view.addSubview(datePicker)
         view.addSubview(recurrentPicker)
         view.addSubview(recurrentPickerLabel)
+        view.addSubview(saveButton)
     }
     
     func setupConstraints() {
@@ -241,7 +287,14 @@ class NewEntryViewController: UIViewController {
         recurrentPickerLabel.layout{
             $0.widthAnchor.constraint(equalTo: inputStackView.widthAnchor, multiplier: 0.8)
             $0.centerXAnchor.constraint(equalTo: inputStackView.centerXAnchor)
-            $0.centerYAnchor.constraint(equalTo: recurrentPicker.centerYAnchor, constant: 20)
+            $0.centerYAnchor.constraint(equalTo: recurrentPicker.centerYAnchor)
+            $0.heightAnchor.constraint(equalToConstant: 40)
+        }
+
+        saveButton.layout{
+            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
+        
+            $0.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
             $0.heightAnchor.constraint(equalToConstant: 40)
         }
     }
@@ -255,6 +308,18 @@ class NewEntryViewController: UIViewController {
 @objc
 private extension NewEntryViewController {
 
+    func saveButtonTap() {
+        
+        inputViewModel.writeIncomeData(title: spentEntryTextField.text ?? "",
+                                       gain: amountSpentTextField.text ?? "",
+                                       method: Method(title: WSTag(paymentMethodTextField.text ?? "", context: nil), installments: 0),
+                                       category: WSTag("", context: nil),
+                                       date: datePicker.date,
+                                       isRecurrent: false)
+        print(inputViewModel.dataInputInList.first?.category)
+    }
+    
+    
     func handlePickerTap(_ sender: UITapGestureRecognizer? = nil){
         dropDown.show()
     }
