@@ -1,6 +1,6 @@
 import Intents
 
-class GetNewSpendIntentHandler: NSObject, CreateExpenseIntentHandling {
+class CreateNewExpenseIntentHandler: NSObject, CreateExpenseIntentHandling {
     
     let inputViewModel = InputViewModel()
     
@@ -51,7 +51,7 @@ class IntentHandler: INExtension {
         guard intent is CreateExpenseIntent else {
             fatalError("Unhandled intent")
         }
-        return GetNewSpendIntentHandler()
+        return CreateNewExpenseIntentHandler()
     }
     
 }
