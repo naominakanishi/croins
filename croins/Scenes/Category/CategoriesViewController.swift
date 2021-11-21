@@ -12,6 +12,12 @@ class CategoriesViewController: UIViewController {
         return title
     }()
     
+    private lazy var pizzaChartView: PizzaChartView = {
+        let view = PizzaChartView()
+        
+        return view
+    }()
+    
     private lazy var categoriesList: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -22,6 +28,8 @@ class CategoriesViewController: UIViewController {
         view.dataSource = self
         return view
     }()
+    
+ 
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -38,8 +46,19 @@ class CategoriesViewController: UIViewController {
         setupConstraints()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        pizzaChartView.configure(slices: [
+            .init(percentage: 0.15, color: .blue),
+            .init(percentage: 0.30, color: .black),
+            .init(percentage: 0.10, color: .orange),
+            .init(percentage: 0.05, color: .green),
+            .init(percentage: 0.33, color: .purple),
+            .init(percentage: 0.07, color: .systemPink),
+        ])
+    }
     func addSubviews() {
         view.addSubview(pageTitle)
+        view.addSubview(pizzaChartView)
         view.addSubview(categoriesList)
     }
     
@@ -50,9 +69,16 @@ class CategoriesViewController: UIViewController {
             $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         }
         
-        categoriesList.layout {
+        pizzaChartView.layout {
             $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-            $0.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5)
+            $0.heightAnchor.constraint(equalTo: pizzaChartView.widthAnchor)
+            $0.topAnchor.constraint(equalTo: pageTitle.bottomAnchor, constant: 30)
+        }
+        
+        categoriesList.layout {
+            $0.topAnchor.constraint(equalTo: pizzaChartView.bottomAnchor, constant: 30)
+            $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
             $0.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
         }
@@ -61,7 +87,7 @@ class CategoriesViewController: UIViewController {
 
 extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

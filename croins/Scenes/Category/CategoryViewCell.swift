@@ -9,6 +9,7 @@ class CategoryViewCell: UICollectionViewCell {
         ))
         return view
     }()
+    
     let title: UILabel = {
         let view = UILabel()
         view.text = "Minha categoria"
@@ -16,10 +17,11 @@ class CategoryViewCell: UICollectionViewCell {
         view.font = .systemFont(ofSize: 12)
         return view
     }()
+    
     let target: UILabel = {
         let view = UILabel()
         view.text = "500/550"
-        view.numberOfLines  = 0
+        view.numberOfLines = 0
         view.font = .systemFont(ofSize: 7)
         return view
     }()
@@ -43,21 +45,25 @@ class CategoryViewCell: UICollectionViewCell {
     
     func setupConstraints() {
         graph.layout {
-            $0.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 100)
-            $0.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8)
-            $0.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+            $0.topAnchor.constraint(equalTo: contentView.topAnchor)
+            $0.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+            $0.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
             $0.heightAnchor.constraint(equalTo: $0.widthAnchor)
         }
         
         target.layout {
             $0.centerXAnchor.constraint(equalTo: graph.centerXAnchor)
             $0.centerYAnchor.constraint(equalTo: graph.centerYAnchor)
-            $0.widthAnchor.constraint(equalTo: graph.widthAnchor, multiplier: 0.5)
+            $0.topAnchor.constraint(equalTo: graph.topAnchor, constant: 35)
+            $0.bottomAnchor.constraint(equalTo: graph.bottomAnchor, constant:-35)
         }
         
         title.layout {
-            $0.topAnchor.constraint(equalTo: graph.bottomAnchor, constant: 20)
+            $0.topAnchor.constraint(equalTo: graph.bottomAnchor, constant: 10)
+            $0.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
             $0.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+            $0.leadingAnchor.constraint(equalTo: graph.leadingAnchor)
+            $0.trailingAnchor.constraint(equalTo: graph.trailingAnchor)
         }
     }
     
