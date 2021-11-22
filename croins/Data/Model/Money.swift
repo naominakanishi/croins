@@ -7,9 +7,22 @@ extension Money {
     
     /// Returns formatted value. Ex.: 10,32 becomes R$ 10,32
     var currency: String? {
+        NumberFormatter.currencyFormatter().string(from: self as NSNumber)
+    }
+}
+
+extension NumberFormatter {
+    static func currencyFormatter() -> NumberFormatter {
         let formatter = NumberFormatter()
-        formatter.locale = Locale.autoupdatingCurrent
+        formatter.locale = Locale.current
         formatter.numberStyle = .currency
-        return formatter.string(from: self as NSNumber)
+        return formatter
+    }
+}
+
+
+extension NumberFormatter {
+    func string(from money: Money) -> String? {
+        string(from: money as NSNumber)
     }
 }

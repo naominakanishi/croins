@@ -16,6 +16,18 @@ final class NewEntryView: UIView {
         return view
     }()
     
+    private lazy var titleStackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.spacing = 10
+        return view
+    }()
+    
+    private lazy var headerView: EntryHeader = {
+        let view = EntryHeader(title: "Perdoa gastei", image: UIImage(systemName: "circle"))
+        return view
+    }()
+    
     private lazy var nameTextField: UITextField = {
         let view = TextField(inset: 15)
         view.backgroundColor = .hex(0xF5F6F8)
@@ -36,12 +48,12 @@ final class NewEntryView: UIView {
         return view
     }()
     
-    private lazy var coastTextField: UITextField = {
-        let view = TextField(inset: 15)
+    private lazy var coastTextField: NumberFormattedTextField = {
+        let view = NumberFormattedTextField(inset: 15)
         view.backgroundColor = UIColor(
             hex: 0xF5F6F8)
         view.attributedPlaceholder = .init(
-            string: "Custou",
+            string: "Quanto custou",
             attributes: [
                 .font : UIFont.systemFont(ofSize: 12),
                 .foregroundColor : UIColor(hex: 0x9A9696).withAlphaComponent(0.4)
@@ -103,6 +115,7 @@ final class NewEntryView: UIView {
     
     func addSubviews() {
         addSubview(containerView)
+        containerView.addSubview(headerView)
         containerView.addSubview(fieldsStackView)
         containerView.addSubview(registerButton)
         fieldsStackView.addArrangedSubview(nameTextField)
@@ -113,8 +126,10 @@ final class NewEntryView: UIView {
     
     func constraintSubviews() {
         constraintContainerView()
+        constraintHeaderView()
         constraintRegisterButton()
         constraintFieldsStackView()
+        
     }
     
     func reloadCategories() {
@@ -141,6 +156,21 @@ private extension NewEntryView {
         }
     }
     
+    func constraintHeaderView() {
+        headerView.layout {
+            $0.topAnchor.constraint(
+                equalTo: containerView.topAnchor,
+                constant: 16)
+            $0.leadingAnchor.constraint(
+                equalTo: containerView.leadingAnchor,
+                constant: 16)
+            $0.trailingAnchor.constraint(
+                equalTo: containerView.trailingAnchor,
+                constant: -16)
+
+        }
+    }
+    
     func constraintRegisterButton() {
         registerButton.layout {
             $0.bottomAnchor.constraint(
@@ -158,7 +188,7 @@ private extension NewEntryView {
     func constraintFieldsStackView() {
         fieldsStackView.layout {
             $0.topAnchor.constraint(
-                equalTo: containerView.topAnchor,
+                equalTo: headerView.bottomAnchor,
                 constant: 16)
             $0.leadingAnchor.constraint(
                 equalTo: containerView.leadingAnchor,

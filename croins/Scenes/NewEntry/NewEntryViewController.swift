@@ -17,6 +17,15 @@ final class NewEntryViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         newEntryView?.reloadCategories()
+        configureNavigationBar()
+    }
+    
+    func configureNavigationBar() {
+        title = "Registro saída"
+        navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.prefersLargeTitles = false
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
 }
 

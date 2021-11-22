@@ -25,8 +25,8 @@ class NewCategoryViewController: UIViewController {
         return view
     }()
     
-    private lazy var targetEntryTextField: UITextField = {
-        let view = TextField(inset: 15)
+    private lazy var targetEntryTextField: NumberFormattedTextField = {
+        let view = NumberFormattedTextField(inset: 15)
         view.backgroundColor = .white
         view.attributedPlaceholder = .init(string: "Gasto máximo",
                                            attributes: [
@@ -98,7 +98,6 @@ class NewCategoryViewController: UIViewController {
             $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         }
     }
-
 }
 
 @objc
@@ -121,9 +120,13 @@ private extension NewCategoryViewController {
     }
     
     func saveButtonTap() {
+        guard let title = newCategoryEntryTextField.text
+        else { return }
         categoryViewModel.addNewCategory(
             Category(
-                title: newCategoryEntryTextField.text!,
-                target: targetEntryTextField.text!))
+                title: title,
+                target: targetEntryTextField.amount
+            ))
     }
 }
+
