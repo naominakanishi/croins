@@ -51,19 +51,12 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
     
     let spentMoneyButton: UIButton = {
         let button = UIButton()
-        //button.addTarget(self, action: #selector(handleSpentMoneyButtonTap), for: .touchUpInside)
-        button.addTarget(self, action: #selector(editShortcut(_:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleSpentMoneyButtonTap), for: .touchUpInside)
         button.setTitle("Perdoa, gastei a grana", for: .normal)
         button.backgroundColor = .blue
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.titleLabel?.textAlignment = .center
-        return button
-    }()
-    
-    let siriButton: INUIAddVoiceShortcutButton = {
-        let button = INUIAddVoiceShortcutButton(style: .blackOutline)
-        button.addTarget(self, action: #selector(addToSiri(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -100,7 +93,6 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
         view.addSubview(pageContent)
         view.addSubview(spentMoneyButton)
         view.addSubview(receivedMoneyButton)
-        view.addSubview(siriButton)
     }
     
     func setupConstraints() {
@@ -116,14 +108,6 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
             $0.topAnchor.constraint(equalTo: pageTitle.bottomAnchor, constant: 20)
             $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
             $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        }
-        
-        siriButton.layout {
-            $0.topAnchor.constraint(equalTo: pageContent.bottomAnchor, constant: 30)
-            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9)
-            $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-            $0.titleLabel?.centerXAnchor.constraint(equalTo: $0.centerXAnchor)
-            $0.titleLabel?.centerYAnchor.constraint(equalTo: $0.centerYAnchor)
         }
         
         //MARK: received money button constraints:
@@ -168,7 +152,7 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
         navigationController?.pushViewController(startController, animated: true)
     }
     
-    @objc func addToSiri(_ sender: Any) {
+    /*@objc func addToSiri(_ sender: Any) {
         if let shortcut = INShortcut(intent: CreateExpenseIntent()) {
             let viewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
             viewController.modalPresentationStyle = .formSheet
@@ -184,5 +168,5 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
         let vc = INUIEditVoiceShortcutViewController(voiceShortcut: shortcut)
         vc.delegate = self
         self.present(vc, animated: true, completion: nil)
-    }
+    }*/
 }
