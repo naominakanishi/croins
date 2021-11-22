@@ -1,11 +1,11 @@
 import UIKit
 
-class Category {
+final class Category {
     let title: String
     // let color: UIColor
-    let target: String
+    let target: Money
     
-    init(title: String, target: String) {
+    init(title: String, target: Money) {
         self.title = title
         self.target = target
     }

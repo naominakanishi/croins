@@ -4,14 +4,6 @@ class CategoriesViewController: UIViewController {
     
     let categoryViewModel = CategoryViewModel()
     
-    let pageTitle: UILabel = {
-        let title = UILabel()
-        title.text = "Categorias"
-        title.font = .boldSystemFont(ofSize: 25)
-        title.numberOfLines = 0
-        return title
-    }()
-    
     private lazy var pizzaChartView: PizzaChartView = {
         let view = PizzaChartView()
         
@@ -42,6 +34,7 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
+        configureNavigationBar()
         addSubviews()
         setupConstraints()
     }
@@ -56,24 +49,30 @@ class CategoriesViewController: UIViewController {
             .init(percentage: 0.07, color: .systemPink),
         ])
     }
+    
+    func configureNavigationBar() {
+        title = "Categorias"
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = .init(
+            image: .init(systemName: "plus"),
+            style: .done,
+            target: self,
+            action: #selector(onAddTapped))
+    }
+    
     func addSubviews() {
-        view.addSubview(pageTitle)
         view.addSubview(pizzaChartView)
         view.addSubview(categoriesList)
     }
     
     func setupConstraints() {
-        pageTitle.layout {
-            $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 100)
-            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
-            $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        }
         
         pizzaChartView.layout {
             $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5)
             $0.heightAnchor.constraint(equalTo: pizzaChartView.widthAnchor)
-            $0.topAnchor.constraint(equalTo: pageTitle.bottomAnchor, constant: 30)
+            $0.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30)
         }
         
         categoriesList.layout {
@@ -97,5 +96,12 @@ extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         (cell as? CategoryViewCell)?.setupAdditionalSettings()
+    }
+}
+
+@objc
+private extension CategoriesViewController {
+    func onAddTapped() {
+        present(NewCategoryViewController(), animated: true, completion: nil)
     }
 }

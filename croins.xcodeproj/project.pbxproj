@@ -28,6 +28,7 @@
 		118BD3BA274B114B00B14417 /* DatePicker+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3B9274B114B00B14417 /* DatePicker+UITextField.swift */; };
 		118BD3BC274B169600B14417 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3BB274B169600B14417 /* UIColor+Extensions.swift */; };
 		118BD3BE274B196D00B14417 /* NewEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3BD274B196D00B14417 /* NewEntryView.swift */; };
+		118BD3C1274B344500B14417 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3C0274B344500B14417 /* Money.swift */; };
 		119F7498273D8990005DF419 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F7497273D8990005DF419 /* TextField.swift */; };
 		119F749D273EEA0D005DF419 /* DataInputIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749C273EEA0D005DF419 /* DataInputIn.swift */; };
 		119F749F273EEB54005DF419 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749E273EEB54005DF419 /* Method.swift */; };
@@ -87,6 +88,7 @@
 		118BD3B9274B114B00B14417 /* DatePicker+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatePicker+UITextField.swift"; sourceTree = "<group>"; };
 		118BD3BB274B169600B14417 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		118BD3BD274B196D00B14417 /* NewEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryView.swift; sourceTree = "<group>"; };
+		118BD3C0274B344500B14417 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		119F7497273D8990005DF419 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		119F749C273EEA0D005DF419 /* DataInputIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputIn.swift; sourceTree = "<group>"; };
 		119F749E273EEB54005DF419 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
@@ -237,6 +239,18 @@
 			path = Dropdown;
 			sourceTree = "<group>";
 		};
+		118BD3BF274B305800B14417 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				119F749C273EEA0D005DF419 /* DataInputIn.swift */,
+				119F749E273EEB54005DF419 /* Method.swift */,
+				49C552A62744299800A30E2C /* Category.swift */,
+				49C552A827442A6E00A30E2C /* Goal.swift */,
+				118BD3C0274B344500B14417 /* Money.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		119F7496273D8978005DF419 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,10 +262,7 @@
 		119F7499273EE9D3005DF419 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				119F749C273EEA0D005DF419 /* DataInputIn.swift */,
-				119F749E273EEB54005DF419 /* Method.swift */,
-				49C552A62744299800A30E2C /* Category.swift */,
-				49C552A827442A6E00A30E2C /* Goal.swift */,
+				118BD3BF274B305800B14417 /* Model */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -540,6 +551,7 @@
 			files = (
 				119F749F273EEB54005DF419 /* Method.swift in Sources */,
 				118BD3B7274B0A1200B14417 /* OptionCell.swift in Sources */,
+				118BD3C1274B344500B14417 /* Money.swift in Sources */,
 				49C552B027442BF200A30E2C /* NewCategoryViewController.swift in Sources */,
 				118BD3BC274B169600B14417 /* UIColor+Extensions.swift in Sources */,
 				118BD3BA274B114B00B14417 /* DatePicker+UITextField.swift in Sources */,
