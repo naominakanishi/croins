@@ -5,6 +5,7 @@
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>CreateExpenseIntent</string>
+		<string>CreateIncomeIntent</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
