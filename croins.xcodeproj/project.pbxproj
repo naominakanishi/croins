@@ -47,13 +47,13 @@
 		49C552B027442BF200A30E2C /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552AF27442BF200A30E2C /* NewCategoryViewController.swift */; };
 		49C552B227443D8300A30E2C /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552B127443D8300A30E2C /* CategoriesViewController.swift */; };
 		49C552B427443FD100A30E2C /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552B327443FD100A30E2C /* CategoryViewCell.swift */; };
+		49D17C9D274C32C700C86BBC /* EntryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D17C9C274C32C700C86BBC /* EntryEnum.swift */; };
 		49E6BA6F2746F25100824746 /* DataInputIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749C273EEA0D005DF419 /* DataInputIn.swift */; };
 		49F6355F274582F80033972E /* ExpenseIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49F6355E274582F80033972E /* ExpenseIntents.intentdefinition */; };
 		49F6356827458ABA0033972E /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F6356727458ABA0033972E /* Intents.framework */; };
 		49F6356B27458ABA0033972E /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6356A27458ABA0033972E /* IntentHandler.swift */; };
 		49F6356F27458ABB0033972E /* ExpendsIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49F6356627458ABA0033972E /* ExpendsIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		49F6357427458AEF0033972E /* ExpenseIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49F6355E274582F80033972E /* ExpenseIntents.intentdefinition */; };
-		49F635792745943B0033972E /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F63575274593350033972E /* InputViewModel.swift */; };
 		865D58D30D12F02D785D8ECF /* Pods_croins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A297F7B12748508788E83111 /* Pods_croins.framework */; };
 		8A4DEBC71C1F3F9DBE4806CD /* Pods_croins_croinsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B094576EE31C183ACAB452 /* Pods_croins_croinsUITests.framework */; };
 		B36DC3C588AE7F7846AB17C6 /* Pods_croinsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E309F717E3F12C5456CF6D /* Pods_croinsTests.framework */; };
@@ -151,13 +151,13 @@
 		49C552AF27442BF200A30E2C /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		49C552B127443D8300A30E2C /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		49C552B327443FD100A30E2C /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
+		49D17C9C274C32C700C86BBC /* EntryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryEnum.swift; sourceTree = "<group>"; };
 		49F6355D274582BD0033972E /* croins.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = croins.entitlements; sourceTree = "<group>"; };
 		49F6355E274582F80033972E /* ExpenseIntents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ExpenseIntents.intentdefinition; sourceTree = "<group>"; };
 		49F6356627458ABA0033972E /* ExpendsIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ExpendsIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F6356727458ABA0033972E /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		49F6356A27458ABA0033972E /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		49F6356C27458ABA0033972E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49F63575274593350033972E /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
 		4E987DC78DB2176FD8E8C4F4 /* Pods-croinsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croinsTests.release.xcconfig"; path = "Target Support Files/Pods-croinsTests/Pods-croinsTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A0ED4B45B5730BCC16DC0AE /* Pods-croins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins.release.xcconfig"; path = "Target Support Files/Pods-croins/Pods-croins.release.xcconfig"; sourceTree = "<group>"; };
 		A297F7B12748508788E83111 /* Pods_croins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_croins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,7 +242,6 @@
 			children = (
 				119F74A0273EEC9C005DF419 /* ViewModels */,
 				119F7499273EE9D3005DF419 /* Data */,
-				49F6355D274582BD0033972E /* croins.entitlements */,
 				110ECF11273C46B700F9E6CD /* UI */,
 				110ECF0D273C3EA500F9E6CD /* Scenes */,
 				119F7496273D8978005DF419 /* DesignSystem */,
@@ -252,6 +251,7 @@
 				110ECEE6273C3DAD00F9E6CD /* Assets.xcassets */,
 				110ECEE8273C3DAD00F9E6CD /* LaunchScreen.storyboard */,
 				110ECEEB273C3DAD00F9E6CD /* Info.plist */,
+				49F6355D274582BD0033972E /* croins.entitlements */,
 			);
 			path = croins;
 			sourceTree = "<group>";
@@ -289,7 +289,6 @@
 				110ECF0F273C3EF200F9E6CD /* NewEntryViewController.swift */,
 				110ECF14273C57A400F9E6CD /* NewInputViewController.swift */,
 				49A6EB9C2748357B004BA797 /* SuccessfulRegisterViewController.swift */,
-				49C653E1273EE6AE0049897F /* TagsTestViewController.swift */,
 				118BD3BD274B196D00B14417 /* NewEntryView.swift */,
 			);
 			path = NewEntry;
@@ -328,6 +327,7 @@
 				49C552A62744299800A30E2C /* Category.swift */,
 				49C552A827442A6E00A30E2C /* Goal.swift */,
 				118BD3C0274B344500B14417 /* Money.swift */,
+				49D17C9C274C32C700C86BBC /* EntryEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,7 +391,6 @@
 			children = (
 				49F6355E274582F80033972E /* ExpenseIntents.intentdefinition */,
 				49A6EB8927482114004BA797 /* IncomeIntents.intentdefinition */,
-				49F63575274593350033972E /* InputViewModel.swift */,
 			);
 			path = SiriKit;
 			sourceTree = "<group>";
@@ -732,6 +731,7 @@
 				118BD3C1274B344500B14417 /* Money.swift in Sources */,
 				49C552B027442BF200A30E2C /* NewCategoryViewController.swift in Sources */,
 				118BD3BC274B169600B14417 /* UIColor+Extensions.swift in Sources */,
+				49D17C9D274C32C700C86BBC /* EntryEnum.swift in Sources */,
 				118BD3BA274B114B00B14417 /* DatePicker+UITextField.swift in Sources */,
 				110ECEE2273C3DAB00F9E6CD /* ViewController.swift in Sources */,
 				110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */,
@@ -750,7 +750,6 @@
 				118BD3C3274B3CFB00B14417 /* NumberFormattedTextField.swift in Sources */,
 				118BD3B6274B0A1200B14417 /* SelfSizingTableView.swift in Sources */,
 				118BD3BE274B196D00B14417 /* NewEntryView.swift in Sources */,
-				49C653E2273EE6AE0049897F /* TagsTestViewController.swift in Sources */,
 				49C552A927442A6E00A30E2C /* Goal.swift in Sources */,
 				110ECF10273C3EF200F9E6CD /* NewEntryViewController.swift in Sources */,
 				110ECEE0273C3DAB00F9E6CD /* SceneDelegate.swift in Sources */,
@@ -795,7 +794,6 @@
 				49F6357427458AEF0033972E /* ExpenseIntents.intentdefinition in Sources */,
 				49E6BA6F2746F25100824746 /* DataInputIn.swift in Sources */,
 				49F6356B27458ABA0033972E /* IntentHandler.swift in Sources */,
-				49F635792745943B0033972E /* InputViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

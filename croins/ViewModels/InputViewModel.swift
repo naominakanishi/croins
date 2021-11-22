@@ -2,13 +2,13 @@ import UIKit
 import Combine
 import Intents
 
-class InputViewModel {
+class InputViewModel: ObservableObject {
     @Published private (set) var dataInputInList: [DataInputIn]
-    @Published private (set) var shortcutList: [INVoiceShortcut]
+    @Published private (set) var dataInputType: EntryType
 
     init() {
         dataInputInList = []
-        shortcutList = []
+        dataInputType = .outcome
     }
     
     func writeIncomeData(title: String, gain: String, method: Method, date: Date, isRecurrent: Bool) {
@@ -20,12 +20,8 @@ class InputViewModel {
             isRecurrent: isRecurrent))
     }
     
-    func getAllShortcuts() {
-        INVoiceShortcutCenter.shared.getAllVoiceShortcuts { shortcurts, error in
-            if let shortcurts = shortcurts {
-                self.shortcutList = shortcurts
-            }
-        }
+    func setInputType(to entryType: EntryType) {
+        dataInputType = entryType
     }
 }
 

@@ -2,6 +2,8 @@ import UIKit
 
 final class SuccessfulRegisterViewController: UIViewController {
     
+    var inputViewModel = InputViewModel()
+    
     private lazy var backgroundView: UIView = {
        let view = UIView()
         view.backgroundColor = .white
@@ -9,7 +11,13 @@ final class SuccessfulRegisterViewController: UIViewController {
     }()
     
     private lazy var entryHeader: EntryHeader = {
-        let view = EntryHeader(title: "Gasto Registrado", image: UIImage(systemName: "photo"))
+        let view: EntryHeader
+        switch inputViewModel.dataInputType {
+        case .income:
+            view = EntryHeader(title: "Renda Registrada", image: UIImage(systemName: "photo"))
+        case .outcome:
+            view = EntryHeader(title: "Gasto Registrado", image: UIImage(systemName: "photo"))
+        }
         return view
     }()
     
