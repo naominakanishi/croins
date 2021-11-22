@@ -15,5 +15,3 @@ class DataInputIn{
         self.isRecurrent = isRecurrent
     }
 }
-
-

@@ -13,7 +13,7 @@ class ProgressView: UIView {
     struct Setup {
         let backgroundColor: UIColor
         let tintColor: UIColor
-        let lineWidth: CGFloat = 4
+        let lineWidth: CGFloat = 15
     }
     
     struct Progress {
@@ -70,10 +70,6 @@ class ProgressView: UIView {
         layer.lineCap = .round
         layer.strokeColor = setup.tintColor.cgColor
         layer.fillColor = UIColor.clear.cgColor
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = .init(width: 2, height: 2)
-        layer.shadowRadius = 2
-        layer.shadowOpacity = 1
         return layer
     }
     
