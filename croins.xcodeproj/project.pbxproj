@@ -20,6 +20,14 @@
 		110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF14273C57A400F9E6CD /* NewInputViewController.swift */; };
 		1134FE9A2744927D005953B2 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134FE992744927D005953B2 /* ProgressView.swift */; };
 		118BD3AD274AF50E00B14417 /* PizzaChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3AC274AF50E00B14417 /* PizzaChartView.swift */; };
+		118BD3B4274B0A1200B14417 /* DropdownDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3AF274B0A1200B14417 /* DropdownDataSource.swift */; };
+		118BD3B5274B0A1200B14417 /* DropdownPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3B0274B0A1200B14417 /* DropdownPicker.swift */; };
+		118BD3B6274B0A1200B14417 /* SelfSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3B1274B0A1200B14417 /* SelfSizingTableView.swift */; };
+		118BD3B7274B0A1200B14417 /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3B2274B0A1200B14417 /* OptionCell.swift */; };
+		118BD3B8274B0A1200B14417 /* DropdownOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3B3274B0A1200B14417 /* DropdownOption.swift */; };
+		118BD3BA274B114B00B14417 /* DatePicker+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3B9274B114B00B14417 /* DatePicker+UITextField.swift */; };
+		118BD3BC274B169600B14417 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3BB274B169600B14417 /* UIColor+Extensions.swift */; };
+		118BD3BE274B196D00B14417 /* NewEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3BD274B196D00B14417 /* NewEntryView.swift */; };
 		119F7498273D8990005DF419 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F7497273D8990005DF419 /* TextField.swift */; };
 		119F749D273EEA0D005DF419 /* DataInputIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749C273EEA0D005DF419 /* DataInputIn.swift */; };
 		119F749F273EEB54005DF419 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749E273EEB54005DF419 /* Method.swift */; };
@@ -71,6 +79,14 @@
 		110ECF14273C57A400F9E6CD /* NewInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInputViewController.swift; sourceTree = "<group>"; };
 		1134FE992744927D005953B2 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressView.swift; path = croins/Scenes/TesteTags/ProgressView.swift; sourceTree = SOURCE_ROOT; };
 		118BD3AC274AF50E00B14417 /* PizzaChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaChartView.swift; sourceTree = "<group>"; };
+		118BD3AF274B0A1200B14417 /* DropdownDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownDataSource.swift; sourceTree = "<group>"; };
+		118BD3B0274B0A1200B14417 /* DropdownPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPicker.swift; sourceTree = "<group>"; };
+		118BD3B1274B0A1200B14417 /* SelfSizingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfSizingTableView.swift; sourceTree = "<group>"; };
+		118BD3B2274B0A1200B14417 /* OptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
+		118BD3B3274B0A1200B14417 /* DropdownOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownOption.swift; sourceTree = "<group>"; };
+		118BD3B9274B114B00B14417 /* DatePicker+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatePicker+UITextField.swift"; sourceTree = "<group>"; };
+		118BD3BB274B169600B14417 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		118BD3BD274B196D00B14417 /* NewEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryView.swift; sourceTree = "<group>"; };
 		119F7497273D8990005DF419 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		119F749C273EEA0D005DF419 /* DataInputIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputIn.swift; sourceTree = "<group>"; };
 		119F749E273EEB54005DF419 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
@@ -193,6 +209,7 @@
 				110ECF0F273C3EF200F9E6CD /* NewEntryViewController.swift */,
 				110ECF14273C57A400F9E6CD /* NewInputViewController.swift */,
 				49C653E1273EE6AE0049897F /* TagsTestViewController.swift */,
+				118BD3BD274B196D00B14417 /* NewEntryView.swift */,
 			);
 			path = NewEntry;
 			sourceTree = "<group>";
@@ -200,9 +217,24 @@
 		110ECF11273C46B700F9E6CD /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				118BD3AE274B09E600B14417 /* Dropdown */,
 				110ECF12273C46C200F9E6CD /* ViewCode.swift */,
+				118BD3B9274B114B00B14417 /* DatePicker+UITextField.swift */,
+				118BD3BB274B169600B14417 /* UIColor+Extensions.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		118BD3AE274B09E600B14417 /* Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				118BD3AF274B0A1200B14417 /* DropdownDataSource.swift */,
+				118BD3B3274B0A1200B14417 /* DropdownOption.swift */,
+				118BD3B0274B0A1200B14417 /* DropdownPicker.swift */,
+				118BD3B2274B0A1200B14417 /* OptionCell.swift */,
+				118BD3B1274B0A1200B14417 /* SelfSizingTableView.swift */,
+			);
+			path = Dropdown;
 			sourceTree = "<group>";
 		};
 		119F7496273D8978005DF419 /* DesignSystem */ = {
@@ -507,7 +539,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				119F749F273EEB54005DF419 /* Method.swift in Sources */,
+				118BD3B7274B0A1200B14417 /* OptionCell.swift in Sources */,
 				49C552B027442BF200A30E2C /* NewCategoryViewController.swift in Sources */,
+				118BD3BC274B169600B14417 /* UIColor+Extensions.swift in Sources */,
+				118BD3BA274B114B00B14417 /* DatePicker+UITextField.swift in Sources */,
 				110ECEE2273C3DAB00F9E6CD /* ViewController.swift in Sources */,
 				110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */,
 				110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */,
@@ -516,7 +551,12 @@
 				119F749D273EEA0D005DF419 /* DataInputIn.swift in Sources */,
 				118BD3AD274AF50E00B14417 /* PizzaChartView.swift in Sources */,
 				49C552AD27442B8500A30E2C /* CategoryViewModel.swift in Sources */,
+				118BD3B5274B0A1200B14417 /* DropdownPicker.swift in Sources */,
 				110ECEDE273C3DAB00F9E6CD /* AppDelegate.swift in Sources */,
+				118BD3B8274B0A1200B14417 /* DropdownOption.swift in Sources */,
+				118BD3B4274B0A1200B14417 /* DropdownDataSource.swift in Sources */,
+				118BD3B6274B0A1200B14417 /* SelfSizingTableView.swift in Sources */,
+				118BD3BE274B196D00B14417 /* NewEntryView.swift in Sources */,
 				49C653E2273EE6AE0049897F /* TagsTestViewController.swift in Sources */,
 				49C552A927442A6E00A30E2C /* Goal.swift in Sources */,
 				110ECF10273C3EF200F9E6CD /* NewEntryViewController.swift in Sources */,
