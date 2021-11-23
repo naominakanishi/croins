@@ -1,23 +1,9 @@
 import UIKit
 import Intents
-import IntentsUI
 
-class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControllerDelegate {
+class NewInputViewController: UIViewController {
     
     let inputViewModel = InputViewModel()
-    
-    func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
-    func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
-    func present(_ addVoiceShortcutViewController: INUIAddVoiceShortcutViewController, for addVoiceShortcutButton: INUIAddVoiceShortcutButton) {
-        addVoiceShortcutViewController.delegate = self
-        self.present(addVoiceShortcutViewController, animated: true, completion: nil)
-    }
     
     let pageTitle: UILabel = {
         let pageTitle = UILabel()
@@ -37,7 +23,7 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
     
     let spentMoneyButton: UIButton = {
         let button = UIButton()
-        button.addTarget(self, action: #selector(handleSpentMoneyButtonTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleSpentMoneyButtonTap(_:)), for: .touchUpInside)
         button.setTitle("Perdoa, gastei a grana", for: .normal)
         button.backgroundColor = .blue
         button.setTitleColor(.white, for: .normal)
@@ -48,6 +34,7 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
     
     let receivedMoneyButton: UIButton = {
         let button = UIButton()
+        button.addTarget(self, action: #selector(handleReceiveMoneyButtonTap(_:)), for: .touchUpInside)
         button.setTitle("Amém, caiu a bolsa", for: .normal)
         button.backgroundColor = .blue
         button.setTitleColor(.white, for: .normal)
@@ -70,7 +57,6 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
         addSubviews()
         setupConstraints()
         view.backgroundColor = .white
-        donateInteraction()
     }
 
     
@@ -115,44 +101,25 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
             $0.titleLabel?.centerYAnchor.constraint(equalTo: $0.centerYAnchor)
         }
     }
-    
-    func donateInteraction() {
-        let intent = CreateExpenseIntent()
-        intent.suggestedInvocationPhrase = "Add new expense"
-        intent.title = "newExpense"
-        intent.value = 0.0
-        intent.date = Calendar.current.dateComponents([.year, .month, .day], from: Date())
-        let interaction = INInteraction(intent: intent, response: nil)
-        
-        interaction.donate { (error) in
-            if let error = error as NSError? {
-                print("Interaction donation failed: \(error.description)")
-            } else {
-                print("Successfully donated interaction")
-            }
-        }
+}
+
+@objc
+private extension NewInputViewController {
+    func handleSpentMoneyButtonTap(_ sender: Any) {
+        /*let startController = NewEntryViewController()
+        navigationController?.pushViewController(startController, animated: true)*/
+        let successfulViewController = SuccessfulRegisterViewController()
+        successfulViewController.inputViewModel.setNewInputModel(InputModel(title: "Gasto Registrado", image: UIImage(systemName: "photo.fill")!, siriIntent: CreateExpenseIntent()))
+        successfulViewController.modalPresentationStyle = .overCurrentContext
+        navigationController?.present(successfulViewController, animated: true, completion: nil)
     }
     
-    @objc func handleSpentMoneyButtonTap() {
-        let startController = NewEntryViewController()
-        navigationController?.pushViewController(startController, animated: true)
+    func handleReceiveMoneyButtonTap(_ sender: Any) {
+        /*let startController = NewEntryViewController()
+        navigationController?.pushViewController(startController, animated: true)*/
+        let successfulViewController = SuccessfulRegisterViewController()
+        successfulViewController.inputViewModel.setNewInputModel(InputModel(title: "Entrada Registrada", image: UIImage(systemName: "photo.fill")!, siriIntent: CreateIncomeIntent()))
+        successfulViewController.modalPresentationStyle = .overCurrentContext
+        navigationController?.present(successfulViewController, animated: true, completion: nil)
     }
-    
-    /*@objc func addToSiri(_ sender: Any) {
-        if let shortcut = INShortcut(intent: CreateExpenseIntent()) {
-            let viewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
-            viewController.modalPresentationStyle = .formSheet
-            viewController.delegate = self
-            present(viewController, animated: true, completion: nil)
-        }
-        inputViewModel.getAllShortcuts()
-    }
-    
-    @objc func editShortcut(_ sender: Any) {
-        inputViewModel.getAllShortcuts()
-        let shortcut = inputViewModel.shortcutList.first!
-        let vc = INUIEditVoiceShortcutViewController(voiceShortcut: shortcut)
-        vc.delegate = self
-        self.present(vc, animated: true, completion: nil)
-    }*/
 }

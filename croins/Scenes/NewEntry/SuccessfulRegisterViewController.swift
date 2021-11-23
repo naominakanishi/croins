@@ -1,6 +1,8 @@
 import UIKit
+import Intents
+import IntentsUI
 
-final class SuccessfulRegisterViewController: UIViewController {
+final class SuccessfulRegisterViewController: UIViewController, INUIAddVoiceShortcutViewControllerDelegate {
     
     var inputViewModel = InputViewModel()
     
@@ -11,14 +13,7 @@ final class SuccessfulRegisterViewController: UIViewController {
     }()
     
     private lazy var entryHeader: EntryHeader = {
-        let view: EntryHeader
-        switch inputViewModel.dataInputType {
-        case .income:
-            view = EntryHeader(title: "Renda Registrada", image: UIImage(systemName: "photo"))
-        case .outcome:
-            view = EntryHeader(title: "Gasto Registrado", image: UIImage(systemName: "photo"))
-        }
-        return view
+        EntryHeader(title: inputViewModel.inputModel.title, image: inputViewModel.inputModel.image)
     }()
     
     private lazy var confirmationImageView: UIImageView = {
@@ -85,10 +80,10 @@ final class SuccessfulRegisterViewController: UIViewController {
         addSubviews()
         setupConstraints()
     }
-    
+
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .black
+        view.backgroundColor = .black.withAlphaComponent(0.5)
     }
     
     func addSubviews() {
@@ -136,13 +131,46 @@ final class SuccessfulRegisterViewController: UIViewController {
     }
 }
 
-@objc
 extension SuccessfulRegisterViewController {
+    func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func donateInteraction() {
+        let intent = CreateExpenseIntent()
+        intent.suggestedInvocationPhrase = inputViewModel.newExpenseDonation.suggestedInvocationPhrase
+        intent.title = inputViewModel.newExpenseDonation.title
+        intent.value = NSNumber(value: inputViewModel.newExpenseDonation.value)
+        intent.date = inputViewModel.newExpenseDonation.date
+        let interaction = INInteraction(intent: intent, response: nil)
+        
+        interaction.donate { (error) in
+            if let error = error as NSError? {
+                print("Interaction donation failed: \(error.description)")
+            } else {
+                print("Successfully donated interaction")
+            }
+        }
+    }
+}
+
+@objc
+private extension SuccessfulRegisterViewController {
     func handleConfirmButtonTap(_ sender: Any) {
-        print("EBA")
+        donateInteraction()
+        self.dismiss(animated: true, completion: nil)
     }
     
     func handleSiriButtonTap(_ sender: Any) {
-        print("Siri")
+        if let shortcut = INShortcut(intent: inputViewModel.inputModel.siriIntent) {
+            let viewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
+            viewController.modalPresentationStyle = .formSheet
+            viewController.delegate = self
+            present(viewController, animated: true, completion: nil)
+        }
     }
 }

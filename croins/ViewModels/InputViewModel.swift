@@ -2,13 +2,17 @@ import UIKit
 import Combine
 import Intents
 
-class InputViewModel: ObservableObject {
+final class InputViewModel: ObservableObject {
+    
     @Published private (set) var dataInputInList: [DataInputIn]
-    @Published private (set) var dataInputType: EntryType
+    @Published private (set) var inputModel: InputModel
+    
+    private (set) var newExpenseDonation = NewExpenseDonation()
+    private (set) var newIncomeDonation = NewIncomeDonation()
 
     init() {
         dataInputInList = []
-        dataInputType = .outcome
+        inputModel = InputModel(title: "", image: UIImage(), siriIntent: INIntent())
     }
     
     func writeIncomeData(title: String, gain: String, method: Method, date: Date, isRecurrent: Bool) {
@@ -20,9 +24,27 @@ class InputViewModel: ObservableObject {
             isRecurrent: isRecurrent))
     }
     
-    func setInputType(to entryType: EntryType) {
-        dataInputType = entryType
+    func setNewInputModel(_ input: InputModel) {
+        inputModel = input
     }
 }
 
+struct InputModel {
+    let title: String
+    let image: UIImage
+    let siriIntent: INIntent
+}
 
+struct NewExpenseDonation {
+    let suggestedInvocationPhrase = "Add new expense"
+    let title = "newExpense"
+    let value = 0.0
+    let date = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+}
+
+struct NewIncomeDonation {
+    let suggestedInvocationPhrase = "Add new income"
+    let title = "newIncome"
+    let value = 0.0
+    let date = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+}
