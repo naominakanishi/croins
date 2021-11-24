@@ -1,6 +1,6 @@
 import UIKit
 
-class DataInputIn{
+class DataInputIn {
     let title: String
     let gain: String
     let method: Method

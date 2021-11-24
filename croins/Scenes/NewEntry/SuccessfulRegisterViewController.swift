@@ -162,6 +162,7 @@ extension SuccessfulRegisterViewController {
 private extension SuccessfulRegisterViewController {
     func handleConfirmButtonTap(_ sender: Any) {
         donateInteraction()
+        print(UserDefaultsSingleton.shared.loadDataIn())
         self.dismiss(animated: true, completion: nil)
     }
     

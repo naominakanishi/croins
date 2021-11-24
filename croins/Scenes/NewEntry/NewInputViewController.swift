@@ -108,6 +108,7 @@ private extension NewInputViewController {
     func handleSpentMoneyButtonTap(_ sender: Any) {
         /*let startController = NewEntryViewController()
         navigationController?.pushViewController(startController, animated: true)*/
+        UserDefaultsSingleton.shared.saveNewInput(DataInputIn(title: "teste", gain: "teste", method: Method(title: "teste", installments: 1), date: Date(), isRecurrent: true))
         let successfulViewController = SuccessfulRegisterViewController()
         successfulViewController.inputViewModel.setNewInputModel(InputModel(title: "Gasto Registrado", image: UIImage(systemName: "photo.fill")!, siriIntent: CreateExpenseIntent()))
         successfulViewController.modalPresentationStyle = .overCurrentContext

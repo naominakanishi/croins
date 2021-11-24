@@ -41,6 +41,7 @@
 		49A6EB97274823C8004BA797 /* IncomeIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49A6EB8F274823C8004BA797 /* IncomeIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		49A6EB9B2748254B004BA797 /* IncomeIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49A6EB8927482114004BA797 /* IncomeIntents.intentdefinition */; };
 		49A6EB9D2748357B004BA797 /* SuccessfulRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6EB9C2748357B004BA797 /* SuccessfulRegisterViewController.swift */; };
+		49B25254274ECABF00AB4BE6 /* UserDefaultsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B25253274ECABF00AB4BE6 /* UserDefaultsSingleton.swift */; };
 		49C552A72744299800A30E2C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552A62744299800A30E2C /* Category.swift */; };
 		49C552A927442A6E00A30E2C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552A827442A6E00A30E2C /* Goal.swift */; };
 		49C552AD27442B8500A30E2C /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552AC27442B8500A30E2C /* CategoryViewModel.swift */; };
@@ -144,6 +145,7 @@
 		49A6EB92274823C8004BA797 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		49A6EB94274823C8004BA797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49A6EB9C2748357B004BA797 /* SuccessfulRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulRegisterViewController.swift; sourceTree = "<group>"; };
+		49B25253274ECABF00AB4BE6 /* UserDefaultsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSingleton.swift; sourceTree = "<group>"; };
 		49C552A62744299800A30E2C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		49C552A827442A6E00A30E2C /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		49C552AC27442B8500A30E2C /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				49C552A62744299800A30E2C /* Category.swift */,
 				49C552A827442A6E00A30E2C /* Goal.swift */,
 				118BD3C0274B344500B14417 /* Money.swift */,
+				49B25253274ECABF00AB4BE6 /* UserDefaultsSingleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -736,6 +739,7 @@
 				110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */,
 				49C552B427443FD100A30E2C /* CategoryViewCell.swift in Sources */,
 				119F7498273D8990005DF419 /* TextField.swift in Sources */,
+				49B25254274ECABF00AB4BE6 /* UserDefaultsSingleton.swift in Sources */,
 				119F749D273EEA0D005DF419 /* DataInputIn.swift in Sources */,
 				118BD3AD274AF50E00B14417 /* PizzaChartView.swift in Sources */,
 				49C552AD27442B8500A30E2C /* CategoryViewModel.swift in Sources */,
