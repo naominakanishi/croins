@@ -23,6 +23,13 @@
 		119F749D273EEA0D005DF419 /* DataInputIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749C273EEA0D005DF419 /* DataInputIn.swift */; };
 		119F749F273EEB54005DF419 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749E273EEB54005DF419 /* Method.swift */; };
 		119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F74A1273EECAC005DF419 /* InputViewModel.swift */; };
+		4111A9A2274DEE9D00436971 /* CameraScanButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4111A9A1274DEE9D00436971 /* CameraScanButtonView.swift */; };
+		4144B719274D6B9E0085D889 /* ReceiptContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144B718274D6B9D0085D889 /* ReceiptContentsViewController.swift */; };
+		4144B71B274D6C380085D889 /* CameraEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144B71A274D6C370085D889 /* CameraEntryViewController.swift */; };
+		4144B71D274D6C830085D889 /* VisionReceiptProcessorDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144B71C274D6C830085D889 /* VisionReceiptProcessorDataSource.swift */; };
+		4144B71F274D777F0085D889 /* VisionReceiptProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4144B71E274D777F0085D889 /* VisionReceiptProcessor.swift */; };
+		41A1CAF0274E72F400EE2362 /* ReceiptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A1CAEF274E72F300EE2362 /* ReceiptModel.swift */; };
+		41A1CAF2274E738600EE2362 /* ReceiptReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A1CAF1274E738600EE2362 /* ReceiptReviewViewController.swift */; };
 		49C552A72744299800A30E2C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552A62744299800A30E2C /* Category.swift */; };
 		49C552A927442A6E00A30E2C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552A827442A6E00A30E2C /* Goal.swift */; };
 		49C552AD27442B8500A30E2C /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552AC27442B8500A30E2C /* CategoryViewModel.swift */; };
@@ -101,6 +108,13 @@
 		119F749E273EEB54005DF419 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		119F74A1273EECAC005DF419 /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
 		1C71BE60511392F6377A2F28 /* Pods-croinsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croinsTests.debug.xcconfig"; path = "Target Support Files/Pods-croinsTests/Pods-croinsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4111A9A1274DEE9D00436971 /* CameraScanButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScanButtonView.swift; sourceTree = "<group>"; };
+		4144B718274D6B9D0085D889 /* ReceiptContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptContentsViewController.swift; sourceTree = "<group>"; };
+		4144B71A274D6C370085D889 /* CameraEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraEntryViewController.swift; sourceTree = "<group>"; };
+		4144B71C274D6C830085D889 /* VisionReceiptProcessorDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionReceiptProcessorDataSource.swift; sourceTree = "<group>"; };
+		4144B71E274D777F0085D889 /* VisionReceiptProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionReceiptProcessor.swift; sourceTree = "<group>"; };
+		41A1CAEF274E72F300EE2362 /* ReceiptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptModel.swift; sourceTree = "<group>"; };
+		41A1CAF1274E738600EE2362 /* ReceiptReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptReviewViewController.swift; sourceTree = "<group>"; };
 		47EE7C3B6CA5AADBEFAAF825 /* Pods-croins-croinsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins-croinsUITests.release.xcconfig"; path = "Target Support Files/Pods-croins-croinsUITests/Pods-croins-croinsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		49C552A62744299800A30E2C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		49C552A827442A6E00A30E2C /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
@@ -192,6 +206,7 @@
 				49F6355D274582BD0033972E /* croins.entitlements */,
 				110ECF11273C46B700F9E6CD /* UI */,
 				110ECF0D273C3EA500F9E6CD /* Scenes */,
+				4144B717274D6A0D0085D889 /* Camera */,
 				119F7496273D8978005DF419 /* DesignSystem */,
 				110ECEDD273C3DAB00F9E6CD /* AppDelegate.swift */,
 				110ECEDF273C3DAB00F9E6CD /* SceneDelegate.swift */,
@@ -273,6 +288,20 @@
 				49C552AC27442B8500A30E2C /* CategoryViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4144B717274D6A0D0085D889 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				4144B71A274D6C370085D889 /* CameraEntryViewController.swift */,
+				4144B718274D6B9D0085D889 /* ReceiptContentsViewController.swift */,
+				4144B71C274D6C830085D889 /* VisionReceiptProcessorDataSource.swift */,
+				4144B71E274D777F0085D889 /* VisionReceiptProcessor.swift */,
+				4111A9A1274DEE9D00436971 /* CameraScanButtonView.swift */,
+				41A1CAEF274E72F300EE2362 /* ReceiptModel.swift */,
+				41A1CAF1274E738600EE2362 /* ReceiptReviewViewController.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 		49C552AE27442BDD00A30E2C /* Category */ = {
@@ -596,11 +625,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4144B71B274D6C380085D889 /* CameraEntryViewController.swift in Sources */,
+				4144B71F274D777F0085D889 /* VisionReceiptProcessor.swift in Sources */,
+				41A1CAF0274E72F400EE2362 /* ReceiptModel.swift in Sources */,
 				119F749F273EEB54005DF419 /* Method.swift in Sources */,
 				49C552B027442BF200A30E2C /* NewCategoryViewController.swift in Sources */,
 				110ECEE2273C3DAB00F9E6CD /* ViewController.swift in Sources */,
 				110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */,
+				4144B719274D6B9E0085D889 /* ReceiptContentsViewController.swift in Sources */,
 				49F6355F274582F80033972E /* Intents.intentdefinition in Sources */,
+				4111A9A2274DEE9D00436971 /* CameraScanButtonView.swift in Sources */,
 				110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */,
 				49C552B427443FD100A30E2C /* CategoryViewCell.swift in Sources */,
 				119F7498273D8990005DF419 /* TextField.swift in Sources */,
@@ -609,10 +643,12 @@
 				110ECEDE273C3DAB00F9E6CD /* AppDelegate.swift in Sources */,
 				49C552A927442A6E00A30E2C /* Goal.swift in Sources */,
 				110ECF10273C3EF200F9E6CD /* NewEntryViewController.swift in Sources */,
+				41A1CAF2274E738600EE2362 /* ReceiptReviewViewController.swift in Sources */,
 				110ECEE0273C3DAB00F9E6CD /* SceneDelegate.swift in Sources */,
 				119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */,
 				49C552B227443D8300A30E2C /* CategoriesViewController.swift in Sources */,
 				49C552A72744299800A30E2C /* Category.swift in Sources */,
+				4144B71D274D6C830085D889 /* VisionReceiptProcessorDataSource.swift in Sources */,
 				1134FE9A2744927D005953B2 /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -803,9 +839,10 @@
 				CODE_SIGN_ENTITLEMENTS = croins/croins.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U77829B9P3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = croins/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = croins;
 				INFOPLIST_KEY_NSSiriUsageDescription = "This is a Siri demo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -835,9 +872,10 @@
 				CODE_SIGN_ENTITLEMENTS = croins/croins.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U77829B9P3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = croins/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = croins;
 				INFOPLIST_KEY_NSSiriUsageDescription = "This is a Siri demo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -865,7 +903,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UL74FQ825B;
+				DEVELOPMENT_TEAM = U77829B9P3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -891,7 +929,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UL74FQ825B;
+				DEVELOPMENT_TEAM = U77829B9P3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -916,7 +954,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UL74FQ825B;
+				DEVELOPMENT_TEAM = U77829B9P3;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -940,7 +978,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UL74FQ825B;
+				DEVELOPMENT_TEAM = U77829B9P3;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -962,7 +1000,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U77829B9P3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpendsIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ExpendsIntents;
@@ -987,7 +1025,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U77829B9P3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpendsIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ExpendsIntents;
