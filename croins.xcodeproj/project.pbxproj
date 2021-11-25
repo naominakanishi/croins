@@ -49,6 +49,8 @@
 		49C552B227443D8300A30E2C /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552B127443D8300A30E2C /* CategoriesViewController.swift */; };
 		49C552B427443FD100A30E2C /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552B327443FD100A30E2C /* CategoryViewCell.swift */; };
 		49E6BA6F2746F25100824746 /* DataInputIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749C273EEA0D005DF419 /* DataInputIn.swift */; };
+		49EFAC6727500637000013E0 /* ObjectSavable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFAC6627500637000013E0 /* ObjectSavable.swift */; };
+		49EFAC69275006D1000013E0 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFAC68275006D1000013E0 /* UserDefaults+Extensions.swift */; };
 		49F6355F274582F80033972E /* ExpenseIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49F6355E274582F80033972E /* ExpenseIntents.intentdefinition */; };
 		49F6356827458ABA0033972E /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F6356727458ABA0033972E /* Intents.framework */; };
 		49F6356B27458ABA0033972E /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6356A27458ABA0033972E /* IntentHandler.swift */; };
@@ -152,6 +154,8 @@
 		49C552AF27442BF200A30E2C /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		49C552B127443D8300A30E2C /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		49C552B327443FD100A30E2C /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
+		49EFAC6627500637000013E0 /* ObjectSavable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSavable.swift; sourceTree = "<group>"; };
+		49EFAC68275006D1000013E0 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		49F6355D274582BD0033972E /* croins.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = croins.entitlements; sourceTree = "<group>"; };
 		49F6355E274582F80033972E /* ExpenseIntents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ExpenseIntents.intentdefinition; sourceTree = "<group>"; };
 		49F6356627458ABA0033972E /* ExpendsIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ExpendsIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -327,7 +331,6 @@
 				49C552A62744299800A30E2C /* Category.swift */,
 				49C552A827442A6E00A30E2C /* Goal.swift */,
 				118BD3C0274B344500B14417 /* Money.swift */,
-				49B25253274ECABF00AB4BE6 /* UserDefaultsSingleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 		119F7499273EE9D3005DF419 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				49EFAC6527500610000013E0 /* UserDefaults */,
 				118BD3BF274B305800B14417 /* Model */,
 			);
 			path = Data;
@@ -384,6 +388,16 @@
 				118BD3AC274AF50E00B14417 /* PizzaChartView.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		49EFAC6527500610000013E0 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				49EFAC6627500637000013E0 /* ObjectSavable.swift */,
+				49B25253274ECABF00AB4BE6 /* UserDefaultsSingleton.swift */,
+				49EFAC68275006D1000013E0 /* UserDefaults+Extensions.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		49F6355A27457C5B0033972E /* SiriKit */ = {
@@ -743,6 +757,7 @@
 				119F749D273EEA0D005DF419 /* DataInputIn.swift in Sources */,
 				118BD3AD274AF50E00B14417 /* PizzaChartView.swift in Sources */,
 				49C552AD27442B8500A30E2C /* CategoryViewModel.swift in Sources */,
+				49EFAC69275006D1000013E0 /* UserDefaults+Extensions.swift in Sources */,
 				118BD3B5274B0A1200B14417 /* DropdownPicker.swift in Sources */,
 				110ECEDE273C3DAB00F9E6CD /* AppDelegate.swift in Sources */,
 				118BD3B8274B0A1200B14417 /* DropdownOption.swift in Sources */,
@@ -756,6 +771,7 @@
 				119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */,
 				49C552B227443D8300A30E2C /* CategoriesViewController.swift in Sources */,
 				49C552A72744299800A30E2C /* Category.swift in Sources */,
+				49EFAC6727500637000013E0 /* ObjectSavable.swift in Sources */,
 				1134FE9A2744927D005953B2 /* ProgressView.swift in Sources */,
 				118BD3C6274C228300B14417 /* EntryHeader.swift in Sources */,
 			);

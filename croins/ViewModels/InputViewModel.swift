@@ -19,9 +19,7 @@ final class InputViewModel: ObservableObject {
         dataInputInList.append(DataInputIn(
             title: title,
             gain: gain,
-            method: method,
-            date: date,
-            isRecurrent: isRecurrent))
+            date: date))
     }
     
     func setNewInputModel(_ input: InputModel) {
