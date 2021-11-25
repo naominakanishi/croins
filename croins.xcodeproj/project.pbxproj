@@ -19,6 +19,7 @@
 		110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF12273C46C200F9E6CD /* ViewCode.swift */; };
 		110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF14273C57A400F9E6CD /* NewInputViewController.swift */; };
 		1134FE9A2744927D005953B2 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134FE992744927D005953B2 /* ProgressView.swift */; };
+		117055BE275008820051EC82 /* ExpandedCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */; };
 		118BD3AD274AF50E00B14417 /* PizzaChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3AC274AF50E00B14417 /* PizzaChartView.swift */; };
 		118BD3B4274B0A1200B14417 /* DropdownDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3AF274B0A1200B14417 /* DropdownDataSource.swift */; };
 		118BD3B5274B0A1200B14417 /* DropdownPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3B0274B0A1200B14417 /* DropdownPicker.swift */; };
@@ -122,6 +123,7 @@
 		110ECF12273C46C200F9E6CD /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		110ECF14273C57A400F9E6CD /* NewInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInputViewController.swift; sourceTree = "<group>"; };
 		1134FE992744927D005953B2 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressView.swift; path = croins/Scenes/TesteTags/ProgressView.swift; sourceTree = SOURCE_ROOT; };
+		117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCategoryViewController.swift; sourceTree = "<group>"; };
 		118BD3AC274AF50E00B14417 /* PizzaChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaChartView.swift; sourceTree = "<group>"; };
 		118BD3AF274B0A1200B14417 /* DropdownDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownDataSource.swift; sourceTree = "<group>"; };
 		118BD3B0274B0A1200B14417 /* DropdownPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPicker.swift; sourceTree = "<group>"; };
@@ -289,7 +291,6 @@
 				110ECF0F273C3EF200F9E6CD /* NewEntryViewController.swift */,
 				110ECF14273C57A400F9E6CD /* NewInputViewController.swift */,
 				49A6EB9C2748357B004BA797 /* SuccessfulRegisterViewController.swift */,
-				49C653E1273EE6AE0049897F /* TagsTestViewController.swift */,
 				118BD3BD274B196D00B14417 /* NewEntryView.swift */,
 			);
 			path = NewEntry;
@@ -382,6 +383,7 @@
 				49C552B327443FD100A30E2C /* CategoryViewCell.swift */,
 				1134FE992744927D005953B2 /* ProgressView.swift */,
 				118BD3AC274AF50E00B14417 /* PizzaChartView.swift */,
+				117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -750,13 +752,13 @@
 				118BD3C3274B3CFB00B14417 /* NumberFormattedTextField.swift in Sources */,
 				118BD3B6274B0A1200B14417 /* SelfSizingTableView.swift in Sources */,
 				118BD3BE274B196D00B14417 /* NewEntryView.swift in Sources */,
-				49C653E2273EE6AE0049897F /* TagsTestViewController.swift in Sources */,
 				49C552A927442A6E00A30E2C /* Goal.swift in Sources */,
 				110ECF10273C3EF200F9E6CD /* NewEntryViewController.swift in Sources */,
 				110ECEE0273C3DAB00F9E6CD /* SceneDelegate.swift in Sources */,
 				119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */,
 				49C552B227443D8300A30E2C /* CategoriesViewController.swift in Sources */,
 				49C552A72744299800A30E2C /* Category.swift in Sources */,
+				117055BE275008820051EC82 /* ExpandedCategoryViewController.swift in Sources */,
 				1134FE9A2744927D005953B2 /* ProgressView.swift in Sources */,
 				118BD3C6274C228300B14417 /* EntryHeader.swift in Sources */,
 			);
@@ -961,8 +963,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = croins/croins.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = UL74FQ825B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = croins/Info.plist;
 				INFOPLIST_KEY_NSSiriUsageDescription = "This is a Siri demo";
@@ -976,7 +978,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.nimi.croins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -993,8 +995,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = croins/croins.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = UL74FQ825B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = croins/Info.plist;
 				INFOPLIST_KEY_NSSiriUsageDescription = "This is a Siri demo";
@@ -1008,7 +1010,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.nimi.croins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1120,8 +1122,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = UL74FQ825B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IncomeIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IncomeIntents;
@@ -1132,7 +1134,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins.IncomeIntents;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.nimi.croins.IncomeIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1145,8 +1147,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = UL74FQ825B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IncomeIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IncomeIntents;
@@ -1157,7 +1159,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins.IncomeIntents;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.nimi.croins.IncomeIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1169,9 +1171,10 @@
 		49F6357127458ABB0033972E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UL74FQ825B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpendsIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ExpendsIntents;
@@ -1182,8 +1185,9 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins.ExpendsIntents;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.nimi.croins.ExpendsIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1194,9 +1198,10 @@
 		49F6357227458ABB0033972E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UL74FQ825B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpendsIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ExpendsIntents;
@@ -1207,8 +1212,9 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins.ExpendsIntents;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.nimi.croins.ExpendsIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

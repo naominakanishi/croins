@@ -51,7 +51,7 @@ class CategoriesViewController: UIViewController {
     }
     
     func configureNavigationBar() {
-        title = "Categorias"
+        title = "Categoriassssss"
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = .init(
@@ -94,6 +94,11 @@ extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(ExpandedCategoryViewController(), animated: true)
+       
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         (cell as? CategoryViewCell)?.setupAdditionalSettings()
     }
@@ -105,3 +110,4 @@ private extension CategoriesViewController {
         present(NewCategoryViewController(), animated: true, completion: nil)
     }
 }
+
