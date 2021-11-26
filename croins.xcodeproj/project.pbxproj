@@ -18,6 +18,8 @@
 		110ECF10273C3EF200F9E6CD /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF0F273C3EF200F9E6CD /* NewEntryViewController.swift */; };
 		110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF12273C46C200F9E6CD /* ViewCode.swift */; };
 		110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF14273C57A400F9E6CD /* NewInputViewController.swift */; };
+		1111852727515D0D00BF997B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111852627515D0D00BF997B /* DashboardViewController.swift */; };
+		1111852927515FC900BF997B /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111852827515FC900BF997B /* BalanceView.swift */; };
 		1134FE9A2744927D005953B2 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134FE992744927D005953B2 /* ProgressView.swift */; };
 		117055BE275008820051EC82 /* ExpandedCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */; };
 		117055C0275018DE0051EC82 /* TargetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117055BF275018DE0051EC82 /* TargetLabel.swift */; };
@@ -124,6 +126,8 @@
 		110ECF0F273C3EF200F9E6CD /* NewEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
 		110ECF12273C46C200F9E6CD /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		110ECF14273C57A400F9E6CD /* NewInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInputViewController.swift; sourceTree = "<group>"; };
+		1111852627515D0D00BF997B /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		1111852827515FC900BF997B /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		1134FE992744927D005953B2 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressView.swift; path = croins/Scenes/TesteTags/ProgressView.swift; sourceTree = SOURCE_ROOT; };
 		117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCategoryViewController.swift; sourceTree = "<group>"; };
 		117055BF275018DE0051EC82 /* TargetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLabel.swift; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 		110ECF0D273C3EA500F9E6CD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1111852427515CF600BF997B /* Dashboard */,
 				49C552AE27442BDD00A30E2C /* Category */,
 				110ECF0E273C3EAF00F9E6CD /* NewEntry */,
 			);
@@ -311,6 +316,15 @@
 				118BD3C2274B3CFB00B14417 /* NumberFormattedTextField.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		1111852427515CF600BF997B /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				1111852627515D0D00BF997B /* DashboardViewController.swift */,
+				1111852827515FC900BF997B /* BalanceView.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		118BD3AE274B09E600B14417 /* Dropdown */ = {
@@ -753,6 +767,8 @@
 				118BD3AD274AF50E00B14417 /* PizzaChartView.swift in Sources */,
 				49C552AD27442B8500A30E2C /* CategoryViewModel.swift in Sources */,
 				118BD3B5274B0A1200B14417 /* DropdownPicker.swift in Sources */,
+				1111852927515FC900BF997B /* BalanceView.swift in Sources */,
+				1111852727515D0D00BF997B /* DashboardViewController.swift in Sources */,
 				110ECEDE273C3DAB00F9E6CD /* AppDelegate.swift in Sources */,
 				118BD3B8274B0A1200B14417 /* DropdownOption.swift in Sources */,
 				118BD3B4274B0A1200B14417 /* DropdownDataSource.swift in Sources */,
