@@ -294,10 +294,10 @@
 			isa = PBXGroup;
 			children = (
 				4144B71A274D6C370085D889 /* CameraEntryViewController.swift */,
+				4111A9A1274DEE9D00436971 /* CameraScanButtonView.swift */,
+				4144B71E274D777F0085D889 /* VisionReceiptProcessor.swift */,
 				4144B718274D6B9D0085D889 /* ReceiptContentsViewController.swift */,
 				4144B71C274D6C830085D889 /* VisionReceiptProcessorDataSource.swift */,
-				4144B71E274D777F0085D889 /* VisionReceiptProcessor.swift */,
-				4111A9A1274DEE9D00436971 /* CameraScanButtonView.swift */,
 				41A1CAEF274E72F300EE2362 /* ReceiptModel.swift */,
 				41A1CAF1274E738600EE2362 /* ReceiptReviewViewController.swift */,
 			);

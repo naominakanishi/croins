@@ -18,7 +18,6 @@ class ReceiptReviewViewController: UIViewController {
     var contents = ReceiptContents()
     
     
-    
     private lazy var receiptPlaceholder: UIView = {
         let placeholder = UIView()
         placeholder.backgroundColor = .white
@@ -43,8 +42,9 @@ class ReceiptReviewViewController: UIViewController {
     private lazy var receiptTableView: UITableView = {
         let receiptTableView = UITableView()
         receiptTableView.backgroundColor = .white
-        receiptTableView.font = .systemFont(ofSize: 14)
-    }
+        return receiptTableView
+     
+    }()
 }
 
 // MARK: UITableViewDataSource
