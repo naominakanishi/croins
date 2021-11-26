@@ -1,20 +1,82 @@
 import UIKit
 
+final class InOutView: UIView {
+    // MARK: - UI Components
+    
+    private lazy var iconImageView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(systemName: "circle")
+        return view
+    }()
+    
+    private lazy var valueLabel: UILabel = {
+        let view = UILabel()
+        view.text = "R$ 9,00"
+        view.font = .boldSystemFont(ofSize: 16)
+        view.numberOfLines = 0
+        view.textAlignment = .center
+        return view
+    }()
+    
+    // MARK: - Properties
+    
+    var text: String? {
+        didSet {
+            valueLabel.text = text
+        }
+    }
+    
+    // MARK: - Initialization
+    
+    init() {
+        super.init(frame: .zero)
+        addSubviews()
+        constraintSubviews()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - View lifecycle
+    
+    func addSubviews() {
+        addSubview(iconImageView)
+        addSubview(valueLabel)
+    }
+    
+    func constraintSubviews() {
+        valueLabel.layout {
+            $0.topAnchor.constraint(equalTo: topAnchor)
+            $0.centerXAnchor.constraint(equalTo: centerXAnchor)
+            $0.bottomAnchor.constraint(equalTo: bottomAnchor)
+        }
+        
+        iconImageView.layout {
+            $0.topAnchor.constraint(equalTo: topAnchor)
+            $0.bottomAnchor.constraint(equalTo: bottomAnchor)
+            $0.trailingAnchor.constraint(equalTo: valueLabel.leadingAnchor, constant: -8)
+            $0.widthAnchor.constraint(equalToConstant: 12)
+            $0.heightAnchor.constraint(equalTo: $0.widthAnchor)
+        }
+    }
+}
+
 class BalanceView: UIView {
     
     private lazy var balanceStackView: UIStackView = {
         let view = UIStackView()
-        view.axis = .horizontal
-        view.spacing = 12
-        view.distribution = .fillEqually
+        view.axis = .vertical
+        view.spacing = 0
+        view.distribution = .equalSpacing
         return view
     }()
     
     private lazy var monthlyRecordsStackView: UIStackView = {
         let view = UIStackView()
-        view.axis = .horizontal
-        view.spacing = 12
-        view.distribution = .fillEqually
+        view.axis = .vertical
+        view.spacing = 7
+        view.distribution = .equalSpacing
         return view
     }()
     
@@ -44,41 +106,19 @@ class BalanceView: UIView {
         return view
     }()
     
-    
-    private lazy var monthlyInIcon: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(systemName: "circle")
-        return view
-    }()
-    
-    private lazy var monthlyOutIcon: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(systemName: "circle")
-        return view
-    }()
-
-    
-    private lazy var monthlyIn: UILabel = {
-        let view = UILabel()
-        view.text = "R$ 9,00"
-        view.font = .boldSystemFont(ofSize: 16)
-        view.numberOfLines = 0
-        view.textAlignment = .center
-        return view
-    }()
-    
-    private lazy var monthlyOut: UILabel = {
-        let view = UILabel()
-        view.text = "R$ 2,00"
-        view.font = .boldSystemFont(ofSize: 16)
-        view.numberOfLines = 0
-        view.textAlignment = .center
-        return view
-    }()
-    
     private lazy var separator: UIImageView = {
         let view = UIImageView()
         
+        return view
+    }()
+    
+    private lazy var monthlyInView: InOutView = {
+        let view = InOutView()
+        return view
+    }()
+    
+    private lazy var monthlyOutView: InOutView = {
+        let view = InOutView()
         return view
     }()
     
@@ -86,12 +126,12 @@ class BalanceView: UIView {
         super.init(frame: .zero)
         addSubviews()
         constraintSubviews()
-        constraintsBalanceStackView()
-        constraintsMonthlyRecordsStackView()
         balanceValue.text = balance
         self.layer.cornerRadius = 20
-        self.monthlyIn.text = monthlyIn
-        self.monthlyOut.text = monthlyOut
+        layer.borderColor = UIColor.red.cgColor
+        layer.borderWidth = 2
+        self.monthlyInView.text = monthlyIn
+        self.monthlyOutView.text = monthlyOut
     }
     
     required init?(coder: NSCoder) {
@@ -100,14 +140,13 @@ class BalanceView: UIView {
     
     func addSubviews() {
         self.addSubview(balanceStackView)
+        self.addSubview(monthlyRecordsStackView)
+        self.addSubview(separator)
         balanceStackView.addArrangedSubview(balanceTitle)
         balanceStackView.addArrangedSubview(balanceValue)
-        monthlyRecordsStackView.addArrangedSubview(monthlyRecordsStackView)
         monthlyRecordsStackView.addArrangedSubview(monthlyTitle)
-        monthlyRecordsStackView.addArrangedSubview(monthlyInIcon)
-        monthlyRecordsStackView.addArrangedSubview(monthlyOutIcon)
-        monthlyRecordsStackView.addArrangedSubview(monthlyIn)
-        monthlyRecordsStackView.addArrangedSubview(monthlyOut)
+        monthlyRecordsStackView.addArrangedSubview(monthlyInView)
+        monthlyRecordsStackView.addArrangedSubview(monthlyOutView)
     }
     
     func constraintSubviews() {
@@ -119,8 +158,7 @@ class BalanceView: UIView {
         }
         
         balanceStackView.layout {
-            $0.topAnchor.constraint(equalTo: self.topAnchor)
-            $0.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            $0.centerYAnchor.constraint(equalTo: monthlyRecordsStackView.centerYAnchor)
             $0.leadingAnchor.constraint(equalTo: self.leadingAnchor)
             $0.trailingAnchor.constraint(equalTo: separator.leadingAnchor)
         }
@@ -130,49 +168,6 @@ class BalanceView: UIView {
             $0.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             $0.leadingAnchor.constraint(equalTo: separator.trailingAnchor)
             $0.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        }
-    }
-    
-    func constraintsBalanceStackView() {
-        balanceTitle.layout {
-            $0.bottomAnchor.constraint(equalTo: balanceStackView.centerYAnchor)
-            $0.leadingAnchor.constraint(equalTo: balanceStackView.leadingAnchor)
-            $0.trailingAnchor.constraint(equalTo: balanceStackView.trailingAnchor)
-        }
-        balanceValue.layout {
-            $0.topAnchor.constraint(equalTo: balanceTitle.bottomAnchor)
-            $0.leadingAnchor.constraint(equalTo: balanceStackView.leadingAnchor)
-            $0.trailingAnchor.constraint(equalTo: balanceStackView.trailingAnchor)
-        }
-    }
-    
-    func constraintsMonthlyRecordsStackView() {
-        
-        monthlyInIcon.layout {
-            $0.centerYAnchor.constraint(equalTo: monthlyRecordsStackView.centerYAnchor)
-            $0.leadingAnchor.constraint(equalTo: monthlyRecordsStackView.leadingAnchor)
-        }
-        
-        monthlyIn.layout {
-            $0.centerYAnchor.constraint(equalTo: monthlyRecordsStackView.centerYAnchor)
-            $0.leadingAnchor.constraint(equalTo: monthlyInIcon.trailingAnchor, constant: 10)
-            $0.trailingAnchor.constraint(equalTo: monthlyRecordsStackView.trailingAnchor)
-        }
-        
-        monthlyOutIcon.layout{
-            $0.topAnchor.constraint(equalTo: monthlyIn.bottomAnchor)
-            $0.leadingAnchor.constraint(equalTo: monthlyRecordsStackView.leadingAnchor)
-        }
-        monthlyOut.layout {
-            $0.topAnchor.constraint(equalTo: monthlyIn.bottomAnchor)
-            $0.leadingAnchor.constraint(equalTo: monthlyInIcon.trailingAnchor, constant: 10)
-            $0.trailingAnchor.constraint(equalTo: monthlyRecordsStackView.trailingAnchor)
-        }
-        
-        monthlyTitle.layout {
-            $0.bottomAnchor.constraint(equalTo: monthlyIn.topAnchor, constant: -10)
-            $0.leadingAnchor.constraint(equalTo: monthlyRecordsStackView.leadingAnchor)
-            $0.trailingAnchor.constraint(equalTo: monthlyRecordsStackView.trailingAnchor)
         }
     }
 }
