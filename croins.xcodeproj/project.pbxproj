@@ -20,6 +20,8 @@
 		110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF14273C57A400F9E6CD /* NewInputViewController.swift */; };
 		1134FE9A2744927D005953B2 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134FE992744927D005953B2 /* ProgressView.swift */; };
 		117055BE275008820051EC82 /* ExpandedCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */; };
+		117055C0275018DE0051EC82 /* TargetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117055BF275018DE0051EC82 /* TargetLabel.swift */; };
+		117055C227501EE10051EC82 /* MoneyMovementsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117055C127501EE10051EC82 /* MoneyMovementsTableViewCell.swift */; };
 		118BD3AD274AF50E00B14417 /* PizzaChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3AC274AF50E00B14417 /* PizzaChartView.swift */; };
 		118BD3B4274B0A1200B14417 /* DropdownDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3AF274B0A1200B14417 /* DropdownDataSource.swift */; };
 		118BD3B5274B0A1200B14417 /* DropdownPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3B0274B0A1200B14417 /* DropdownPicker.swift */; };
@@ -124,6 +126,8 @@
 		110ECF14273C57A400F9E6CD /* NewInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInputViewController.swift; sourceTree = "<group>"; };
 		1134FE992744927D005953B2 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressView.swift; path = croins/Scenes/TesteTags/ProgressView.swift; sourceTree = SOURCE_ROOT; };
 		117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCategoryViewController.swift; sourceTree = "<group>"; };
+		117055BF275018DE0051EC82 /* TargetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLabel.swift; sourceTree = "<group>"; };
+		117055C127501EE10051EC82 /* MoneyMovementsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyMovementsTableViewCell.swift; sourceTree = "<group>"; };
 		118BD3AC274AF50E00B14417 /* PizzaChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaChartView.swift; sourceTree = "<group>"; };
 		118BD3AF274B0A1200B14417 /* DropdownDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownDataSource.swift; sourceTree = "<group>"; };
 		118BD3B0274B0A1200B14417 /* DropdownPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPicker.swift; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				118BD3C5274C228300B14417 /* EntryHeader.swift */,
+				117055BF275018DE0051EC82 /* TargetLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 				1134FE992744927D005953B2 /* ProgressView.swift */,
 				118BD3AC274AF50E00B14417 /* PizzaChartView.swift */,
 				117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */,
+				117055C127501EE10051EC82 /* MoneyMovementsTableViewCell.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -729,6 +735,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				119F749F273EEB54005DF419 /* Method.swift in Sources */,
+				117055C227501EE10051EC82 /* MoneyMovementsTableViewCell.swift in Sources */,
 				49A6EB9D2748357B004BA797 /* SuccessfulRegisterViewController.swift in Sources */,
 				118BD3B7274B0A1200B14417 /* OptionCell.swift in Sources */,
 				118BD3C1274B344500B14417 /* Money.swift in Sources */,
@@ -757,6 +764,7 @@
 				110ECEE0273C3DAB00F9E6CD /* SceneDelegate.swift in Sources */,
 				119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */,
 				49C552B227443D8300A30E2C /* CategoriesViewController.swift in Sources */,
+				117055C0275018DE0051EC82 /* TargetLabel.swift in Sources */,
 				49C552A72744299800A30E2C /* Category.swift in Sources */,
 				117055BE275008820051EC82 /* ExpandedCategoryViewController.swift in Sources */,
 				1134FE9A2744927D005953B2 /* ProgressView.swift in Sources */,
