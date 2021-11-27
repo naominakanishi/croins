@@ -15,6 +15,7 @@ class CategoriesViewController: UIViewController {
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.register(CategoryViewCell.self, forCellWithReuseIdentifier: "CategoryViewCell")
+        view.register(NewCategoryViewCell.self, forCellWithReuseIdentifier: "NewCategoryViewCell")
         view.backgroundColor = .clear
         view.delegate = self
         view.dataSource = self
@@ -90,13 +91,16 @@ extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.item == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewCategoryViewCell", for: indexPath) as! NewCategoryViewCell
+            return cell
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryViewCell", for: indexPath) as! CategoryViewCell
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         navigationController?.pushViewController(ExpandedCategoryViewController(), animated: true)
-       
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -110,4 +114,5 @@ private extension CategoriesViewController {
         present(NewCategoryViewController(), animated: true, completion: nil)
     }
 }
+
 
