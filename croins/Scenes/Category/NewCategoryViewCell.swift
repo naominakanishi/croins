@@ -27,14 +27,42 @@ class NewCategoryViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(label)
         
-        setupBorder()
-        setupPlusIcon()
-    
+        //setupBorder()
+        //setupPlusIcon()
+        addSubviews()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func addSubviews() {
+        contentView
+            .addSubview(newCellView)
+        contentView
+            .addSubview(newCellLabel)
+    }
+    
+//    override func layoutSubviews() {
+//       // super.layoutSubviews()
+//        contentView.layoutSubviews()
+//        _ = contentView.layer.sublayers?.filter({ $0 as? CAShapeLayer != nil }).forEach({ $0.removeFromSuperlayer() })
+//        setupBorder()
+//    }
+    
+    private lazy var newCellView: UIView = {
+        let newCellView = UIView()
+        newCellView.backgroundColor = .red
+        return newCellView
+    }()
+    
+    private lazy var newCellLabel: UILabel = {
+        let newCellLabel = UILabel()
+        newCellLabel.text = "sua irma"
+        newCellLabel.font = .systemFont(ofSize: 7)
+        return newCellLabel
+    }()
     
     func setupBorder() {
         newCategoryBorder = CAShapeLayer()
@@ -47,9 +75,6 @@ class NewCategoryViewCell: UICollectionViewCell {
         self.contentView.layer.addSublayer(newCategoryBorder)
     }
     
-    
-    
-    
     func setupPlusIcon() {
         plusIcon.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(plusIcon)
@@ -60,4 +85,21 @@ class NewCategoryViewCell: UICollectionViewCell {
         plusIcon.image = UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
         plusIcon.tintColor = .white
     }
+    
+    func setupConstraints() {
+        newCellView.layout {
+            $0.topAnchor.constraint(equalTo: contentView.topAnchor)
+            $0.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+            $0.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            $0.heightAnchor.constraint(equalTo: $0.widthAnchor)
+        }
+        
+        newCellLabel.layout {
+            $0.topAnchor.constraint(equalTo: newCellView.bottomAnchor, constant: 10)
+            $0.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            $0.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+            $0.leadingAnchor.constraint(equalTo: newCellView.leadingAnchor)
+            $0.trailingAnchor.constraint(equalTo: newCellView.trailingAnchor)
+        }
+            }
 }
