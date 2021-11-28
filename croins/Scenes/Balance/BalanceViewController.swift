@@ -14,7 +14,7 @@ class BalanceViewController: UIViewController, UIAdaptivePresentationControllerD
     }
     
     override func viewDidLayoutSubviews() {
-        balanceView?.configureChart(using: [
+        balanceView?.configure(bars: [
             .init(
                 inPercentage: .random(in: 0...1),
                 outPercentage: .random(in: 0...1),
@@ -63,6 +63,33 @@ class BalanceViewController: UIViewController, UIAdaptivePresentationControllerD
                 balanceColor: .systemOrange,
                 isSelected: false
             ),
+        ],
+        recentTransactions: [
+            .init(
+                isPositive: true,
+                name: "asdad",
+                category: "ewqewq",
+                amount: 300),
+            .init(
+                isPositive: true,
+                name: "asdad",
+                category: "ewqewq",
+                amount: 300),
+            .init(
+                isPositive: true,
+                name: "asdad",
+                category: "ewqewq",
+                amount: 300),
+            .init(
+                isPositive: true,
+                name: "asdad",
+                category: "ewqewq",
+                amount: 300),
+            .init(
+                isPositive: true,
+                name: "asdad",
+                category: "ewqewq",
+                amount: 300),
         ])
     }
     

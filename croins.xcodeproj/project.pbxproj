@@ -66,6 +66,8 @@
 		865D58D30D12F02D785D8ECF /* Pods_croins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A297F7B12748508788E83111 /* Pods_croins.framework */; };
 		8A4DEBC71C1F3F9DBE4806CD /* Pods_croins_croinsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B094576EE31C183ACAB452 /* Pods_croins_croinsUITests.framework */; };
 		B36DC3C588AE7F7846AB17C6 /* Pods_croinsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E309F717E3F12C5456CF6D /* Pods_croinsTests.framework */; };
+		D778FC21275346010097544B /* RecentTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778FC20275346010097544B /* RecentTransactionsView.swift */; };
+		D778FC232753461B0097544B /* TransactionRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778FC222753461B0097544B /* TransactionRecordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +184,8 @@
 		A9B094576EE31C183ACAB452 /* Pods_croins_croinsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_croins_croinsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA02E67301C436BCED16C3A /* Pods-croins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins.debug.xcconfig"; path = "Target Support Files/Pods-croins/Pods-croins.debug.xcconfig"; sourceTree = "<group>"; };
 		D1E309F717E3F12C5456CF6D /* Pods_croinsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_croinsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D778FC20275346010097544B /* RecentTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionsView.swift; sourceTree = "<group>"; };
+		D778FC222753461B0097544B /* TransactionRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRecordView.swift; sourceTree = "<group>"; };
 		ED487C35648693850F16847C /* Pods-croins-croinsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins-croinsUITests.debug.xcconfig"; path = "Target Support Files/Pods-croins-croinsUITests/Pods-croins-croinsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -343,6 +347,8 @@
 				1111852D2751754400BF997B /* BalanceView.swift */,
 				1111852F275175E400BF997B /* BalanceChartView.swift */,
 				111185312751798300BF997B /* BarCollectionViewCell.swift */,
+				D778FC20275346010097544B /* RecentTransactionsView.swift */,
+				D778FC222753461B0097544B /* TransactionRecordView.swift */,
 			);
 			path = Balance;
 			sourceTree = "<group>";
@@ -782,6 +788,7 @@
 				110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */,
 				49F6355F274582F80033972E /* ExpenseIntents.intentdefinition in Sources */,
 				1111852E2751754400BF997B /* BalanceView.swift in Sources */,
+				D778FC232753461B0097544B /* TransactionRecordView.swift in Sources */,
 				49A6EB8A27482114004BA797 /* IncomeIntents.intentdefinition in Sources */,
 				110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */,
 				49C552B427443FD100A30E2C /* CategoryViewCell.swift in Sources */,
@@ -798,6 +805,7 @@
 				118BD3C3274B3CFB00B14417 /* NumberFormattedTextField.swift in Sources */,
 				118BD3B6274B0A1200B14417 /* SelfSizingTableView.swift in Sources */,
 				11118530275175E400BF997B /* BalanceChartView.swift in Sources */,
+				D778FC21275346010097544B /* RecentTransactionsView.swift in Sources */,
 				118BD3BE274B196D00B14417 /* NewEntryView.swift in Sources */,
 				49C552A927442A6E00A30E2C /* Goal.swift in Sources */,
 				110ECF10273C3EF200F9E6CD /* NewEntryViewController.swift in Sources */,
