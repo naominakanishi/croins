@@ -2,33 +2,59 @@ import UIKit
 
 class BarCollectionViewCell: UICollectionViewCell {
     
+    struct Bar {
+        let inPercentage: Double
+        let outPercentage: Double
+        let dateRange: String
+        let balance: String
+        let balanceColor: UIColor?
+        let isSelected: Bool
+    }
+    
     private lazy var pinkBarView: UIView = {
         let view = UIView()
+        view.backgroundColor = .croinColor.negativeBalanceRed
+        view.layer.cornerRadius = 2
+        view.layer.maskedCorners = [
+            .layerMinXMinYCorner,
+            .layerMaxXMinYCorner
+        ]
         return view
     }()
     
     private lazy var greenBarView: UIView = {
         let view = UIView()
+        view.backgroundColor = .croinColor.positiveBalanceGreen
+        view.layer.cornerRadius = 2
+        view.layer.maskedCorners = [
+            .layerMinXMinYCorner,
+            .layerMaxXMinYCorner
+        ]
         return view
     }()
     
     private lazy var baseLineView: UIView = {
         let view = UIView()
+        view.backgroundColor = .hex(0x7F8192)
         return view
     }()
     
     private lazy var dateMarker: UIView = {
         let view = UIView()
+        view.backgroundColor = .hex(0x7F8192)
         return view
     }()
     
     private lazy var dateLabel: UILabel = {
         let view = UILabel()
+        view.font = .preferredFont(forTextStyle: .caption2)
+        view.textColor = .hex(0x7F8192)
         return view
     }()
     
     private lazy var balanceLabel: UILabel = {
         let view = UILabel()
+        view.font = .preferredFont(forTextStyle: .body)
         return view
     }()
     
@@ -37,12 +63,15 @@ class BarCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private var greenBarHeight: NSLa?
+    private var greenBarHeight: NSLayoutConstraint?
+    private var pinkBarHeight: NSLayoutConstraint?
     
-    init() {
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         addSubviews()
         setupConstraints()
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
     }
     
     required init?(coder: NSCoder) {
@@ -68,6 +97,18 @@ class BarCollectionViewCell: UICollectionViewCell {
         constraintBalanceLabel()
         constraintBaseLineView()
     }
+    
+    func configure(using bar: Bar) {
+        dateLabel.text = bar.dateRange
+        balanceLabel.text = bar.balance
+        balanceLabel.textColor = bar.balanceColor
+        
+        greenBarHeight?.constant = bar.inPercentage * frame.height
+        pinkBarHeight?.constant = bar.outPercentage * frame.height
+        
+        setNeedsLayout()
+        layoutIfNeeded()
+    }
 }
 
 private extension BarCollectionViewCell {
@@ -79,17 +120,28 @@ private extension BarCollectionViewCell {
             $0.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         }
     }
+    
     func constraintPinkBarView() {
-        
+        let heightAnchor = pinkBarView.heightAnchor.constraint(equalToConstant: 0)
+        pinkBarView.layout {
+            $0.leadingAnchor.constraint(equalTo: dateMarker.trailingAnchor, constant: 8)
+            $0.bottomAnchor.constraint(equalTo: baseLineView.topAnchor)
+            $0.widthAnchor.constraint(equalToConstant: 14)
+            heightAnchor
+        }
+        pinkBarHeight = heightAnchor
     }
+    
     func constraintGreenBarView() {
-        let heightAnchor = greenBarView.heightAnchor.constraint(equalTo: containerView.heightAnchor)
+        let heightAnchor = greenBarView.heightAnchor.constraint(equalToConstant: 0)
         greenBarView.layout {
             $0.trailingAnchor.constraint(equalTo: dateMarker.leadingAnchor, constant: -8)
             $0.bottomAnchor.constraint(equalTo: baseLineView.topAnchor)
             $0.widthAnchor.constraint(equalToConstant: 14)
             heightAnchor
         }
+        
+        greenBarHeight = heightAnchor
     }
     
     func constraintBaseLineView() {
@@ -104,7 +156,7 @@ private extension BarCollectionViewCell {
     func constraintDateMarker() {
         dateMarker.layout {
             $0.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
-            $0.bottomAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: -8)
+            $0.bottomAnchor.constraint(equalTo: dateLabel.topAnchor, constant: -4)
             $0.widthAnchor.constraint(equalToConstant: 1)
             $0.heightAnchor.constraint(equalToConstant: 10)
         }
@@ -114,7 +166,7 @@ private extension BarCollectionViewCell {
         
         dateLabel.layout {
             $0.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
-            $0.bottomAnchor.constraint(equalTo: balanceLabel.bottomAnchor, constant: -8)
+            $0.bottomAnchor.constraint(equalTo: balanceLabel.topAnchor, constant: -2)
         }
     }
     
@@ -124,4 +176,13 @@ private extension BarCollectionViewCell {
             $0.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         }
     }
+}
+
+enum CroinColor {
+    static let positiveBalanceGreen: UIColor = .hex(0x40D9A2)
+    static let negativeBalanceRed: UIColor = .hex(0xF784C2)
+}
+
+extension UIColor {
+    static var croinColor: CroinColor.Type { CroinColor.self }
 }
