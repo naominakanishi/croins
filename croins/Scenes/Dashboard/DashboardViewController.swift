@@ -1,7 +1,33 @@
 import UIKit
 //import XCTest
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: UIViewController, DashboardTransactionRecordDelegate {
+    func didTapOnEntryButton() {
+        let controller = NewEntryViewController()
+        controller.configuration = .init(
+            style: .income,
+            onTap: { _, _, _, _ in }
+        )
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func didTapOnSpentButton() {
+        let controller = NewEntryViewController()
+        controller.configuration = .init(
+            style: .outcome,
+            onTap: { _, _, _, _ in }
+        )
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func didTapOnCamera() {
+        // TODO route to camera picker
+    }
+    
+    func didTapOnVoiceCommand() {
+        // TODO open siri
+    }
+    
     
     //--MARK: declaração das variáveis
     
@@ -14,7 +40,7 @@ class DashboardViewController: UIViewController {
     private lazy var welcomeMessage: UILabel = {
         let view = UILabel()
         view.text = "Olá, Gonzi"
-        view.font = .boldSystemFont(ofSize: 25)
+        view.font = .boldSystemFont(ofSize: 34)
         view.numberOfLines = 0
         view.textAlignment = .left
         view.textColor = .white
@@ -29,6 +55,7 @@ class DashboardViewController: UIViewController {
     
     private lazy var transactionRecordView: DashboardTransactionRecordView = {
         let view = DashboardTransactionRecordView()
+        view.delegate = self
         return view
     }()
     

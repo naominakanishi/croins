@@ -56,11 +56,15 @@ class BalanceDashboardView: UIView {
     
     private lazy var monthlyInView: InOutView = {
         let view = InOutView()
+        view.configure(using: .init(
+            arrow: UIImage(named: "arrow-up")))
         return view
     }()
     
     private lazy var monthlyOutView: InOutView = {
         let view = InOutView()
+        view.configure(using: .init(
+            arrow: UIImage(named: "arrow-down")))
         return view
     }()
     
@@ -118,11 +122,14 @@ class BalanceDashboardView: UIView {
 
 
 final class InOutView: UIView {
+    struct Model {
+        let arrow: UIImage?
+    }
+    
     // MARK: - UI Components
     
     private lazy var iconImageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "arrow-up")
         return view
     }()
     
@@ -178,5 +185,9 @@ final class InOutView: UIView {
             $0.widthAnchor.constraint(equalToConstant: 12)
             $0.heightAnchor.constraint(equalTo: $0.widthAnchor)
         }
+    }
+    
+    func configure(using model: Model) {
+        iconImageView.image = model.arrow
     }
 }

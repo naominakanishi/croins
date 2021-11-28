@@ -1,5 +1,12 @@
 import UIKit
 
+protocol DashboardTransactionRecordDelegate: AnyObject {
+    func didTapOnEntryButton()
+    func didTapOnSpentButton()
+    func didTapOnCamera()
+    func didTapOnVoiceCommand()
+}
+
 class DashboardTransactionRecordView: UIView {
     
     private lazy var title: UILabel = {
@@ -22,23 +29,37 @@ class DashboardTransactionRecordView: UIView {
     
     private lazy var entryButton: TransactionButtons = {
         let view = TransactionButtons(label: "Entrada", image: "dashboard-entryButton")
+        view.addGestureRecognizer(UITapGestureRecognizer(
+            target: self, action: #selector(self.handleOptionSelected)
+        ))
         return view
     }()
     
     private lazy var spentButton: TransactionButtons = {
         let view = TransactionButtons(label: "Saída", image: "dashboard-spentButton")
+        view.addGestureRecognizer(UITapGestureRecognizer(
+            target: self, action: #selector(self.handleOptionSelected)
+        ))
         return view
     }()
     
     private lazy var cameraButton: TransactionButtons = {
         let view = TransactionButtons(label: "Camera", image: "dashboard-cameraButton")
+        view.addGestureRecognizer(UITapGestureRecognizer(
+            target: self, action: #selector(self.handleOptionSelected)
+        ))
         return view
     }()
     
     private lazy var voiceButton: TransactionButtons = {
         let view = TransactionButtons(label: "Camera", image: "dashboard-voiceButton")
+        view.addGestureRecognizer(UITapGestureRecognizer(
+            target: self, action: #selector(self.handleOptionSelected)
+        ))
         return view
     }()
+    
+    weak var delegate: DashboardTransactionRecordDelegate?
     
     init() {
         super.init(frame: .zero)
@@ -71,6 +92,24 @@ class DashboardTransactionRecordView: UIView {
             $0.leadingAnchor.constraint(equalTo: leadingAnchor)
             $0.trailingAnchor.constraint(equalTo: trailingAnchor)
             $0.bottomAnchor.constraint(equalTo: bottomAnchor)
+        }
+    }
+    
+    @objc
+    private func handleOptionSelected(_ sender: Any?) {
+        guard let gesture = sender as? UITapGestureRecognizer,
+              let view = gesture.view
+        else { return }
+        switch view {
+        case entryButton:
+            delegate?.didTapOnEntryButton()
+        case spentButton:
+            delegate?.didTapOnSpentButton()
+        case cameraButton:
+            delegate?.didTapOnCamera()
+        case voiceButton:
+            delegate?.didTapOnVoiceCommand()
+        default: break
         }
     }
 }
