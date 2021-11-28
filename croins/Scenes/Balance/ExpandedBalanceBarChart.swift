@@ -33,7 +33,7 @@ final class ExpandedBalanceBarChart: UITableViewCell {
     
     private lazy var monthlyIncomeValueLabel: UILabel = {
         let view = UILabel()
-        view.textColor = .croinColor.positiveBalanceGreen
+        view.textColor = .croinColor.green
         view.font = .preferredFont(forTextStyle: .body)
         return view
     }()
@@ -48,7 +48,7 @@ final class ExpandedBalanceBarChart: UITableViewCell {
     
     private lazy var monthlyOutcomeValueLabel: UILabel = {
         let view = UILabel()
-        view.textColor = .croinColor.negativeBalanceRed
+        view.textColor = .croinColor.pink
         view.font = .preferredFont(forTextStyle: .body)
         return view
     }()
@@ -142,7 +142,7 @@ final class TransactionBarChartView: UIView {
             roundedRect: bar,
             byRoundingCorners: [.topLeft, .topRight],
             cornerRadii: .init(width: 2, height: 2))
-        UIColor.croinColor.positiveBalanceGreen.setFill()
+        UIColor.croinColor.green.setFill()
         path.fill()
         
     }
@@ -160,7 +160,7 @@ final class TransactionBarChartView: UIView {
             roundedRect: bar,
             byRoundingCorners: [.topLeft, .topRight],
             cornerRadii: .init(width: 2, height: 2))
-        UIColor.croinColor.negativeBalanceRed.setFill()
+        UIColor.croinColor.pink.setFill()
         path.fill()
     }
 }

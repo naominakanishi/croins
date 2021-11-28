@@ -4,12 +4,53 @@ class CategoriesViewController: UIViewController {
     
     let categoryViewModel = CategoryViewModel()
     
+    
     private lazy var pizzaChartView: PizzaChartView = {
         let view = PizzaChartView()
         
         return view
     }()
     
+    private lazy var financialBalance: UIView = {
+        let financialBalance = UIView()
+        financialBalance.layer.borderWidth = 2
+        financialBalance.layer.borderColor = CGColor(gray: 2, alpha: 0.4)
+        financialBalance.layer.cornerRadius = 14
+        return financialBalance
+    }()
+    
+    private lazy var availableLimitLabel: UILabel = {
+        let availableLimitLabel = UILabel()
+        availableLimitLabel.text = "Limite Disponível"
+        availableLimitLabel.font = .systemFont(ofSize: 14)
+        availableLimitLabel.textColor = .white
+        return availableLimitLabel
+    }()
+    
+    private lazy var availableLimitResultUILabel: UILabel = {
+        let availableLimitResultUILabel = UILabel()
+        availableLimitResultUILabel.text = "$432,00"
+        availableLimitResultUILabel.font = .systemFont(ofSize: 14)
+        availableLimitResultUILabel.textColor = .white
+        return availableLimitResultUILabel
+    }()
+    
+    private lazy var maximumLimitLabelUILabel: UILabel = {
+        let maximumLimitLabelUILabel = UILabel()
+        maximumLimitLabelUILabel.text = "Limite Máximo"
+        maximumLimitLabelUILabel.font = .systemFont(ofSize: 14)
+        maximumLimitLabelUILabel.textColor = .white
+        return maximumLimitLabelUILabel
+    }()
+    
+    private lazy var maximumLimitResultUILabel: UILabel = {
+        let maximumLimitResultUILabel = UILabel()
+        maximumLimitResultUILabel.text = "$1.723,00"
+        maximumLimitResultUILabel.font = .systemFont(ofSize: 14)
+        maximumLimitResultUILabel.textColor = .white
+        return maximumLimitResultUILabel
+    }()
+
     private lazy var categoriesList: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -34,7 +75,7 @@ class CategoriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = UIColor(named: "Background")!
         configureNavigationBar()
         addSubviews()
         setupConstraints()
@@ -42,19 +83,21 @@ class CategoriesViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         pizzaChartView.configure(slices: [
-            .init(percentage: 0.15, color: .blue),
-            .init(percentage: 0.30, color: .black),
-            .init(percentage: 0.10, color: .orange),
-            .init(percentage: 0.05, color: .green),
-            .init(percentage: 0.33, color: .purple),
-            .init(percentage: 0.07, color: UIColor(named: "Purple")!)
+            .init(percentage: 0.45, color: UIColor(named: "Lilac")!),
+            .init(percentage: 0.25, color: UIColor(named: "Pink")!),
+            .init(percentage: 0.23, color: UIColor(named: "Purple")!),
+            .init(percentage: 0.08, color: UIColor(named: "Purple-2")!)
         ])
     }
     
     func configureNavigationBar() {
-        title = "Categoriassssss"
+        title = "Categorias"
         navigationItem.largeTitleDisplayMode = .always
+        
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
         navigationItem.rightBarButtonItem = .init(
             image: .init(systemName: "plus"),
             style: .done,
@@ -64,6 +107,11 @@ class CategoriesViewController: UIViewController {
     
     func addSubviews() {
         view.addSubview(pizzaChartView)
+        view.addSubview(financialBalance)
+        view.addSubview(availableLimitLabel)
+        view.addSubview(availableLimitResultUILabel)
+        view.addSubview(maximumLimitLabelUILabel)
+        view.addSubview(maximumLimitResultUILabel)
         view.addSubview(categoriesList)
     }
     
@@ -76,8 +124,43 @@ class CategoriesViewController: UIViewController {
             $0.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30)
         }
         
-        categoriesList.layout {
+        financialBalance.layout {
             $0.topAnchor.constraint(equalTo: pizzaChartView.bottomAnchor, constant: 30)
+            $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
+            $0.heightAnchor.constraint(equalToConstant: 64)
+        }
+        
+        availableLimitLabel.layout {
+            $0.topAnchor.constraint(equalTo: financialBalance.topAnchor, constant: -10)
+            $0.widthAnchor.constraint(equalTo: financialBalance.widthAnchor, multiplier: 0.45)
+            $0.heightAnchor.constraint(equalTo: financialBalance.heightAnchor)
+            $0.leadingAnchor.constraint(equalTo: financialBalance.leadingAnchor, constant: 24)
+        }
+        
+        availableLimitResultUILabel.layout {
+            $0.topAnchor.constraint(equalTo: availableLimitLabel.bottomAnchor, constant: -45)
+            $0.widthAnchor.constraint(equalTo: financialBalance.widthAnchor, multiplier: 0.45)
+            $0.heightAnchor.constraint(equalTo: financialBalance.heightAnchor)
+            $0.centerXAnchor.constraint(equalTo: availableLimitLabel.centerXAnchor)
+        }
+        
+        maximumLimitLabelUILabel.layout {
+            $0.topAnchor.constraint(equalTo: financialBalance.topAnchor, constant: -10)
+            $0.widthAnchor.constraint(equalTo: financialBalance.widthAnchor, multiplier: 0.45)
+            $0.heightAnchor.constraint(equalTo: financialBalance.heightAnchor)
+            $0.trailingAnchor.constraint(equalTo: financialBalance.trailingAnchor, constant: 10)
+        }
+        
+        maximumLimitResultUILabel.layout {
+            $0.topAnchor.constraint(equalTo: maximumLimitLabelUILabel.bottomAnchor, constant: -45)
+            $0.widthAnchor.constraint(equalTo: financialBalance.widthAnchor, multiplier: 0.45)
+            $0.heightAnchor.constraint(equalTo: financialBalance.heightAnchor)
+            $0.centerXAnchor.constraint(equalTo: maximumLimitLabelUILabel.centerXAnchor)
+        }
+        
+        categoriesList.layout {
+            $0.topAnchor.constraint(equalTo: financialBalance.bottomAnchor, constant: 30)
             $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
             $0.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
@@ -115,7 +198,7 @@ extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDa
 @objc
 private extension CategoriesViewController {
     func onAddTapped() {
-        present(NewCategoryViewController(), animated: true, completion: nil)
+        navigationController?.pushViewController(NewCategoryViewController(), animated: true)
     }
 }
 

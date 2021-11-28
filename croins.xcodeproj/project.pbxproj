@@ -24,6 +24,12 @@
 		1111852E2751754400BF997B /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111852D2751754400BF997B /* BalanceView.swift */; };
 		11118530275175E400BF997B /* BalanceChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111852F275175E400BF997B /* BalanceChartView.swift */; };
 		111185322751798300BF997B /* BarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111185312751798300BF997B /* BarCollectionViewCell.swift */; };
+		111185342753119200BF997B /* DashboardTransactionRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111185332753119200BF997B /* DashboardTransactionRecordView.swift */; };
+		111185362753129200BF997B /* TransactionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111185352753129200BF997B /* TransactionButtons.swift */; };
+		1111853827531BB200BF997B /* DashboardCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111853727531BB200BF997B /* DashboardCategoriesView.swift */; };
+		1111853B27531C9A00BF997B /* DashboardCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111853A27531C9A00BF997B /* DashboardCategoryView.swift */; };
+		1111853D2753221E00BF997B /* Spacings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111853C2753221E00BF997B /* Spacings.swift */; };
+		1111854227532F7400BF997B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111854127532F7400BF997B /* Colors.swift */; };
 		1134FE9A2744927D005953B2 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134FE992744927D005953B2 /* ProgressView.swift */; };
 		117055BE275008820051EC82 /* ExpandedCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */; };
 		117055C0275018DE0051EC82 /* TargetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117055BF275018DE0051EC82 /* TargetLabel.swift */; };
@@ -51,6 +57,7 @@
 		4982EDEF27518FDC0014C713 /* StringTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982EDEE27518FDC0014C713 /* StringTracker.swift */; };
 		4982EDF12751911A0014C713 /* VisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982EDF02751911A0014C713 /* VisionViewController.swift */; };
 		41603F3B2751E1DF0075BF10 /* NewCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41603F3A2751E1DF0075BF10 /* NewCategoryViewCell.swift */; };
+		41603F3D2753C92E0075BF10 /* NewCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41603F3C2753C92D0075BF10 /* NewCategoryTableViewCell.swift */; };
 		49A6EB8A27482114004BA797 /* IncomeIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49A6EB8927482114004BA797 /* IncomeIntents.intentdefinition */; };
 		49A6EB90274823C8004BA797 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F6356727458ABA0033972E /* Intents.framework */; };
 		49A6EB93274823C8004BA797 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6EB92274823C8004BA797 /* IntentHandler.swift */; };
@@ -149,6 +156,12 @@
 		1111852D2751754400BF997B /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		1111852F275175E400BF997B /* BalanceChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceChartView.swift; sourceTree = "<group>"; };
 		111185312751798300BF997B /* BarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCollectionViewCell.swift; sourceTree = "<group>"; };
+		111185332753119200BF997B /* DashboardTransactionRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTransactionRecordView.swift; sourceTree = "<group>"; };
+		111185352753129200BF997B /* TransactionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionButtons.swift; sourceTree = "<group>"; };
+		1111853727531BB200BF997B /* DashboardCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCategoriesView.swift; sourceTree = "<group>"; };
+		1111853A27531C9A00BF997B /* DashboardCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCategoryView.swift; sourceTree = "<group>"; };
+		1111853C2753221E00BF997B /* Spacings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacings.swift; sourceTree = "<group>"; };
+		1111854127532F7400BF997B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1134FE992744927D005953B2 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressView.swift; path = croins/Scenes/TesteTags/ProgressView.swift; sourceTree = SOURCE_ROOT; };
 		117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCategoryViewController.swift; sourceTree = "<group>"; };
 		117055BF275018DE0051EC82 /* TargetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLabel.swift; sourceTree = "<group>"; };
@@ -171,6 +184,7 @@
 		119F74A1273EECAC005DF419 /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
 		1C71BE60511392F6377A2F28 /* Pods-croinsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croinsTests.debug.xcconfig"; path = "Target Support Files/Pods-croinsTests/Pods-croinsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		41603F3A2751E1DF0075BF10 /* NewCategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewCell.swift; sourceTree = "<group>"; };
+		41603F3C2753C92D0075BF10 /* NewCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		47EE7C3B6CA5AADBEFAAF825 /* Pods-croins-croinsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins-croinsUITests.release.xcconfig"; path = "Target Support Files/Pods-croins-croinsUITests/Pods-croins-croinsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4982EDDF27517ED70014C713 /* ReadVisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadVisionViewController.swift; sourceTree = "<group>"; };
 		4982EDE2275181240014C713 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
@@ -358,6 +372,10 @@
 			children = (
 				1111852627515D0D00BF997B /* DashboardViewController.swift */,
 				1111852827515FC900BF997B /* BalanceDashboardView.swift */,
+				111185332753119200BF997B /* DashboardTransactionRecordView.swift */,
+				111185352753129200BF997B /* TransactionButtons.swift */,
+				1111853727531BB200BF997B /* DashboardCategoriesView.swift */,
+				1111853A27531C9A00BF997B /* DashboardCategoryView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -414,6 +432,8 @@
 			isa = PBXGroup;
 			children = (
 				119F7497273D8990005DF419 /* TextField.swift */,
+				1111853C2753221E00BF997B /* Spacings.swift */,
+				1111854127532F7400BF997B /* Colors.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -487,9 +507,10 @@
 			isa = PBXGroup;
 			children = (
 				49C552AF27442BF200A30E2C /* NewCategoryViewController.swift */,
+				41603F3C2753C92D0075BF10 /* NewCategoryTableViewCell.swift */,
+				41603F3A2751E1DF0075BF10 /* NewCategoryViewCell.swift */,
 				49C552B127443D8300A30E2C /* CategoriesViewController.swift */,
 				49C552B327443FD100A30E2C /* CategoryViewCell.swift */,
-				41603F3A2751E1DF0075BF10 /* NewCategoryViewCell.swift */,
 				1134FE992744927D005953B2 /* ProgressView.swift */,
 				118BD3AC274AF50E00B14417 /* PizzaChartView.swift */,
 				117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */,
@@ -848,6 +869,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				119F749F273EEB54005DF419 /* Method.swift in Sources */,
+				1111853827531BB200BF997B /* DashboardCategoriesView.swift in Sources */,
 				117055C227501EE10051EC82 /* MoneyMovementsTableViewCell.swift in Sources */,
 				49A6EB9D2748357B004BA797 /* SuccessfulRegisterViewController.swift in Sources */,
 				118BD3B7274B0A1200B14417 /* OptionCell.swift in Sources */,
@@ -867,6 +889,7 @@
 				D778FC232753461B0097544B /* TransactionRecordView.swift in Sources */,
 				49A6EB8A27482114004BA797 /* IncomeIntents.intentdefinition in Sources */,
 				110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */,
+				1111854227532F7400BF997B /* Colors.swift in Sources */,
 				49C552B427443FD100A30E2C /* CategoryViewCell.swift in Sources */,
 				119F7498273D8990005DF419 /* TextField.swift in Sources */,
 				49B25254274ECABF00AB4BE6 /* UserDefaultsSingleton.swift in Sources */,
@@ -875,6 +898,7 @@
 				49C552AD27442B8500A30E2C /* CategoryViewModel.swift in Sources */,
 				49EFAC69275006D1000013E0 /* UserDefaults+Extensions.swift in Sources */,
 				118BD3B5274B0A1200B14417 /* DropdownPicker.swift in Sources */,
+				1111853D2753221E00BF997B /* Spacings.swift in Sources */,
 				1111852927515FC900BF997B /* BalanceDashboardView.swift in Sources */,
 				1111852727515D0D00BF997B /* DashboardViewController.swift in Sources */,
 				110ECEDE273C3DAB00F9E6CD /* AppDelegate.swift in Sources */,
@@ -882,8 +906,10 @@
 				118BD3B8274B0A1200B14417 /* DropdownOption.swift in Sources */,
 				118BD3B4274B0A1200B14417 /* DropdownDataSource.swift in Sources */,
 				118BD3C3274B3CFB00B14417 /* NumberFormattedTextField.swift in Sources */,
+				41603F3D2753C92E0075BF10 /* NewCategoryTableViewCell.swift in Sources */,
 				118BD3B6274B0A1200B14417 /* SelfSizingTableView.swift in Sources */,
 				11118530275175E400BF997B /* BalanceChartView.swift in Sources */,
+				111185342753119200BF997B /* DashboardTransactionRecordView.swift in Sources */,
 				D778FC21275346010097544B /* RecentTransactionsView.swift in Sources */,
 				118BD3BE274B196D00B14417 /* NewEntryView.swift in Sources */,
 				49C552A927442A6E00A30E2C /* Goal.swift in Sources */,
@@ -891,10 +917,12 @@
 				110ECF10273C3EF200F9E6CD /* NewEntryViewController.swift in Sources */,
 				110ECEE0273C3DAB00F9E6CD /* SceneDelegate.swift in Sources */,
 				119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */,
+				111185362753129200BF997B /* TransactionButtons.swift in Sources */,
 				49C552B227443D8300A30E2C /* CategoriesViewController.swift in Sources */,
 				117055C0275018DE0051EC82 /* TargetLabel.swift in Sources */,
 				4982EDEF27518FDC0014C713 /* StringTracker.swift in Sources */,
 				4982EDE3275181240014C713 /* PreviewView.swift in Sources */,
+				1111853B27531C9A00BF997B /* DashboardCategoryView.swift in Sources */,
 				49C552A72744299800A30E2C /* Category.swift in Sources */,
 				117055BE275008820051EC82 /* ExpandedCategoryViewController.swift in Sources */,
 				49EFAC6727500637000013E0 /* ObjectSavable.swift in Sources */,

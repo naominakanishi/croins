@@ -81,7 +81,7 @@ extension ExpandedBalanceViewController: UITableViewDelegate, UITableViewDataSou
                 monthIncome: "+R$4,00",
                 monthOutcome: "-R$2,00",
                 balance: "+R$2,00",
-                balanceColor: .croinColor.positiveBalanceGreen,
+                balanceColor: .croinColor.green,
                 inPercent: 0.5, outPercent: 0.3))
             return cell
         }

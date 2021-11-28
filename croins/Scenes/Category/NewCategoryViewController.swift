@@ -2,19 +2,72 @@ import UIKit
 
 class NewCategoryViewController: UIViewController, UIColorPickerViewControllerDelegate {
     
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 14
+        return view
+    }()
+    
+    private lazy var fieldsStackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.spacing = 16
+        return view
+    }()
+    
+    private var headerView: EntryHeader
+
+    
     let categoryViewModel = CategoryViewModel()
     
-    let pageTitle: UILabel = {
-        let title = UILabel()
-        title.text = "Nova Categoria"
-        title.font = .boldSystemFont(ofSize: 25)
-        title.numberOfLines = 0
-        return title
+//    private lazy var leadingIcon: UIImageView = {
+//        let view = UIImageView()
+//        view.image = UIImage(named: "new-category-fill")
+//        return view
+//    }()
+    
+    func configureNavigationBar() {
+        title = "Nova Categoria"
+        navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.prefersLargeTitles = false
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
+    
+    private lazy var nameQuestion: UILabel = {
+        let view = UILabel()
+        view.numberOfLines = 0
+        view.font = .systemFont(ofSize: 12)
+        view.textAlignment = .left
+        view.textColor = .black
+        view.text = "Como você quer chamar a categoria?"
+        return view
+    }()
+    
+    private lazy var limitQuestion: UILabel = {
+        let view = UILabel()
+        view.numberOfLines = 0
+        view.font = .systemFont(ofSize: 12)
+        view.textAlignment = .left
+        view.textColor = .black
+        view.text = "Qual limite mensal você quer estabelecer?"
+        return view
+    }()
+    
+    private lazy var colorQuestion: UILabel = {
+        let view = UILabel()
+        view.numberOfLines = 0
+        view.font = .systemFont(ofSize: 12)
+        view.textAlignment = .left
+        view.textColor = .black
+        view.text = "Qual será a cor da categoria?"
+        return view
     }()
     
     private lazy var newCategoryEntryTextField: UITextField = {
         let view = TextField(inset: 15)
-        view.backgroundColor = .white
+        view.backgroundColor = .hex(0xF5F6F8)
         view.attributedPlaceholder = .init(string: "Nome da categoria",
                                            attributes: [
                                             .font: UIFont.systemFont(ofSize: 12),
@@ -27,7 +80,7 @@ class NewCategoryViewController: UIViewController, UIColorPickerViewControllerDe
     
     private lazy var targetEntryTextField: NumberFormattedTextField = {
         let view = NumberFormattedTextField(inset: 15)
-        view.backgroundColor = .white
+        view.backgroundColor = .hex(0xF5F6F8)
         view.attributedPlaceholder = .init(string: "Gasto máximo",
                                            attributes: [
                                             .font: UIFont.systemFont(ofSize: 12),
@@ -46,19 +99,19 @@ class NewCategoryViewController: UIViewController, UIColorPickerViewControllerDe
         return view
     }()
     
-    let saveButton: UIButton = {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
-        button.setTitle("Salvar", for: .normal)
-        button.backgroundColor = .blue
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        button.titleLabel?.textAlignment = .center
-        button.layer.cornerRadius = 10
-        return button
+    private lazy var registerButton: UIButton = {
+        let view = UIButton()
+        view.configuration = .bordered()
+        view.configuration?.title = "Registrar"
+        view.configuration?.baseBackgroundColor = CroinColor.blue
+        view.configuration?.baseForegroundColor = CroinColor.white
+        view.configuration?.cornerStyle = .capsule
+        
+        return view
     }()
     
     init() {
+        self.headerView = .init(title: "Nova Categoria", image: UIImage (named: "new-category-fill"))
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -68,51 +121,76 @@ class NewCategoryViewController: UIViewController, UIColorPickerViewControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = CroinColor.black
         addSubviews()
         setupConstraints()
     }
     
     func addSubviews() {
-        view.addSubview(pageTitle)
-        view.addSubview(newCategoryEntryTextField)
-        view.addSubview(targetEntryTextField)
-        view.addSubview(openColorPickerButton)
-        view.addSubview(saveButton)
+        view.addSubview(containerView)
+        containerView.addSubview(headerView)
+        containerView.addSubview(fieldsStackView)
+        fieldsStackView.addArrangedSubview(nameQuestion)
+        fieldsStackView.addArrangedSubview(newCategoryEntryTextField)
+        fieldsStackView.addArrangedSubview(limitQuestion)
+        fieldsStackView.addArrangedSubview(targetEntryTextField)
+        fieldsStackView.addArrangedSubview(colorQuestion)
+        fieldsStackView.addArrangedSubview(openColorPickerButton)
+        fieldsStackView.addArrangedSubview(registerButton)
     }
     
     func setupConstraints() {
-        pageTitle.layout {
-            $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 100)
-            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
-            $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        containerView.layout {
+            $0.topAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.topAnchor,
+                constant: 0)
+            $0.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor,
+                constant: Spacing.Vertical.s4)
+            $0.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor,
+                constant: -Spacing.Vertical.s4)
         }
         
-        newCategoryEntryTextField.layout {
-            $0.topAnchor.constraint(equalTo: pageTitle.bottomAnchor, constant: 25)
-            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
-            $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        headerView.layout {
+            $0.topAnchor.constraint(
+                equalTo: containerView.topAnchor,
+                constant: Spacing.Horizontal.s3)
+            $0.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor,
+                constant: Spacing.Vertical.s2)
+            $0.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor,
+                constant: -Spacing.Vertical.s2)
+
         }
         
-        targetEntryTextField.layout {
-            $0.topAnchor.constraint(equalTo: newCategoryEntryTextField.bottomAnchor, constant: 25)
-            $0.heightAnchor.constraint(equalTo: newCategoryEntryTextField.heightAnchor)
-            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
-            $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        fieldsStackView.layout {
+            $0.topAnchor.constraint(
+                equalTo: headerView.bottomAnchor,
+                constant: Spacing.Horizontal.s4)
+            $0.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor,
+                constant: Spacing.Vertical.s2)
+            $0.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor,
+                constant: -Spacing.Vertical.s2)
+            $0.bottomAnchor.constraint(
+                lessThanOrEqualTo: registerButton.topAnchor,
+                constant: -Spacing.Horizontal.s3)
         }
         
-        openColorPickerButton.layout {
-            $0.topAnchor.constraint(equalTo: targetEntryTextField.bottomAnchor, constant: 25)
-            $0.heightAnchor.constraint(equalTo: newCategoryEntryTextField.heightAnchor)
-            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
-            $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        }
-        
-        saveButton.layout {
-            $0.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
-            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
-            $0.heightAnchor.constraint(equalToConstant: 40)
-            $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        registerButton.layout {
+            $0.bottomAnchor.constraint(
+                equalTo: containerView.bottomAnchor,
+                constant: -Spacing.Horizontal.s3)
+            $0.leadingAnchor.constraint(
+                equalTo: containerView.leadingAnchor,
+                constant: Spacing.Vertical.s2)
+            $0.trailingAnchor.constraint(
+                equalTo: containerView.trailingAnchor,
+                constant: -Spacing.Vertical.s2)
+            $0.heightAnchor.constraint(equalToConstant: 56)
         }
     }
     

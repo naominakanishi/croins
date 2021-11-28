@@ -42,6 +42,7 @@ class ProgressView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
+        layer.sublayers?.forEach { $0.removeFromSuperlayer() }
         layer.addSublayer(backgroundLayerFactory)
         if let progressLayerFactory = progressLayerFactory {
             let animation = CABasicAnimation(keyPath: "strokeEnd")

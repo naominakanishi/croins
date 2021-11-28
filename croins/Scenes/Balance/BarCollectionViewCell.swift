@@ -13,7 +13,7 @@ class BarCollectionViewCell: UICollectionViewCell {
     
     private lazy var pinkBarView: UIView = {
         let view = UIView()
-        view.backgroundColor = .croinColor.negativeBalanceRed
+        view.backgroundColor = .croinColor.pink
         view.layer.cornerRadius = 2
         view.layer.maskedCorners = [
             .layerMinXMinYCorner,
@@ -24,7 +24,7 @@ class BarCollectionViewCell: UICollectionViewCell {
     
     private lazy var greenBarView: UIView = {
         let view = UIView()
-        view.backgroundColor = .croinColor.positiveBalanceGreen
+        view.backgroundColor = .croinColor.green
         view.layer.cornerRadius = 2
         view.layer.maskedCorners = [
             .layerMinXMinYCorner,
@@ -178,11 +178,4 @@ private extension BarCollectionViewCell {
     }
 }
 
-enum CroinColor {
-    static let positiveBalanceGreen: UIColor = .hex(0x40D9A2)
-    static let negativeBalanceRed: UIColor = .hex(0xF784C2)
-}
 
-extension UIColor {
-    static var croinColor: CroinColor.Type { CroinColor.self }
-}

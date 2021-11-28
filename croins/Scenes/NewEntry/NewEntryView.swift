@@ -1,5 +1,14 @@
 import UIKit
 
+protocol NewEntryViewDelegate: AnyObject {
+    func didTapOnButton(
+        name: String,
+        when: Date,
+        howMuch: Money,
+        categoryIndex: Int?
+    )
+}
+
 final class NewEntryView: UIView {
     
     private lazy var containerView: UIView = {
@@ -16,15 +25,52 @@ final class NewEntryView: UIView {
         return view
     }()
     
-    private lazy var titleStackView: UIStackView = {
-        let view = UIStackView()
-        view.axis = .horizontal
-        view.spacing = 10
+//    private lazy var titleStackView: UIStackView = {
+//        let view = UIStackView()
+//        view.axis = .horizontal
+//        view.spacing = 10
+//        return view
+//    }()
+//    
+    private let headerView: EntryHeader
+    
+    private lazy var nameQuestion: UILabel = {
+        let view = UILabel()
+        view.numberOfLines = 0
+        view.font = .systemFont(ofSize: 12)
+        view.textAlignment = .left
+        view.textColor = .black
+        view.text = "Como você quer chamar a transação?"
         return view
     }()
     
-    private lazy var headerView: EntryHeader = {
-        let view = EntryHeader(title: "Perdoa gastei", image: UIImage(systemName: "circle"))
+    private lazy var costQuestion: UILabel = {
+        let view = UILabel()
+        view.numberOfLines = 0
+        view.font = .systemFont(ofSize: 12)
+        view.textAlignment = .left
+        view.textColor = .black
+        view.text = "Qual o valor dessa transação?"
+        return view
+    }()
+    
+    private lazy var whenQuestion: UILabel = {
+        let view = UILabel()
+        view.numberOfLines = 0
+        view.font = .systemFont(ofSize: 12)
+        view.textAlignment = .left
+        view.textColor = .black
+        view.text = "Quando ocorreu essa transação?"
+        return view
+    }()
+    
+    private lazy var categoryQuestion: UILabel = {
+        let view = UILabel()
+        view.numberOfLines = 0
+        view.font = .systemFont(ofSize: 12)
+        view.textAlignment = .left
+        view.textColor = .black
+        view.text = "Essa transação pertence a alguma categoria?"
         return view
     }()
     
@@ -48,7 +94,7 @@ final class NewEntryView: UIView {
         return view
     }()
     
-    private lazy var coastTextField: NumberFormattedTextField = {
+    private lazy var costTextField: NumberFormattedTextField = {
         let view = NumberFormattedTextField(inset: 15)
         view.backgroundColor = UIColor(
             hex: 0xF5F6F8)
@@ -94,19 +140,33 @@ final class NewEntryView: UIView {
     private lazy var registerButton: UIButton = {
         let view = UIButton()
         view.configuration = .bordered()
-        view.configuration?.title = "Registrar gastos"
-        view.configuration?.baseForegroundColor = .blue
+        view.configuration?.title = "Registrar"
+        view.configuration?.baseBackgroundColor = CroinColor.blue
+        view.configuration?.baseForegroundColor = CroinColor.white
+        view.configuration?.cornerStyle = .capsule
+        
         return view
     }()
     
+    private weak var delegate: NewEntryViewDelegate?
+    
     init(
         dropdownDataSource: DropdownDataSource,
+        delegate: NewEntryViewDelegate,
+        title: String,
+        headerImage: UIImage?,
+        isCategoryHidden: Bool = false,
         frame: CGRect = .zero
     ) {
+        self.delegate = delegate
+        self.headerView = .init(title: title, image: headerImage)
         super.init(frame: frame)
         categoriesDropdown.dataSource = dropdownDataSource
         addSubviews()
         constraintSubviews()
+        categoriesDropdown.isHidden = isCategoryHidden
+        categoryQuestion.isHidden = isCategoryHidden
+        
     }
     
     required init?(coder: NSCoder) {
@@ -118,9 +178,16 @@ final class NewEntryView: UIView {
         containerView.addSubview(headerView)
         containerView.addSubview(fieldsStackView)
         containerView.addSubview(registerButton)
+        fieldsStackView.addArrangedSubview(nameQuestion)
         fieldsStackView.addArrangedSubview(nameTextField)
-        fieldsStackView.addArrangedSubview(coastTextField)
+        fieldsStackView.addArrangedSubview(costQuestion)
+
+        fieldsStackView.addArrangedSubview(costTextField)
+        
+        fieldsStackView.addArrangedSubview(whenQuestion)
         fieldsStackView.addArrangedSubview(whenTextField)
+        
+        fieldsStackView.addArrangedSubview(categoryQuestion)
         fieldsStackView.addArrangedSubview(categoriesDropdown)
     }
     
@@ -134,6 +201,19 @@ final class NewEntryView: UIView {
     
     func reloadCategories() {
         categoriesDropdown.reloadOptions()
+    }
+    
+    @objc
+    private func handleTouch() {
+        guard let name = nameTextField.text,
+              let datePicker = whenTextField.inputView as? UIDatePicker
+        else { return }
+        
+        delegate?.didTapOnButton(
+            name: name,
+            when: datePicker.date,
+            howMuch: costTextField.amount,
+            categoryIndex: categoriesDropdown.currentSelectedIndex)
     }
 }
 
@@ -150,9 +230,6 @@ private extension NewEntryView {
             $0.trailingAnchor.constraint(
                 equalTo: trailingAnchor,
                 constant: -16)
-            $0.bottomAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.bottomAnchor,
-                constant: -24)
         }
     }
     
@@ -175,13 +252,14 @@ private extension NewEntryView {
         registerButton.layout {
             $0.bottomAnchor.constraint(
                 equalTo: containerView.bottomAnchor,
-                constant: -16)
+                constant: -Spacing.Horizontal.s3)
             $0.leadingAnchor.constraint(
                 equalTo: containerView.leadingAnchor,
-                constant: 24)
+                constant: Spacing.Vertical.s2)
             $0.trailingAnchor.constraint(
                 equalTo: containerView.trailingAnchor,
-                constant: -16)
+                constant: -Spacing.Vertical.s2)
+            $0.heightAnchor.constraint(equalToConstant: 56)
         }
     }
     
@@ -189,16 +267,16 @@ private extension NewEntryView {
         fieldsStackView.layout {
             $0.topAnchor.constraint(
                 equalTo: headerView.bottomAnchor,
-                constant: 16)
+                constant: Spacing.Horizontal.s4)
             $0.leadingAnchor.constraint(
                 equalTo: containerView.leadingAnchor,
-                constant: 16)
+                constant: Spacing.Vertical.s2)
             $0.trailingAnchor.constraint(
                 equalTo: containerView.trailingAnchor,
-                constant: -16)
+                constant: -Spacing.Vertical.s2)
             $0.bottomAnchor.constraint(
                 lessThanOrEqualTo: registerButton.topAnchor,
-                constant: -16)
+                constant: -Spacing.Horizontal.s3 + Spacing.Horizontal.s5)
         }
     }
 }
