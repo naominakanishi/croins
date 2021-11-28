@@ -14,6 +14,10 @@ class TransactionButtons: UIView {
     
     private lazy var buttonImage: UIImageView = {
         let view = UIImageView()
+        view.layout {
+            $0.widthAnchor.constraint(equalTo: $0.heightAnchor)
+            $0.heightAnchor.constraint(equalToConstant: 32)
+        }
         return view
     }()
     

@@ -22,8 +22,9 @@ class DashboardTransactionRecordView: UIView {
     private lazy var buttonsStackView: UIStackView = {
         let view = UIStackView()
         view.axis = .horizontal
-        view.spacing = 0
-        view.distribution = .equalSpacing
+        view.spacing =
+        Spacing.Vertical.s4
+        view.distribution = .fillEqually
         return view
     }()
     
@@ -52,7 +53,7 @@ class DashboardTransactionRecordView: UIView {
     }()
     
     private lazy var voiceButton: TransactionButtons = {
-        let view = TransactionButtons(label: "Camera", image: "dashboard-voiceButton")
+        let view = TransactionButtons(label: "Comando\nde voz", image: "dashboard-voiceButton")
         view.addGestureRecognizer(UITapGestureRecognizer(
             target: self, action: #selector(self.handleOptionSelected)
         ))
