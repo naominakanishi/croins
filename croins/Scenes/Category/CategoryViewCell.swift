@@ -15,12 +15,14 @@ class CategoryViewCell: UICollectionViewCell {
         view.text = "Minha categoria"
         view.numberOfLines = 0
         view.font = .systemFont(ofSize: 12)
+        view.textColor = .white
         return view
     }()
     
     private lazy var target: UILabel = {
         let view = UILabel()
         view.text = "500/550"
+        view.textColor = .white
         view.numberOfLines = 0
         view.font = .systemFont(ofSize: 7)
         return view

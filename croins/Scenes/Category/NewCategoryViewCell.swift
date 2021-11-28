@@ -28,7 +28,7 @@ class NewCategoryViewCell: UICollectionViewCell {
         self.contentView.addSubview(label)
         
         //setupBorder()
-        //setupPlusIcon()
+        setupPlusIcon()
         addSubviews()
         setupConstraints()
     }
@@ -53,21 +53,32 @@ class NewCategoryViewCell: UICollectionViewCell {
     
     private lazy var newCellView: UIView = {
         let newCellView = UIView()
-        newCellView.backgroundColor = .red
+        newCellView.layer.borderWidth = 2
+        newCellView.layer.borderColor = CGColor(gray: 2, alpha: 0.6)
+        newCellView.layer.cornerRadius = 45.5
         return newCellView
     }()
     
-    private lazy var newCellLabel: UILabel = {
-        let newCellLabel = UILabel()
-        newCellLabel.text = "sua irma"
-        newCellLabel.font = .systemFont(ofSize: 7)
-        return newCellLabel
+    
+    private lazy var newCellPlusIcon: UIView = {
+        let newCellPlusIcon = UIView()
+      
+        return newCellPlusIcon
     }()
     
+    
+    private lazy var newCellLabel: UILabel = {
+        let newCellLabel = UILabel()
+        newCellLabel.text = "Adicionar"
+        newCellLabel.font = .systemFont(ofSize: 12)
+        newCellLabel.textColor = .white
+        return newCellLabel
+    }()
+        
     func setupBorder() {
         newCategoryBorder = CAShapeLayer()
         newCategoryBorder.lineWidth = 1
-        newCategoryBorder.strokeColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
+        newCategoryBorder.strokeColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         newCategoryBorder.lineDashPattern = [10, 8] as [NSNumber]
         newCategoryBorder.frame = bounds
         newCategoryBorder.fillColor = nil
@@ -79,7 +90,7 @@ class NewCategoryViewCell: UICollectionViewCell {
         plusIcon.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(plusIcon)
         plusIcon.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        plusIcon.centerYAnchor.constraint(equalTo: contentView.topAnchor, constant: contentView.frame.height * 0.5 - 20).isActive = true
+        plusIcon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 35).isActive = true
         plusIcon.widthAnchor.constraint(equalToConstant: 22).isActive = true
         plusIcon.heightAnchor.constraint(equalToConstant: 22).isActive = true
         plusIcon.image = UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
@@ -91,15 +102,17 @@ class NewCategoryViewCell: UICollectionViewCell {
             $0.topAnchor.constraint(equalTo: contentView.topAnchor)
             $0.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
             $0.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-            $0.heightAnchor.constraint(equalTo: $0.widthAnchor)
+            $0.heightAnchor.constraint(equalToConstant: 91)
+            $0.widthAnchor.constraint(equalToConstant: 91)
+            
         }
         
         newCellLabel.layout {
             $0.topAnchor.constraint(equalTo: newCellView.bottomAnchor, constant: 10)
             $0.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
             $0.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
-            $0.leadingAnchor.constraint(equalTo: newCellView.leadingAnchor)
-            $0.trailingAnchor.constraint(equalTo: newCellView.trailingAnchor)
+//            $0.leadingAnchor.constraint(equalTo: newCellView.leadingAnchor)
+//            $0.trailingAnchor.constraint(equalTo: newCellView.trailingAnchor)
         }
     }
 }
