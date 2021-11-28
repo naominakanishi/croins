@@ -1,6 +1,6 @@
 import UIKit
 
-class NewCategoryViewController: UIViewController {
+class NewCategoryViewController: UIViewController, UIColorPickerViewControllerDelegate {
     
     let categoryViewModel = CategoryViewModel()
     
@@ -38,6 +38,14 @@ class NewCategoryViewController: UIViewController {
         return view
     }()
     
+    private lazy var openColorPickerButton: UIButton = {
+        let view = UIButton()
+        view.addTarget(self, action: #selector(openColorPicker), for: .touchUpInside)
+        view.backgroundColor = .random()
+        view.layer.cornerRadius = 10
+        return view
+    }()
+    
     let saveButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
@@ -46,6 +54,7 @@ class NewCategoryViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.titleLabel?.textAlignment = .center
+        button.layer.cornerRadius = 10
         return button
     }()
     
@@ -68,6 +77,7 @@ class NewCategoryViewController: UIViewController {
         view.addSubview(pageTitle)
         view.addSubview(newCategoryEntryTextField)
         view.addSubview(targetEntryTextField)
+        view.addSubview(openColorPickerButton)
         view.addSubview(saveButton)
     }
     
@@ -91,6 +101,13 @@ class NewCategoryViewController: UIViewController {
             $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         }
         
+        openColorPickerButton.layout {
+            $0.topAnchor.constraint(equalTo: targetEntryTextField.bottomAnchor, constant: 25)
+            $0.heightAnchor.constraint(equalTo: newCategoryEntryTextField.heightAnchor)
+            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
+            $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        }
+        
         saveButton.layout {
             $0.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
             $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
@@ -98,10 +115,25 @@ class NewCategoryViewController: UIViewController {
             $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         }
     }
+    
+    func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+        openColorPickerButton.backgroundColor = viewController.selectedColor
+    }
+    
+    func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
+        openColorPickerButton.backgroundColor = viewController.selectedColor
+    }
+    
 }
 
 @objc
 private extension NewCategoryViewController {
+    
+    func openColorPicker() {
+        let controller = UIColorPickerViewController()
+        controller.delegate = self
+        present(controller, animated: true, completion: nil)
+    }
     
     func dismissKeyboard() {
         view.endEditing(true)
@@ -130,3 +162,9 @@ private extension NewCategoryViewController {
     }
 }
 
+
+extension UIColor {
+    static func random() -> UIColor {
+        .init(hex: .random(in: 0...0xFFFFFF))
+    }
+}
