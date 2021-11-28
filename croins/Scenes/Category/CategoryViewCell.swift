@@ -2,7 +2,7 @@ import UIKit
 
 class CategoryViewCell: UICollectionViewCell {
     
-    let graph: ProgressView = {
+    private lazy var graph: ProgressView = {
         let view = ProgressView(setup: .init(
             backgroundColor: .red.withAlphaComponent(0.1),
             tintColor: .blue
@@ -10,7 +10,7 @@ class CategoryViewCell: UICollectionViewCell {
         return view
     }()
     
-    let title: UILabel = {
+    private lazy var title: UILabel = {
         let view = UILabel()
         view.text = "Minha categoria"
         view.numberOfLines = 0
@@ -18,7 +18,7 @@ class CategoryViewCell: UICollectionViewCell {
         return view
     }()
     
-    let target: UILabel = {
+    private lazy var target: UILabel = {
         let view = UILabel()
         view.text = "500/550"
         view.numberOfLines = 0
