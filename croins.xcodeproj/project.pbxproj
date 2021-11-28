@@ -25,7 +25,7 @@
 		118BD3B6274B0A1200B14417 /* SelfSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3B1274B0A1200B14417 /* SelfSizingTableView.swift */; };
 		118BD3B7274B0A1200B14417 /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3B2274B0A1200B14417 /* OptionCell.swift */; };
 		118BD3B8274B0A1200B14417 /* DropdownOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3B3274B0A1200B14417 /* DropdownOption.swift */; };
-		118BD3BA274B114B00B14417 /* DatePicker+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3B9274B114B00B14417 /* DatePicker+UITextField.swift */; };
+		118BD3BA274B114B00B14417 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3B9274B114B00B14417 /* UITextField+Extensions.swift */; };
 		118BD3BC274B169600B14417 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3BB274B169600B14417 /* UIColor+Extensions.swift */; };
 		118BD3BE274B196D00B14417 /* NewEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3BD274B196D00B14417 /* NewEntryView.swift */; };
 		118BD3C1274B344500B14417 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BD3C0274B344500B14417 /* Money.swift */; };
@@ -35,6 +35,12 @@
 		119F749D273EEA0D005DF419 /* DataInputIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749C273EEA0D005DF419 /* DataInputIn.swift */; };
 		119F749F273EEB54005DF419 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749E273EEB54005DF419 /* Method.swift */; };
 		119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F74A1273EECAC005DF419 /* InputViewModel.swift */; };
+		4982EDE027517ED70014C713 /* ReadVisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982EDDF27517ED70014C713 /* ReadVisionViewController.swift */; };
+		4982EDE3275181240014C713 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982EDE2275181240014C713 /* PreviewView.swift */; };
+		4982EDE527518E330014C713 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982EDE427518E330014C713 /* String+Extensions.swift */; };
+		4982EDE727518E750014C713 /* Character+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982EDE627518E750014C713 /* Character+Extensions.swift */; };
+		4982EDEF27518FDC0014C713 /* StringTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982EDEE27518FDC0014C713 /* StringTracker.swift */; };
+		4982EDF12751911A0014C713 /* VisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982EDF02751911A0014C713 /* VisionViewController.swift */; };
 		49A6EB8A27482114004BA797 /* IncomeIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49A6EB8927482114004BA797 /* IncomeIntents.intentdefinition */; };
 		49A6EB90274823C8004BA797 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F6356727458ABA0033972E /* Intents.framework */; };
 		49A6EB93274823C8004BA797 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6EB92274823C8004BA797 /* IntentHandler.swift */; };
@@ -130,7 +136,7 @@
 		118BD3B1274B0A1200B14417 /* SelfSizingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfSizingTableView.swift; sourceTree = "<group>"; };
 		118BD3B2274B0A1200B14417 /* OptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
 		118BD3B3274B0A1200B14417 /* DropdownOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownOption.swift; sourceTree = "<group>"; };
-		118BD3B9274B114B00B14417 /* DatePicker+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatePicker+UITextField.swift"; sourceTree = "<group>"; };
+		118BD3B9274B114B00B14417 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		118BD3BB274B169600B14417 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		118BD3BD274B196D00B14417 /* NewEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryView.swift; sourceTree = "<group>"; };
 		118BD3C0274B344500B14417 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
@@ -142,6 +148,12 @@
 		119F74A1273EECAC005DF419 /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
 		1C71BE60511392F6377A2F28 /* Pods-croinsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croinsTests.debug.xcconfig"; path = "Target Support Files/Pods-croinsTests/Pods-croinsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		47EE7C3B6CA5AADBEFAAF825 /* Pods-croins-croinsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins-croinsUITests.release.xcconfig"; path = "Target Support Files/Pods-croins-croinsUITests/Pods-croins-croinsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4982EDDF27517ED70014C713 /* ReadVisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadVisionViewController.swift; sourceTree = "<group>"; };
+		4982EDE2275181240014C713 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		4982EDE427518E330014C713 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		4982EDE627518E750014C713 /* Character+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Extensions.swift"; sourceTree = "<group>"; };
+		4982EDEE27518FDC0014C713 /* StringTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTracker.swift; sourceTree = "<group>"; };
+		4982EDF02751911A0014C713 /* VisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionViewController.swift; sourceTree = "<group>"; };
 		49A6EB8927482114004BA797 /* IncomeIntents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = IncomeIntents.intentdefinition; sourceTree = "<group>"; };
 		49A6EB8F274823C8004BA797 /* IncomeIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IncomeIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A6EB92274823C8004BA797 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
@@ -244,6 +256,7 @@
 		110ECEDC273C3DAB00F9E6CD /* croins */ = {
 			isa = PBXGroup;
 			children = (
+				4982EDE827518F100014C713 /* Utilities */,
 				119F74A0273EEC9C005DF419 /* ViewModels */,
 				119F7499273EE9D3005DF419 /* Data */,
 				110ECF11273C46B700F9E6CD /* UI */,
@@ -289,6 +302,7 @@
 		110ECF0E273C3EAF00F9E6CD /* NewEntry */ = {
 			isa = PBXGroup;
 			children = (
+				4982EDE12751810F0014C713 /* ReadVision */,
 				49F6355A27457C5B0033972E /* SiriKit */,
 				110ECF0F273C3EF200F9E6CD /* NewEntryViewController.swift */,
 				110ECF14273C57A400F9E6CD /* NewInputViewController.swift */,
@@ -304,8 +318,6 @@
 				118BD3C4274C222300B14417 /* Components */,
 				118BD3AE274B09E600B14417 /* Dropdown */,
 				110ECF12273C46C200F9E6CD /* ViewCode.swift */,
-				118BD3B9274B114B00B14417 /* DatePicker+UITextField.swift */,
-				118BD3BB274B169600B14417 /* UIColor+Extensions.swift */,
 				118BD3C2274B3CFB00B14417 /* NumberFormattedTextField.swift */,
 			);
 			path = UI;
@@ -354,6 +366,7 @@
 		119F7499273EE9D3005DF419 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4982EDED27518FD00014C713 /* Vision */,
 				49EFAC6527500610000013E0 /* UserDefaults */,
 				118BD3BF274B305800B14417 /* Model */,
 			);
@@ -367,6 +380,43 @@
 				49C552AC27442B8500A30E2C /* CategoryViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4982EDE12751810F0014C713 /* ReadVision */ = {
+			isa = PBXGroup;
+			children = (
+				4982EDDF27517ED70014C713 /* ReadVisionViewController.swift */,
+				4982EDE2275181240014C713 /* PreviewView.swift */,
+				4982EDF02751911A0014C713 /* VisionViewController.swift */,
+			);
+			path = ReadVision;
+			sourceTree = "<group>";
+		};
+		4982EDE827518F100014C713 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4982EDE927518F530014C713 /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4982EDE927518F530014C713 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				118BD3B9274B114B00B14417 /* UITextField+Extensions.swift */,
+				118BD3BB274B169600B14417 /* UIColor+Extensions.swift */,
+				4982EDE427518E330014C713 /* String+Extensions.swift */,
+				4982EDE627518E750014C713 /* Character+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4982EDED27518FD00014C713 /* Vision */ = {
+			isa = PBXGroup;
+			children = (
+				4982EDEE27518FDC0014C713 /* StringTracker.swift */,
+			);
+			path = Vision;
 			sourceTree = "<group>";
 		};
 		49A6EB91274823C8004BA797 /* IncomeIntents */ = {
@@ -745,7 +795,7 @@
 				118BD3C1274B344500B14417 /* Money.swift in Sources */,
 				49C552B027442BF200A30E2C /* NewCategoryViewController.swift in Sources */,
 				118BD3BC274B169600B14417 /* UIColor+Extensions.swift in Sources */,
-				118BD3BA274B114B00B14417 /* DatePicker+UITextField.swift in Sources */,
+				118BD3BA274B114B00B14417 /* UITextField+Extensions.swift in Sources */,
 				110ECEE2273C3DAB00F9E6CD /* ViewController.swift in Sources */,
 				110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */,
 				49F6355F274582F80033972E /* ExpenseIntents.intentdefinition in Sources */,
@@ -760,6 +810,7 @@
 				49EFAC69275006D1000013E0 /* UserDefaults+Extensions.swift in Sources */,
 				118BD3B5274B0A1200B14417 /* DropdownPicker.swift in Sources */,
 				110ECEDE273C3DAB00F9E6CD /* AppDelegate.swift in Sources */,
+				4982EDE527518E330014C713 /* String+Extensions.swift in Sources */,
 				118BD3B8274B0A1200B14417 /* DropdownOption.swift in Sources */,
 				118BD3B4274B0A1200B14417 /* DropdownDataSource.swift in Sources */,
 				118BD3C3274B3CFB00B14417 /* NumberFormattedTextField.swift in Sources */,
@@ -770,9 +821,14 @@
 				110ECEE0273C3DAB00F9E6CD /* SceneDelegate.swift in Sources */,
 				119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */,
 				49C552B227443D8300A30E2C /* CategoriesViewController.swift in Sources */,
+				4982EDEF27518FDC0014C713 /* StringTracker.swift in Sources */,
+				4982EDE3275181240014C713 /* PreviewView.swift in Sources */,
 				49C552A72744299800A30E2C /* Category.swift in Sources */,
 				49EFAC6727500637000013E0 /* ObjectSavable.swift in Sources */,
 				1134FE9A2744927D005953B2 /* ProgressView.swift in Sources */,
+				4982EDF12751911A0014C713 /* VisionViewController.swift in Sources */,
+				4982EDE727518E750014C713 /* Character+Extensions.swift in Sources */,
+				4982EDE027517ED70014C713 /* ReadVisionViewController.swift in Sources */,
 				118BD3C6274C228300B14417 /* EntryHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -976,7 +1032,7 @@
 				CODE_SIGN_ENTITLEMENTS = croins/croins.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = croins/Info.plist;
 				INFOPLIST_KEY_NSSiriUsageDescription = "This is a Siri demo";
@@ -990,7 +1046,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lynakano.croins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1008,7 +1064,7 @@
 				CODE_SIGN_ENTITLEMENTS = croins/croins.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = croins/Info.plist;
 				INFOPLIST_KEY_NSSiriUsageDescription = "This is a Siri demo";
@@ -1022,7 +1078,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lynakano.croins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1038,7 +1094,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UL74FQ825B;
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1064,7 +1120,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UL74FQ825B;
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1089,7 +1145,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UL74FQ825B;
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1113,7 +1169,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UL74FQ825B;
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1135,7 +1191,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IncomeIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IncomeIntents;
@@ -1146,7 +1202,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins.IncomeIntents;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lynakano.croins.IncomeIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1160,7 +1216,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IncomeIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IncomeIntents;
@@ -1171,7 +1227,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins.IncomeIntents;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lynakano.croins.IncomeIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1185,7 +1241,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpendsIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ExpendsIntents;
@@ -1196,7 +1252,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins.ExpendsIntents;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lynakano.croins.ExpendsIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1210,7 +1266,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpendsIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ExpendsIntents;
@@ -1221,7 +1277,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimidesign.croins.ExpendsIntents;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lynakano.croins.ExpendsIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

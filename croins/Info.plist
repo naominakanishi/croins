@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) uses the camera to to scan for phone numbers</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>CreateExpenseIntent</string>
