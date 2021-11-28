@@ -50,6 +50,7 @@
 		119F749D273EEA0D005DF419 /* DataInputIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749C273EEA0D005DF419 /* DataInputIn.swift */; };
 		119F749F273EEB54005DF419 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749E273EEB54005DF419 /* Method.swift */; };
 		119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F74A1273EECAC005DF419 /* InputViewModel.swift */; };
+		41603F3B2751E1DF0075BF10 /* NewCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41603F3A2751E1DF0075BF10 /* NewCategoryViewCell.swift */; };
 		49A6EB8A27482114004BA797 /* IncomeIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49A6EB8927482114004BA797 /* IncomeIntents.intentdefinition */; };
 		49A6EB90274823C8004BA797 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F6356727458ABA0033972E /* Intents.framework */; };
 		49A6EB93274823C8004BA797 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6EB92274823C8004BA797 /* IntentHandler.swift */; };
@@ -72,6 +73,10 @@
 		865D58D30D12F02D785D8ECF /* Pods_croins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A297F7B12748508788E83111 /* Pods_croins.framework */; };
 		8A4DEBC71C1F3F9DBE4806CD /* Pods_croins_croinsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B094576EE31C183ACAB452 /* Pods_croins_croinsUITests.framework */; };
 		B36DC3C588AE7F7846AB17C6 /* Pods_croinsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E309F717E3F12C5456CF6D /* Pods_croinsTests.framework */; };
+		D778FC21275346010097544B /* RecentTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778FC20275346010097544B /* RecentTransactionsView.swift */; };
+		D778FC232753461B0097544B /* TransactionRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778FC222753461B0097544B /* TransactionRecordView.swift */; };
+		D778FC2627534A420097544B /* ExpandedBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778FC2527534A420097544B /* ExpandedBalanceViewController.swift */; };
+		D7A22D5527535F0400173F34 /* ExpandedBalanceBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A22D5427535F0400173F34 /* ExpandedBalanceBarChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +174,7 @@
 		119F749E273EEB54005DF419 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		119F74A1273EECAC005DF419 /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
 		1C71BE60511392F6377A2F28 /* Pods-croinsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croinsTests.debug.xcconfig"; path = "Target Support Files/Pods-croinsTests/Pods-croinsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		41603F3A2751E1DF0075BF10 /* NewCategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewCell.swift; sourceTree = "<group>"; };
 		47EE7C3B6CA5AADBEFAAF825 /* Pods-croins-croinsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins-croinsUITests.release.xcconfig"; path = "Target Support Files/Pods-croins-croinsUITests/Pods-croins-croinsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		49A6EB8927482114004BA797 /* IncomeIntents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = IncomeIntents.intentdefinition; sourceTree = "<group>"; };
 		49A6EB8F274823C8004BA797 /* IncomeIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IncomeIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +200,10 @@
 		A9B094576EE31C183ACAB452 /* Pods_croins_croinsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_croins_croinsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA02E67301C436BCED16C3A /* Pods-croins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins.debug.xcconfig"; path = "Target Support Files/Pods-croins/Pods-croins.debug.xcconfig"; sourceTree = "<group>"; };
 		D1E309F717E3F12C5456CF6D /* Pods_croinsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_croinsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D778FC20275346010097544B /* RecentTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionsView.swift; sourceTree = "<group>"; };
+		D778FC222753461B0097544B /* TransactionRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRecordView.swift; sourceTree = "<group>"; };
+		D778FC2527534A420097544B /* ExpandedBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedBalanceViewController.swift; sourceTree = "<group>"; };
+		D7A22D5427535F0400173F34 /* ExpandedBalanceBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedBalanceBarChart.swift; sourceTree = "<group>"; };
 		ED487C35648693850F16847C /* Pods-croins-croinsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins-croinsUITests.debug.xcconfig"; path = "Target Support Files/Pods-croins-croinsUITests/Pods-croins-croinsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -359,6 +369,10 @@
 				1111852D2751754400BF997B /* BalanceView.swift */,
 				1111852F275175E400BF997B /* BalanceChartView.swift */,
 				111185312751798300BF997B /* BarCollectionViewCell.swift */,
+				D778FC20275346010097544B /* RecentTransactionsView.swift */,
+				D778FC222753461B0097544B /* TransactionRecordView.swift */,
+				D778FC2527534A420097544B /* ExpandedBalanceViewController.swift */,
+				D7A22D5427535F0400173F34 /* ExpandedBalanceBarChart.swift */,
 			);
 			path = Balance;
 			sourceTree = "<group>";
@@ -438,6 +452,7 @@
 				49C552AF27442BF200A30E2C /* NewCategoryViewController.swift */,
 				49C552B127443D8300A30E2C /* CategoriesViewController.swift */,
 				49C552B327443FD100A30E2C /* CategoryViewCell.swift */,
+				41603F3A2751E1DF0075BF10 /* NewCategoryViewCell.swift */,
 				1134FE992744927D005953B2 /* ProgressView.swift */,
 				118BD3AC274AF50E00B14417 /* PizzaChartView.swift */,
 				117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */,
@@ -795,12 +810,15 @@
 				49C552B027442BF200A30E2C /* NewCategoryViewController.swift in Sources */,
 				118BD3BC274B169600B14417 /* UIColor+Extensions.swift in Sources */,
 				118BD3BA274B114B00B14417 /* DatePicker+UITextField.swift in Sources */,
+				D778FC2627534A420097544B /* ExpandedBalanceViewController.swift in Sources */,
 				111185322751798300BF997B /* BarCollectionViewCell.swift in Sources */,
 				110ECEE2273C3DAB00F9E6CD /* ViewController.swift in Sources */,
 				1111852C2751753700BF997B /* BalanceViewController.swift in Sources */,
 				110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */,
 				49F6355F274582F80033972E /* ExpenseIntents.intentdefinition in Sources */,
+				41603F3B2751E1DF0075BF10 /* NewCategoryViewCell.swift in Sources */,
 				1111852E2751754400BF997B /* BalanceView.swift in Sources */,
+				D778FC232753461B0097544B /* TransactionRecordView.swift in Sources */,
 				49A6EB8A27482114004BA797 /* IncomeIntents.intentdefinition in Sources */,
 				110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */,
 				1111854227532F7400BF997B /* Colors.swift in Sources */,
@@ -820,8 +838,10 @@
 				118BD3B6274B0A1200B14417 /* SelfSizingTableView.swift in Sources */,
 				11118530275175E400BF997B /* BalanceChartView.swift in Sources */,
 				111185342753119200BF997B /* DashboardTransactionRecordView.swift in Sources */,
+				D778FC21275346010097544B /* RecentTransactionsView.swift in Sources */,
 				118BD3BE274B196D00B14417 /* NewEntryView.swift in Sources */,
 				49C552A927442A6E00A30E2C /* Goal.swift in Sources */,
+				D7A22D5527535F0400173F34 /* ExpandedBalanceBarChart.swift in Sources */,
 				110ECF10273C3EF200F9E6CD /* NewEntryViewController.swift in Sources */,
 				110ECEE0273C3DAB00F9E6CD /* SceneDelegate.swift in Sources */,
 				119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */,
