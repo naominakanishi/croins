@@ -194,7 +194,7 @@ extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDa
 @objc
 private extension CategoriesViewController {
     func onAddTapped() {
-        present(NewCategoryViewController(), animated: true, completion: nil)
+        navigationController?.pushViewController(NewCategoryViewController(), animated: true)
     }
 }
 
