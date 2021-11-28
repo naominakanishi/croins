@@ -4,17 +4,36 @@ class NewCategoryViewController: UIViewController, UIColorPickerViewControllerDe
     
     let categoryViewModel = CategoryViewModel()
     
-    let pageTitle: UILabel = {
-        let title = UILabel()
-        title.text = "Nova Categoria"
-        title.font = .boldSystemFont(ofSize: 25)
-        title.numberOfLines = 0
-        return title
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 14
+        return view
     }()
+    
+    private lazy var fieldsStackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.spacing = 16
+        return view
+    }()
+    
+    private lazy var headerView: EntryHeader = {
+        let view = EntryHeader(title: "Nova Categoria", image: UIImage(systemName: "circle"))
+        return view
+    }()
+    
+//    let pageTitle: UILabel = {
+//        let title = UILabel()
+//        title.text = "Nova Categoria"
+//        title.font = .boldSystemFont(ofSize: 25)
+//        title.numberOfLines = 0
+//        return title
+//    }()
     
     private lazy var newCategoryEntryTextField: UITextField = {
         let view = TextField(inset: 15)
-        view.backgroundColor = .white
+        view.backgroundColor = .gray
         view.attributedPlaceholder = .init(string: "Nome da categoria",
                                            attributes: [
                                             .font: UIFont.systemFont(ofSize: 12),
@@ -27,7 +46,7 @@ class NewCategoryViewController: UIViewController, UIColorPickerViewControllerDe
     
     private lazy var targetEntryTextField: NumberFormattedTextField = {
         let view = NumberFormattedTextField(inset: 15)
-        view.backgroundColor = .white
+        view.backgroundColor = .gray
         view.attributedPlaceholder = .init(string: "Gasto máximo",
                                            attributes: [
                                             .font: UIFont.systemFont(ofSize: 12),
@@ -68,7 +87,7 @@ class NewCategoryViewController: UIViewController, UIColorPickerViewControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = UIColor(named: "Background")
         addSubviews()
         setupConstraints()
     }
@@ -82,14 +101,23 @@ class NewCategoryViewController: UIViewController, UIColorPickerViewControllerDe
     }
     
     func setupConstraints() {
-        pageTitle.layout {
-            $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 100)
-            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
-            $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        
+        containerView.layout {
+            $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 24)
+            $0.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 16)
+            $0.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -16)
+            $0.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -24)
+        }
+        
+        headerView.layout {
+            $0.topAnchor.constraint(equalTo: containerView.topAnchor,constant: 16)
+            $0.leadingAnchor.constraint( equalTo: containerView.leadingAnchor,constant: 16)
+            $0.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,constant: -16)
+            
         }
         
         newCategoryEntryTextField.layout {
-            $0.topAnchor.constraint(equalTo: pageTitle.bottomAnchor, constant: 25)
+            $0.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 25)
             $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
             $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         }

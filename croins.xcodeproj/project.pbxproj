@@ -51,6 +51,7 @@
 		119F749F273EEB54005DF419 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749E273EEB54005DF419 /* Method.swift */; };
 		119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F74A1273EECAC005DF419 /* InputViewModel.swift */; };
 		41603F3B2751E1DF0075BF10 /* NewCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41603F3A2751E1DF0075BF10 /* NewCategoryViewCell.swift */; };
+		41603F3D2753C92E0075BF10 /* NewCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41603F3C2753C92D0075BF10 /* NewCategoryTableViewCell.swift */; };
 		49A6EB8A27482114004BA797 /* IncomeIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49A6EB8927482114004BA797 /* IncomeIntents.intentdefinition */; };
 		49A6EB90274823C8004BA797 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F6356727458ABA0033972E /* Intents.framework */; };
 		49A6EB93274823C8004BA797 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6EB92274823C8004BA797 /* IntentHandler.swift */; };
@@ -175,6 +176,7 @@
 		119F74A1273EECAC005DF419 /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
 		1C71BE60511392F6377A2F28 /* Pods-croinsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croinsTests.debug.xcconfig"; path = "Target Support Files/Pods-croinsTests/Pods-croinsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		41603F3A2751E1DF0075BF10 /* NewCategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewCell.swift; sourceTree = "<group>"; };
+		41603F3C2753C92D0075BF10 /* NewCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		47EE7C3B6CA5AADBEFAAF825 /* Pods-croins-croinsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins-croinsUITests.release.xcconfig"; path = "Target Support Files/Pods-croins-croinsUITests/Pods-croins-croinsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		49A6EB8927482114004BA797 /* IncomeIntents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = IncomeIntents.intentdefinition; sourceTree = "<group>"; };
 		49A6EB8F274823C8004BA797 /* IncomeIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IncomeIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -450,9 +452,10 @@
 			isa = PBXGroup;
 			children = (
 				49C552AF27442BF200A30E2C /* NewCategoryViewController.swift */,
+				41603F3C2753C92D0075BF10 /* NewCategoryTableViewCell.swift */,
+				41603F3A2751E1DF0075BF10 /* NewCategoryViewCell.swift */,
 				49C552B127443D8300A30E2C /* CategoriesViewController.swift */,
 				49C552B327443FD100A30E2C /* CategoryViewCell.swift */,
-				41603F3A2751E1DF0075BF10 /* NewCategoryViewCell.swift */,
 				1134FE992744927D005953B2 /* ProgressView.swift */,
 				118BD3AC274AF50E00B14417 /* PizzaChartView.swift */,
 				117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */,
@@ -835,6 +838,7 @@
 				118BD3B8274B0A1200B14417 /* DropdownOption.swift in Sources */,
 				118BD3B4274B0A1200B14417 /* DropdownDataSource.swift in Sources */,
 				118BD3C3274B3CFB00B14417 /* NumberFormattedTextField.swift in Sources */,
+				41603F3D2753C92E0075BF10 /* NewCategoryTableViewCell.swift in Sources */,
 				118BD3B6274B0A1200B14417 /* SelfSizingTableView.swift in Sources */,
 				11118530275175E400BF997B /* BalanceChartView.swift in Sources */,
 				111185342753119200BF997B /* DashboardTransactionRecordView.swift in Sources */,
