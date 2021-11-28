@@ -78,6 +78,5 @@ class BalanceViewController: UIViewController, UIAdaptivePresentationControllerD
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-
     }
 }
