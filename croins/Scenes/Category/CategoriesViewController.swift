@@ -93,7 +93,11 @@ class CategoriesViewController: UIViewController {
     func configureNavigationBar() {
         title = "Categorias"
         navigationItem.largeTitleDisplayMode = .always
+        
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
         navigationItem.rightBarButtonItem = .init(
             image: .init(systemName: "plus"),
             style: .done,
