@@ -148,8 +148,10 @@ class NewInputViewController: UIViewController, INUIAddVoiceShortcutViewControll
     }
     
     @objc func handleSpentMoneyButtonTap() {
-        let startController = NewEntryViewController()
-        navigationController?.pushViewController(startController, animated: true)
+        /*let startController = NewEntryViewController()
+        navigationController?.pushViewController(startController, animated: true)*/
+        let controller = VisionViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     /*@objc func addToSiri(_ sender: Any) {

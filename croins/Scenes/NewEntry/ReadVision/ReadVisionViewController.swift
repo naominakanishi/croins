@@ -195,15 +195,24 @@ class ReadVisionViewController: UIViewController {
     // MARK: - UI drawing and interaction
     
     func showString(string: [String]) {
-        print("DEU")
-        /*captureSessionQueue.sync {
+        captureSessionQueue.sync {
             self.captureSession.stopRunning()
             /// Colocar resultado da busca
-            /*DispatchQueue.main.async {
-                self.numberView.text = string[1] + "|" + string[0]
-                self.numberView.isHidden = false
-            }*/
-        }*/
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Dados coletados!", message: String(format: "Gasto de R$ %@ em %@", string[1], string[0]), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Confirmar", style: .default, handler: { _ in
+                    self.navigationController?.viewControllers.removeLast()
+                    self.present(NewEntryViewController(), animated: true, completion: nil)
+                }))
+                alert.addAction(UIAlertAction(title: "Buscar novamente", style: .cancel, handler: { _ in
+                    self.captureSession.startRunning()
+                }))
+                alert.addAction(UIAlertAction(title: "Cancelar busca", style: .destructive, handler: { _ in
+                    self.navigationController?.viewControllers.removeLast()
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     func addSubviews() {
