@@ -195,7 +195,7 @@ final class TransactionRecordView: UIView {
         categoryLabel.text = model.category
         amountLabel.text = model.amount.formatted()
         amountLabel.textColor = model.isPositive ?
-            .croinColor.positiveBalanceGreen :
-            .croinColor.negativeBalanceRed
+            .croinColor.green :
+            .croinColor.pink
     }
 }

@@ -11,7 +11,8 @@ class ExpandedCategoryViewController: UIViewController {
     }()
     
     private lazy var targetLabel: TargetLabel = {
-        let view = TargetLabel(target: "500/550", percentage: "90%")
+        let view = TargetLabel()
+        view.configure(target: "MOCK", percentage: "MOCK")
         return view
     }()
     
@@ -48,18 +49,12 @@ class ExpandedCategoryViewController: UIViewController {
         addSubviews()
         setupConstraints()
         setupAdditionalSettings()
-        
     }
     
     func configureNavigationBar() {
         title = "Comidas"
         navigationItem.largeTitleDisplayMode = .automatic
         navigationController?.navigationBar.prefersLargeTitles = false
-//        navigationItem.rightBarButtonItem = .init(
-//            image: .init(systemName: "plus"),
-//            style: .done,
-//            target: self,
-//            //action: #selector(onAddTapped))
     }
     
     func addSubviews(){

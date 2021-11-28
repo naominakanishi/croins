@@ -4,29 +4,27 @@ final class TargetLabel: UIView {
 
     private lazy var target: UILabel = {
         let view = UILabel()
-        view.text = "500/550"
         view.numberOfLines = 0
-        view.font = .systemFont(ofSize: 16)
+        view.font = .systemFont(ofSize: 10)
         view.textAlignment = .center
+        view.textColor = .white
         return view
     }()
     
     private lazy var targetPercentage: UILabel = {
         let view = UILabel()
-        view.text = "90%"
         view.numberOfLines = 0
         view.font = .systemFont(ofSize: 12)
         view.textAlignment = .center
-
+        view.textColor = .white
+        
         return view
     }()
     
-    init(target: String, percentage: String) {
+    init() {
         super.init(frame: .zero)
         addSubviews()
         constraintSubviews()
-        self.target.text = target
-        targetPercentage.text = percentage
 
     }
     
@@ -53,6 +51,10 @@ final class TargetLabel: UIView {
             $0.trailingAnchor.constraint(equalTo: self.trailingAnchor)
             $0.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         }
-        
+    }
+    
+    func configure(target: String, percentage: String?) {
+        self.target.text = target
+        targetPercentage.text = percentage
     }
 }
