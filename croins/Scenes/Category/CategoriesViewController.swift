@@ -10,6 +10,16 @@ class CategoriesViewController: UIViewController {
         return view
     }()
     
+    private lazy var financialBalance: UIView = {
+        let financialBalance = UIView()
+        financialBalance.layer.borderWidth = 2
+        financialBalance.layer.borderColor = CGColor(gray: 2, alpha: 1)
+        financialBalance.layer.cornerRadius = 14
+        return financialBalance
+    }()
+    
+    
+    
     private lazy var categoriesList: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -34,7 +44,7 @@ class CategoriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = UIColor(named: "Background")!
         configureNavigationBar()
         addSubviews()
         setupConstraints()
@@ -42,17 +52,15 @@ class CategoriesViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         pizzaChartView.configure(slices: [
-            .init(percentage: 0.15, color: .blue),
-            .init(percentage: 0.30, color: .black),
-            .init(percentage: 0.10, color: .orange),
-            .init(percentage: 0.05, color: .green),
-            .init(percentage: 0.33, color: .purple),
-            .init(percentage: 0.07, color: UIColor(named: "Purple")!)
+            .init(percentage: 0.45, color: UIColor(named: "Lilac")!),
+            .init(percentage: 0.25, color: UIColor(named: "Pink")!),
+            .init(percentage: 0.23, color: UIColor(named: "Purple")!),
+            .init(percentage: 0.08, color: UIColor(named: "Purple-2")!)
         ])
     }
     
     func configureNavigationBar() {
-        title = "Categoriassssss"
+        title = "Categorias"
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = .init(
@@ -64,6 +72,7 @@ class CategoriesViewController: UIViewController {
     
     func addSubviews() {
         view.addSubview(pizzaChartView)
+        view.addSubview(financialBalance)
         view.addSubview(categoriesList)
     }
     
@@ -76,8 +85,15 @@ class CategoriesViewController: UIViewController {
             $0.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30)
         }
         
-        categoriesList.layout {
+        financialBalance.layout {
             $0.topAnchor.constraint(equalTo: pizzaChartView.bottomAnchor, constant: 30)
+            $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
+            $0.heightAnchor.constraint(equalToConstant: 64)
+        }
+        
+        categoriesList.layout {
+            $0.topAnchor.constraint(equalTo: financialBalance.bottomAnchor, constant: 30)
             $0.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8)
             $0.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)

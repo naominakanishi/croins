@@ -5,7 +5,7 @@ class CategoryViewCell: UICollectionViewCell {
     private lazy var graph: ProgressView = {
         let view = ProgressView(setup: .init(
             backgroundColor: .red.withAlphaComponent(0.1),
-            tintColor: .blue
+            tintColor: UIColor(named: "Lilac")!
         ))
         return view
     }()

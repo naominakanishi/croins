@@ -101,7 +101,4 @@ class MoneyMovementsTableViewCell: UITableViewCell {
             $0.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         }
     }
-    
-    
-   
 }

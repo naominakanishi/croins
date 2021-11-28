@@ -101,5 +101,5 @@ class NewCategoryViewCell: UICollectionViewCell {
             $0.leadingAnchor.constraint(equalTo: newCellView.leadingAnchor)
             $0.trailingAnchor.constraint(equalTo: newCellView.trailingAnchor)
         }
-            }
+    }
 }
