@@ -50,6 +50,7 @@ class DashboardViewController: UIViewController, DashboardTransactionRecordDeleg
 
     private lazy var balanceView: BalanceDashboardView = {
         let view = BalanceDashboardView(balance: "R$ 432.00", monthlyIn: "R$ 10.00", monthlyOut:"R$ 3.00")
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleBalanceTap)))
         return view
     }()
     
@@ -61,6 +62,8 @@ class DashboardViewController: UIViewController, DashboardTransactionRecordDeleg
     
     private lazy var categoriesView: DashboardCategoriesView = {
         let view = DashboardCategoriesView()
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleCategoryTap)))
+        
         return view
     }()
     
@@ -150,4 +153,13 @@ class DashboardViewController: UIViewController, DashboardTransactionRecordDeleg
                     progress: 4)),
         ])
     }
+    
+    @objc func handleBalanceTap () {
+        navigationController?.pushViewController( BalanceViewController(), animated: true)
+    }
+    
+    @objc func handleCategoryTap () {
+        navigationController?.pushViewController(CategoriesViewController(), animated: true)
+    }
 }
+

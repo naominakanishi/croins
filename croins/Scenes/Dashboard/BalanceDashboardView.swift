@@ -50,7 +50,7 @@ class BalanceDashboardView: UIView {
     
     private lazy var separator: UIImageView = {
         let view = UIImageView()
-        view.tintColor = CroinColor.green.withAlphaComponent(0.15)
+        view.backgroundColor = CroinColor.green.withAlphaComponent(0.15)
         return view
     }()
     
