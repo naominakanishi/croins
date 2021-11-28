@@ -1,17 +1,14 @@
-import UIKit
+import Foundation
 
-class DataInputIn{
-    let title: String
-    let gain: String
-    let method: Method
+class DataInputIn: Codable {
+    let title, gain: String
+    //let method: Method
     let date: Date
-    let isRecurrent: Bool
-
-    init(title: String, gain: String, method: Method, date: Date, isRecurrent: Bool)  {
+    //let isRecurrent: Bool
+    
+    init(title: String, gain: String, date: Date)  {
         self.title = title
         self.gain = gain
-        self.method = method
         self.date = date
-        self.isRecurrent = isRecurrent
     }
 }

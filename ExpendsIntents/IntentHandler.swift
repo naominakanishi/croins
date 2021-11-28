@@ -2,8 +2,6 @@ import Intents
 
 class CreateNewExpenseIntentHandler: NSObject, CreateExpenseIntentHandling {
     
-    let inputViewModel = InputViewModel()
-    
     func resolveTitle(for intent: CreateExpenseIntent, with completion: @escaping (INStringResolutionResult) -> Void) {
         if let expenseTitle = intent.title {
             completion(INStringResolutionResult.success(with: expenseTitle))
@@ -39,7 +37,6 @@ class CreateNewExpenseIntentHandler: NSObject, CreateExpenseIntentHandling {
                   completion(CreateExpenseIntentResponse(code: .failure, userActivity: nil))
                   return
               }
-        inputViewModel.addNewExpense(title: expenseTitle, value: expenseValue.doubleValue, date: expenseDate.date ?? Date())
         completion(CreateExpenseIntentResponse.success(result: "successfully"))
     }
     
