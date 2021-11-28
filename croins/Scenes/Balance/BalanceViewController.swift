@@ -1,8 +1,6 @@
-//
-//  BalanceViewController.swift
-//  croins
-//
-//  Created by Naomi Nakanishi on 26/11/21.
-//
+import UIKit
 
-import Foundation
+class BalanceViewController: UIViewController {
+    
+    
+}

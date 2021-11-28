@@ -20,8 +20,8 @@ class DashboardViewController: UIViewController {
     }()
     
 
-    private lazy var balanceView: BalanceView = {
-        let view = BalanceView(balance: "R$ 432.00", monthlyIn: "R$ 10.00", monthlyOut:"R$ 3.00")
+    private lazy var balanceView: BalanceDashboardView = {
+        let view = BalanceDashboardView(balance: "R$ 432.00", monthlyIn: "R$ 10.00", monthlyOut:"R$ 3.00")
         return view
     }()
     

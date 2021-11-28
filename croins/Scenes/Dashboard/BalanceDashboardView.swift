@@ -62,7 +62,7 @@ final class InOutView: UIView {
     }
 }
 
-class BalanceView: UIView {
+class BalanceDashboardView: UIView {
     
     private lazy var balanceStackView: UIStackView = {
         let view = UIStackView()

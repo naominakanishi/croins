@@ -19,7 +19,11 @@
 		110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF12273C46C200F9E6CD /* ViewCode.swift */; };
 		110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110ECF14273C57A400F9E6CD /* NewInputViewController.swift */; };
 		1111852727515D0D00BF997B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111852627515D0D00BF997B /* DashboardViewController.swift */; };
-		1111852927515FC900BF997B /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111852827515FC900BF997B /* BalanceView.swift */; };
+		1111852927515FC900BF997B /* BalanceDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111852827515FC900BF997B /* BalanceDashboardView.swift */; };
+		1111852C2751753700BF997B /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111852B2751753700BF997B /* BalanceViewController.swift */; };
+		1111852E2751754400BF997B /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111852D2751754400BF997B /* BalanceView.swift */; };
+		11118530275175E400BF997B /* BalanceChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111852F275175E400BF997B /* BalanceChartView.swift */; };
+		111185322751798300BF997B /* BarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111185312751798300BF997B /* BarCollectionViewCell.swift */; };
 		1134FE9A2744927D005953B2 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134FE992744927D005953B2 /* ProgressView.swift */; };
 		117055BE275008820051EC82 /* ExpandedCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */; };
 		117055C0275018DE0051EC82 /* TargetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117055BF275018DE0051EC82 /* TargetLabel.swift */; };
@@ -127,7 +131,11 @@
 		110ECF12273C46C200F9E6CD /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		110ECF14273C57A400F9E6CD /* NewInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInputViewController.swift; sourceTree = "<group>"; };
 		1111852627515D0D00BF997B /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		1111852827515FC900BF997B /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		1111852827515FC900BF997B /* BalanceDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDashboardView.swift; sourceTree = "<group>"; };
+		1111852B2751753700BF997B /* BalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
+		1111852D2751754400BF997B /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		1111852F275175E400BF997B /* BalanceChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceChartView.swift; sourceTree = "<group>"; };
+		111185312751798300BF997B /* BarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCollectionViewCell.swift; sourceTree = "<group>"; };
 		1134FE992744927D005953B2 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressView.swift; path = croins/Scenes/TesteTags/ProgressView.swift; sourceTree = SOURCE_ROOT; };
 		117055BD275008820051EC82 /* ExpandedCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCategoryViewController.swift; sourceTree = "<group>"; };
 		117055BF275018DE0051EC82 /* TargetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLabel.swift; sourceTree = "<group>"; };
@@ -286,6 +294,7 @@
 		110ECF0D273C3EA500F9E6CD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1111852A2751751E00BF997B /* Balance */,
 				1111852427515CF600BF997B /* Dashboard */,
 				49C552AE27442BDD00A30E2C /* Category */,
 				110ECF0E273C3EAF00F9E6CD /* NewEntry */,
@@ -322,9 +331,20 @@
 			isa = PBXGroup;
 			children = (
 				1111852627515D0D00BF997B /* DashboardViewController.swift */,
-				1111852827515FC900BF997B /* BalanceView.swift */,
+				1111852827515FC900BF997B /* BalanceDashboardView.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		1111852A2751751E00BF997B /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				1111852B2751753700BF997B /* BalanceViewController.swift */,
+				1111852D2751754400BF997B /* BalanceView.swift */,
+				1111852F275175E400BF997B /* BalanceChartView.swift */,
+				111185312751798300BF997B /* BarCollectionViewCell.swift */,
+			);
+			path = Balance;
 			sourceTree = "<group>";
 		};
 		118BD3AE274B09E600B14417 /* Dropdown */ = {
@@ -756,9 +776,12 @@
 				49C552B027442BF200A30E2C /* NewCategoryViewController.swift in Sources */,
 				118BD3BC274B169600B14417 /* UIColor+Extensions.swift in Sources */,
 				118BD3BA274B114B00B14417 /* DatePicker+UITextField.swift in Sources */,
+				111185322751798300BF997B /* BarCollectionViewCell.swift in Sources */,
 				110ECEE2273C3DAB00F9E6CD /* ViewController.swift in Sources */,
+				1111852C2751753700BF997B /* BalanceViewController.swift in Sources */,
 				110ECF13273C46C200F9E6CD /* ViewCode.swift in Sources */,
 				49F6355F274582F80033972E /* ExpenseIntents.intentdefinition in Sources */,
+				1111852E2751754400BF997B /* BalanceView.swift in Sources */,
 				49A6EB8A27482114004BA797 /* IncomeIntents.intentdefinition in Sources */,
 				110ECF15273C57A400F9E6CD /* NewInputViewController.swift in Sources */,
 				49C552B427443FD100A30E2C /* CategoryViewCell.swift in Sources */,
@@ -767,13 +790,14 @@
 				118BD3AD274AF50E00B14417 /* PizzaChartView.swift in Sources */,
 				49C552AD27442B8500A30E2C /* CategoryViewModel.swift in Sources */,
 				118BD3B5274B0A1200B14417 /* DropdownPicker.swift in Sources */,
-				1111852927515FC900BF997B /* BalanceView.swift in Sources */,
+				1111852927515FC900BF997B /* BalanceDashboardView.swift in Sources */,
 				1111852727515D0D00BF997B /* DashboardViewController.swift in Sources */,
 				110ECEDE273C3DAB00F9E6CD /* AppDelegate.swift in Sources */,
 				118BD3B8274B0A1200B14417 /* DropdownOption.swift in Sources */,
 				118BD3B4274B0A1200B14417 /* DropdownDataSource.swift in Sources */,
 				118BD3C3274B3CFB00B14417 /* NumberFormattedTextField.swift in Sources */,
 				118BD3B6274B0A1200B14417 /* SelfSizingTableView.swift in Sources */,
+				11118530275175E400BF997B /* BalanceChartView.swift in Sources */,
 				118BD3BE274B196D00B14417 /* NewEntryView.swift in Sources */,
 				49C552A927442A6E00A30E2C /* Goal.swift in Sources */,
 				110ECF10273C3EF200F9E6CD /* NewEntryViewController.swift in Sources */,
