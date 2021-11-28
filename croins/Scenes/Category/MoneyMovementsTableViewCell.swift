@@ -2,6 +2,15 @@ import UIKit
 
 class MoneyMovementsTableViewCell: UITableViewCell {
     
+    struct Model {
+        let transactionImage: UIImage?
+        let transactionTitle: String
+        let transactionValue: String
+        let valueColor: UIColor?
+        let transactionDescription: String
+        let transactionDate: String
+    }
+    
     private lazy var transactionImage: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(systemName: "circle")
@@ -44,8 +53,6 @@ class MoneyMovementsTableViewCell: UITableViewCell {
         view.textAlignment = .right
         return view
     }()
-    
-    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -102,6 +109,12 @@ class MoneyMovementsTableViewCell: UITableViewCell {
         }
     }
     
-    
-   
+    func configure(using model: Model) {
+        transactionImage.image = model.transactionImage
+        transactionLabel.text = model.transactionTitle
+        transactionValue.text = model.transactionValue
+        transactionValue.textColor = model.valueColor
+        transactionDescription.text = model.transactionDescription
+        transactionDate.text = model.transactionDate
+    }
 }

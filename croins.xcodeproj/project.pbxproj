@@ -70,6 +70,7 @@
 		D778FC21275346010097544B /* RecentTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778FC20275346010097544B /* RecentTransactionsView.swift */; };
 		D778FC232753461B0097544B /* TransactionRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778FC222753461B0097544B /* TransactionRecordView.swift */; };
 		D778FC2627534A420097544B /* ExpandedBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778FC2527534A420097544B /* ExpandedBalanceViewController.swift */; };
+		D7A22D5527535F0400173F34 /* ExpandedBalanceBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A22D5427535F0400173F34 /* ExpandedBalanceBarChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +191,7 @@
 		D778FC20275346010097544B /* RecentTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionsView.swift; sourceTree = "<group>"; };
 		D778FC222753461B0097544B /* TransactionRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRecordView.swift; sourceTree = "<group>"; };
 		D778FC2527534A420097544B /* ExpandedBalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedBalanceViewController.swift; sourceTree = "<group>"; };
+		D7A22D5427535F0400173F34 /* ExpandedBalanceBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedBalanceBarChart.swift; sourceTree = "<group>"; };
 		ED487C35648693850F16847C /* Pods-croins-croinsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins-croinsUITests.debug.xcconfig"; path = "Target Support Files/Pods-croins-croinsUITests/Pods-croins-croinsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -354,6 +356,7 @@
 				D778FC20275346010097544B /* RecentTransactionsView.swift */,
 				D778FC222753461B0097544B /* TransactionRecordView.swift */,
 				D778FC2527534A420097544B /* ExpandedBalanceViewController.swift */,
+				D7A22D5427535F0400173F34 /* ExpandedBalanceBarChart.swift */,
 			);
 			path = Balance;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 				D778FC21275346010097544B /* RecentTransactionsView.swift in Sources */,
 				118BD3BE274B196D00B14417 /* NewEntryView.swift in Sources */,
 				49C552A927442A6E00A30E2C /* Goal.swift in Sources */,
+				D7A22D5527535F0400173F34 /* ExpandedBalanceBarChart.swift in Sources */,
 				110ECF10273C3EF200F9E6CD /* NewEntryViewController.swift in Sources */,
 				110ECEE0273C3DAB00F9E6CD /* SceneDelegate.swift in Sources */,
 				119F74A2273EECAC005DF419 /* InputViewModel.swift in Sources */,

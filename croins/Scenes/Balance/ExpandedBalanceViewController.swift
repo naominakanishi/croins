@@ -1,12 +1,16 @@
 import UIKit
 
 class ExpandedBalanceViewController: UIViewController {
+    typealias Transaction = MoneyMovementsTableViewCell.Model
+    
+    private var transactions: [Transaction] = []
     
     private lazy var moneyMovementsTableView: UITableView = {
         let view = UITableView()
         view.delegate = self
         view.dataSource = self
         view.register(MoneyMovementsTableViewCell.self, forCellReuseIdentifier: "MoneyMovementsTableViewCell")
+        view.register(ExpandedBalanceBarChart.self, forCellReuseIdentifier: "ExpandedBalanceBarChart")
         view.separatorStyle = .singleLine
         return view
     }()
@@ -56,16 +60,34 @@ class ExpandedBalanceViewController: UIViewController {
 
 extension ExpandedBalanceViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        switch section  {
+        case 0:
+            return 1
+        default:
+            return transactions.count
+        }
     }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard indexPath.section == 1 else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ExpandedBalanceBarChart", for: indexPath) as! ExpandedBalanceBarChart
+            cell.configure(using: .init(
+                dateRange: "01/FEB - 26/FEB",
+                monthIncome: "+R$4,00",
+                monthOutcome: "-R$2,00",
+                balance: "+R$2,00",
+                balanceColor: .croinColor.positiveBalanceGreen,
+                inPercent: 0.5, outPercent: 0.3))
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "MoneyMovementsTableViewCell") as! MoneyMovementsTableViewCell
+        let transaction = transactions[indexPath.row]
+        cell.configure(using: transaction)
         return cell
     }
     
