@@ -1,12 +1,14 @@
 import UIKit
+import CoreCroins
 
 final class TransactionRecordView: UIView {
     
     struct Model {
         let isPositive: Bool
         let name: String
-        let category: String
+        let category: String?
         let amount: Money
+        let date: Date
     }
     
     private lazy var imageView: UIImageView = {

@@ -68,16 +68,13 @@ class BalanceDashboardView: UIView {
         return view
     }()
     
-    init(balance: String, monthlyIn: String, monthlyOut: String) {
+    init() {
         super.init(frame: .zero)
         addSubviews()
         constraintSubviews()
-        balanceValue.text = balance
         self.layer.cornerRadius = 20
         layer.borderColor = CroinColor.green.withAlphaComponent(0.15).cgColor
         layer.borderWidth = 2
-        self.monthlyInView.text = monthlyIn
-        self.monthlyOutView.text = monthlyOut
     }
     
     required init?(coder: NSCoder) {
@@ -117,6 +114,12 @@ class BalanceDashboardView: UIView {
             $0.leadingAnchor.constraint(equalTo: separator.trailingAnchor)
             $0.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         }
+    }
+    
+    func configure(balance: String, monthlyIn: String, monthlyOut: String) {
+        balanceValue.text = balance
+        self.monthlyInView.text = monthlyIn
+        self.monthlyOutView.text = monthlyOut
     }
 }
 

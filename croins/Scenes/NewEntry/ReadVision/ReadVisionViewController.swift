@@ -1,6 +1,7 @@
 import UIKit
 import AVFoundation
 import Vision
+import CoreCroins
 
 class ReadVisionViewController: UIViewController {
     
@@ -201,8 +202,16 @@ class ReadVisionViewController: UIViewController {
             DispatchQueue.main.async {
                 let alert = UIAlertController(title: "Dados coletados!", message: String(format: "Gasto de R$ %@ em %@", string[1], string[0]), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Confirmar", style: .default, handler: { _ in
+                    guard let value = Double(string[1].replacingOccurrences(of: ",", with: ".")) else { return }
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "dd/MM/yyyy"
+                    guard let date = formatter.date(from: string[0]) else { return }
+                    AppDatabase.shared.add(out: .init(
+                        title: "No title",
+                        value: value,
+                        date: date,
+                        category: AppDatabase.shared.categories[0]))
                     self.navigationController?.viewControllers.removeLast()
-                    self.present(NewEntryViewController(), animated: true, completion: nil)
                 }))
                 alert.addAction(UIAlertAction(title: "Buscar novamente", style: .cancel, handler: { _ in
                     self.captureSession.startRunning()

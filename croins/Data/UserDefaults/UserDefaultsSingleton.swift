@@ -1,4 +1,5 @@
 import Foundation
+import CoreCroins
 
 class UserDefaultsSingleton {
     static var shared = UserDefaultsSingleton()

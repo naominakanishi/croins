@@ -95,7 +95,8 @@ extension BalanceChartView: UICollectionViewDelegate, UICollectionViewDataSource
                 dateRange: " ",
                 balance: " ",
                 balanceColor: .clear,
-                isSelected: false))
+                isSelected: false,
+                date: Date()))
         }
         return cell
     }

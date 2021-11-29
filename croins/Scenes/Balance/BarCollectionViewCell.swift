@@ -9,6 +9,7 @@ class BarCollectionViewCell: UICollectionViewCell {
         let balance: String
         let balanceColor: UIColor?
         let isSelected: Bool
+        let date: Date
     }
     
     private lazy var pinkBarView: UIView = {

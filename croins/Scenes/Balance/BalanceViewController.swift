@@ -2,6 +2,8 @@ import UIKit
 
 class BalanceViewController: UIViewController, UIAdaptivePresentationControllerDelegate {
     
+    var inputViewModel: InputViewModel!
+    
     var balanceView: BalanceView? { view as? BalanceView }
     
     override func loadView() {
@@ -14,83 +16,10 @@ class BalanceViewController: UIViewController, UIAdaptivePresentationControllerD
     }
     
     override func viewDidLayoutSubviews() {
-        balanceView?.configure(bars: [
-            .init(
-                inPercentage: .random(in: 0...1),
-                outPercentage: .random(in: 0...1),
-                dateRange: "01/FEB-26/FEB",
-                balance: "+R$320,00",
-                balanceColor: .systemOrange,
-                isSelected: false
-            ),
-            .init(
-                inPercentage: .random(in: 0...1),
-                outPercentage: .random(in: 0...1),
-                dateRange: "01/FEB-26/FEB",
-                balance: "+R$320,00",
-                balanceColor: .systemOrange,
-                isSelected: false
-            ),
-            .init(
-                inPercentage: .random(in: 0...1),
-                outPercentage: .random(in: 0...1),
-                dateRange: "01/FEB-26/FEB",
-                balance: "+R$320,00",
-                balanceColor: .systemOrange,
-                isSelected: false
-            ),
-            .init(
-                inPercentage: .random(in: 0...1),
-                outPercentage: .random(in: 0...1),
-                dateRange: "01/FEB-26/FEB",
-                balance: "+R$320,00",
-                balanceColor: .systemOrange,
-                isSelected: false
-            ),
-            .init(
-                inPercentage: .random(in: 0...1),
-                outPercentage: .random(in: 0...1),
-                dateRange: "01/FEB-26/FEB",
-                balance: "+R$320,00",
-                balanceColor: .systemOrange,
-                isSelected: false
-            ),
-            .init(
-                inPercentage: .random(in: 0...1),
-                outPercentage: .random(in: 0...1),
-                dateRange: "01/FEB-26/FEB",
-                balance: "+R$320,00",
-                balanceColor: .systemOrange,
-                isSelected: false
-            ),
-        ],
-        recentTransactions: [
-            .init(
-                isPositive: true,
-                name: "asdad",
-                category: "ewqewq",
-                amount: 300),
-            .init(
-                isPositive: true,
-                name: "asdad",
-                category: "ewqewq",
-                amount: 300),
-            .init(
-                isPositive: true,
-                name: "asdad",
-                category: "ewqewq",
-                amount: 300),
-            .init(
-                isPositive: true,
-                name: "asdad",
-                category: "ewqewq",
-                amount: 300),
-            .init(
-                isPositive: true,
-                name: "asdad",
-                category: "ewqewq",
-                amount: 300),
-        ])
+        balanceView?.configure(
+            bars: inputViewModel.getMonthlyCharts(),
+            recentTransactions: inputViewModel.getRecentTransactions(maxLength: 8),
+            balance: inputViewModel.getCurrentBalance())
     }
     
     override func viewDidAppear(_ animated: Bool) {

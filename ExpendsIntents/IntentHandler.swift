@@ -1,4 +1,5 @@
 import Intents
+import CoreCroins
 
 class CreateNewExpenseIntentHandler: NSObject, CreateExpenseIntentHandling {
     
@@ -37,6 +38,7 @@ class CreateNewExpenseIntentHandler: NSObject, CreateExpenseIntentHandling {
                   completion(CreateExpenseIntentResponse(code: .failure, userActivity: nil))
                   return
               }
+        AppDatabase.shared.add(out: DataInputOut(title: expenseTitle, value: Double(expenseValue), date: expenseDate.date!, category: AppDatabase.shared.categories[0]))
         completion(CreateExpenseIntentResponse.success(result: "successfully"))
     }
     

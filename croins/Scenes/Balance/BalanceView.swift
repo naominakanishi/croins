@@ -4,6 +4,7 @@ class BalanceView: UIView {
     
     private let recentTransactionsView = RecentTransactionsView()
     private let chartView = BalanceChartView()
+    
     private lazy var currentBalanceTitle: UILabel = {
         let view = UILabel()
         view.textColor = .white
@@ -16,7 +17,7 @@ class BalanceView: UIView {
         let view = UILabel()
         view.textColor = .white
         view.font = .preferredFont(forTextStyle: .title1)
-        view.text = "R$ MOCK"
+        view.text = "adsads"
         return view
     }()
     
@@ -58,6 +59,7 @@ class BalanceView: UIView {
             $0.topAnchor.constraint(
                 equalTo: currentBalanceTitle.bottomAnchor)
             $0.leadingAnchor.constraint(equalTo: currentBalanceTitle.leadingAnchor)
+            $0.trailingAnchor.constraint(equalTo: trailingAnchor)
         }
         
         recentTransactionsView.layout {
@@ -75,10 +77,12 @@ class BalanceView: UIView {
     
     func configure(
         bars: [BalanceChartView.Bar],
-        recentTransactions: [TransactionRecordView.Model]
+        recentTransactions: [TransactionRecordView.Model],
+        balance: String
     ) {
         chartView.configure(using: bars)
         recentTransactionsView.configure(using: recentTransactions)
+        currentBalanceValueLabel.text = balance
     }
     
     func viewDidAppear() {

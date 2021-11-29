@@ -1,4 +1,5 @@
 import UIKit
+import CoreCroins
 
 protocol NewEntryViewDelegate: AnyObject {
     func didTapOnButton(
@@ -25,13 +26,6 @@ final class NewEntryView: UIView {
         return view
     }()
     
-//    private lazy var titleStackView: UIStackView = {
-//        let view = UIStackView()
-//        view.axis = .horizontal
-//        view.spacing = 10
-//        return view
-//    }()
-//    
     private let headerView: EntryHeader
     
     private lazy var nameQuestion: UILabel = {
@@ -144,6 +138,7 @@ final class NewEntryView: UIView {
         view.configuration?.baseBackgroundColor = CroinColor.blue
         view.configuration?.baseForegroundColor = CroinColor.white
         view.configuration?.cornerStyle = .capsule
+        view.addTarget(self, action: #selector(handleTouch), for: .touchUpInside)
         
         return view
     }()

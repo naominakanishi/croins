@@ -2,11 +2,14 @@ import UIKit
 
 class CategoryViewCell: UICollectionViewCell {
     
+    struct Model {
+        let title: String
+        let target: String
+        let progress: ProgressView.Progress
+    }
+    
     private lazy var graph: ProgressView = {
-        let view = ProgressView(setup: .init(
-            backgroundColor: .red.withAlphaComponent(0.1),
-            tintColor: UIColor(named: "Lilac")!
-        ))
+        let view = ProgressView()
         return view
     }()
     
@@ -32,7 +35,6 @@ class CategoryViewCell: UICollectionViewCell {
         super.init(frame: frame)
         addSubviews()
         setupConstraints()
-        setupAdditionalSettings()
     }
     
     required init?(coder: NSCoder) {
@@ -69,9 +71,9 @@ class CategoryViewCell: UICollectionViewCell {
         }
     }
     
-    func setupAdditionalSettings() {
-        graph.render(progress: .init(
-            total: 10,
-            progress: 20.5))
+    func configure(using model: Model) {
+        self.title.text = model.title
+        self.target.text = model.target
+        graph.render(progress: model.progress)
     }
 }

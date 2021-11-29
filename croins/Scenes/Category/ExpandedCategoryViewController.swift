@@ -3,10 +3,7 @@ import UIKit
 class ExpandedCategoryViewController: UIViewController {
     
     let graph: ProgressView = {
-        let view = ProgressView(setup: .init(
-            backgroundColor: .red.withAlphaComponent(0.1),
-            tintColor: .blue
-        ))
+        let view = ProgressView()
         return view
     }()
     
@@ -96,7 +93,10 @@ class ExpandedCategoryViewController: UIViewController {
     func setupAdditionalSettings() {
         graph.render(progress: .init(
             total: 10,
-            progress: 9))
+            progress: 9,
+            setup: .init(
+                backgroundColor: .red,
+                tintColor: .blue)))
     }
     
     

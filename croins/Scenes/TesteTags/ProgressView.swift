@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class ProgressView: UIView {
-
+    
     struct Setup {
         let backgroundColor: UIColor
         let tintColor: UIColor
@@ -17,17 +17,19 @@ class ProgressView: UIView {
     }
     
     struct Progress {
+        
         /// Valor total do grafico . Ex 500
         let total: Double
         /// Progresso atual. Ex: 250
         let progress: Double
+        
+        let setup: Setup
     }
     
-    private let setup: Setup
+    private var setup: Setup?
     private var progress: Progress?
     
-    init(setup: Setup) {
-        self.setup = setup
+    init() {
         super.init(frame: .zero)
         backgroundColor = .clear
     }
@@ -38,10 +40,12 @@ class ProgressView: UIView {
     
     func render(progress: Progress) {
         self.progress = progress
+        self.setup = progress.setup
         setNeedsDisplay()
     }
     
     override func draw(_ rect: CGRect) {
+        guard let backgroundLayerFactory = backgroundLayerFactory else { return }
         layer.sublayers?.forEach { $0.removeFromSuperlayer() }
         layer.addSublayer(backgroundLayerFactory)
         if let progressLayerFactory = progressLayerFactory {
@@ -55,7 +59,7 @@ class ProgressView: UIView {
     }
     
     private var progressLayerFactory: CALayer? {
-        guard let progress = progress else {
+        guard let progress = progress, let setup = self.setup else {
             return nil
         }
         let path = UIBezierPath(
@@ -74,7 +78,11 @@ class ProgressView: UIView {
         return layer
     }
     
-    private var backgroundLayerFactory: CALayer {
+    private var backgroundLayerFactory: CALayer? {
+        guard let setup = setup else {
+            return nil
+        }
+
         let path = UIBezierPath(
             arcCenter: .init(x: bounds.midX, y: bounds.midY),
             radius: frame.width / 2 - setup.lineWidth / 2,
