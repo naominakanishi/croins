@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleIconName</key>
 	<string>AppIcon</string>
-	<key>NSCameraUsageDescription</key>
-	<string>$(PRODUCT_NAME) uses the camera to to scan for phone numbers</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>CreateExpenseIntent</string>
