@@ -202,7 +202,10 @@ extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDa
             target: "\(current)/\(item.target)",
             progress: .init(
                 total: item.target,
-                progress: current / item.target)))
+                progress: current / item.target,
+                setup: .init(
+                    backgroundColor: item.color.withAlphaComponent(0.5),
+                    tintColor: item.color))))
     }
 }
 

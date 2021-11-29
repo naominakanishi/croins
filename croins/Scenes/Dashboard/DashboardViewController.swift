@@ -160,7 +160,10 @@ class DashboardViewController: UIViewController, DashboardTransactionRecordDeleg
                 categoryName: $0.title,
                 progress: .init(
                     total: $0.target,
-                    progress: AppDatabase.shared.progress(for: $0)))
+                    progress: AppDatabase.shared.progress(for: $0),
+                    setup: .init(
+                        backgroundColor: $0.color.withAlphaComponent(0.5),
+                        tintColor: $0.color)))
         })
     }
     
@@ -219,7 +222,10 @@ extension DashboardViewController: DatabaseSubscriber {
                 categoryName: $0.title,
                 progress: .init(
                     total: $0.target,
-                    progress: database.progress(for: $0)
+                    progress: database.progress(for: $0),
+                    setup: .init(
+                        backgroundColor: $0.color.withAlphaComponent(0.5),
+                        tintColor: $0.color)
                 ))
         })
         

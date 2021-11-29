@@ -7,10 +7,7 @@ class DashboardCategoryView: UIView {
     }
     
     let graph: ProgressView = {
-        let view = ProgressView(setup: .init(
-            backgroundColor: .red.withAlphaComponent(0.1),
-            tintColor: .blue
-        ))
+        let view = ProgressView()
         return view
     }()
     

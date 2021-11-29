@@ -9,10 +9,7 @@ class CategoryViewCell: UICollectionViewCell {
     }
     
     private lazy var graph: ProgressView = {
-        let view = ProgressView(setup: .init(
-            backgroundColor: .red.withAlphaComponent(0.1),
-            tintColor: UIColor(named: "Lilac")!
-        ))
+        let view = ProgressView()
         return view
     }()
     
