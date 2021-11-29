@@ -48,6 +48,7 @@
 		119F7498273D8990005DF419 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F7497273D8990005DF419 /* TextField.swift */; };
 		119F749D273EEA0D005DF419 /* DataInputIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749C273EEA0D005DF419 /* DataInputIn.swift */; };
 		119F749F273EEB54005DF419 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749E273EEB54005DF419 /* Method.swift */; };
+		11D25D7F2755216B007EF683 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D25D7E2755216B007EF683 /* AppDatabase.swift */; };
 		41603F3B2751E1DF0075BF10 /* NewCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41603F3A2751E1DF0075BF10 /* NewCategoryViewCell.swift */; };
 		49134B49275440720032FB5A /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49134B48275440720032FB5A /* InputViewModel.swift */; };
 		49134B4C275453DA0032FB5A /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49134B4B275453DA0032FB5A /* Enums.swift */; };
@@ -181,6 +182,7 @@
 		119F7497273D8990005DF419 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		119F749C273EEA0D005DF419 /* DataInputIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputIn.swift; sourceTree = "<group>"; };
 		119F749E273EEB54005DF419 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		11D25D7E2755216B007EF683 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		1C71BE60511392F6377A2F28 /* Pods-croinsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croinsTests.debug.xcconfig"; path = "Target Support Files/Pods-croinsTests/Pods-croinsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		41603F3A2751E1DF0075BF10 /* NewCategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewCell.swift; sourceTree = "<group>"; };
 		47EE7C3B6CA5AADBEFAAF825 /* Pods-croins-croinsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-croins-croinsUITests.release.xcconfig"; path = "Target Support Files/Pods-croins-croinsUITests/Pods-croins-croinsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 				4982EDED27518FD00014C713 /* Vision */,
 				49EFAC6527500610000013E0 /* UserDefaults */,
 				118BD3BF274B305800B14417 /* Model */,
+				11D25D7E2755216B007EF683 /* AppDatabase.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -890,6 +893,7 @@
 				49F6355F274582F80033972E /* ExpenseIntents.intentdefinition in Sources */,
 				41603F3B2751E1DF0075BF10 /* NewCategoryViewCell.swift in Sources */,
 				1111852E2751754400BF997B /* BalanceView.swift in Sources */,
+				11D25D7F2755216B007EF683 /* AppDatabase.swift in Sources */,
 				D778FC232753461B0097544B /* TransactionRecordView.swift in Sources */,
 				49A6EB8A27482114004BA797 /* IncomeIntents.intentdefinition in Sources */,
 				1111854227532F7400BF997B /* Colors.swift in Sources */,

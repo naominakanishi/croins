@@ -91,7 +91,7 @@ class DashboardViewController: UIViewController, DashboardTransactionRecordDeleg
         view.backgroundColor = .lightGray
         addSubviews()
         setupConstraints()
-        
+        AppDatabase.shared.subscribe(self)
     }
     
     private func addSubviews() {
@@ -208,3 +208,16 @@ extension DashboardViewController: INUIAddVoiceShortcutViewControllerDelegate {
     }
 }
 
+extension DashboardViewController: DatabaseSubscriber {
+    func onDatabaseChange() {
+        let database = AppDatabase.shared
+        categoriesView.configure(using: database.categories!.map{
+            .init(
+                categoryName: $0.title,
+                progress: .init(
+                    total: $0.target,
+                    progress: database.progress(for: $0)
+                ))
+        })
+    }
+}

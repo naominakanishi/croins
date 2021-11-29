@@ -1,7 +1,7 @@
 import Foundation
 
 /// This represents the value in cents. Floating point can go nuts here
-typealias Money = Decimal
+typealias Money = Double
 
 extension Money {
     

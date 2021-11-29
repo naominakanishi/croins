@@ -1,13 +1,13 @@
 import Foundation
 
-class DataInputOut {
+class DataInputOut: Codable {
     let title: String
-    let value: Decimal
+    let value: Double
     let date: Date
     let category: Category
     //let isRecurrent: Bool
     
-    init(title: String, value: Decimal, date: Date, category: Category)  {
+    init(title: String, value: Double, date: Date, category: Category)  {
         self.title = title
         self.value = value
         self.date = date
