@@ -1,15 +1,15 @@
 import UIKit
 
-final class Category: Comparable, Codable {
-    let title: String
-    let target: Money
-    let color: UIColor
+public final class Category: Comparable, Codable {
+    public let title: String
+    public let target: Money
+    public let color: UIColor
     
     enum CodingKeys: String, CodingKey {
         case title, target, color
     }
     
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.title = try container.decode(String.self, forKey: .title)
         self.target = try container.decode(Money.self, forKey: .target)
@@ -18,24 +18,24 @@ final class Category: Comparable, Codable {
         self.color = .hex(hex)
     }
     
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(title, forKey: .title)
         try container.encode(target, forKey: .target)
         try container.encode(color.hexString, forKey: .color)
     }
     
-    init(title: String, target: Money, color: UIColor) {
+    public init(title: String, target: Money, color: UIColor) {
         self.title = title
         self.target = target
         self.color = color
     }
     
-    static func == (lhs: Category, rhs: Category) -> Bool {
+    public static func == (lhs: Category, rhs: Category) -> Bool {
         lhs.title == rhs.title && lhs.target == rhs.target && lhs.color == rhs.color
     }
     
-    static func < (lhs: Category, rhs: Category) -> Bool {
+    public static func < (lhs: Category, rhs: Category) -> Bool {
         lhs.target < rhs.target
     }
 }

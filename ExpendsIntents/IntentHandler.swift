@@ -1,4 +1,5 @@
 import Intents
+import CoreCroins
 
 class CreateNewExpenseIntentHandler: NSObject, CreateExpenseIntentHandling {
     

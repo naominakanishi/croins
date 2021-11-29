@@ -1,6 +1,7 @@
 import UIKit
 import Intents
 import IntentsUI
+import CoreCroins
 
 class DashboardViewController: UIViewController, DashboardTransactionRecordDelegate {
     

@@ -1,30 +1,30 @@
 import Foundation
 
-protocol CategoryCreator {
+public protocol CategoryCreator {
     func add(category: Category)
 }
 
-protocol DatabaseSubscriber {
+public protocol DatabaseSubscriber {
     func onDatabaseChange()
 }
 
 public final class AppDatabase {
     @AppStorage(key: "categories")
-    var categories: [Category]
+    public var categories: [Category]
     
     @AppStorage(key: "DataInputOut")
-    var dataInputOuts: [DataInputOut]
+    public var dataInputOuts: [DataInputOut]
     
     @AppStorage(key: "DataInputIn")
-    var dataInputIns: [DataInputIn]
+    public var dataInputIns: [DataInputIn]
 
-    static let shared = AppDatabase()
+    public static let shared = AppDatabase()
     
     private init() {}
     
     private var subscribers: [DatabaseSubscriber] = []
     
-    func subscribe(_ subscriber: DatabaseSubscriber) {
+    public func subscribe(_ subscriber: DatabaseSubscriber) {
         subscribers.append(subscriber)
     }
     
@@ -32,44 +32,44 @@ public final class AppDatabase {
         subscribers.forEach { $0.onDatabaseChange() }
     }
     
-    func progress(for category: Category) -> Double {
+    public func progress(for category: Category) -> Double {
         (dataInputOuts ?? []).filter( { $0.category == category })
             .map { $0.value }
             .reduce(0, +)
     }
     
-    func add(in data: DataInputIn) {
+    public func add(in data: DataInputIn) {
         defer { notify() }
         dataInputIns.append(data)
     }
     
-    func add(out data: DataInputOut) {
+    public func add(out data: DataInputOut) {
         defer { notify() }
         dataInputOuts.append(data)
     }
     
-    func totalIncome() -> Double {
+    public func totalIncome() -> Double {
         dataInputIns.map { $0.value }.reduce(0, +)
     }
     
-    func totalOutcome() -> Double {
+    public func totalOutcome() -> Double {
         dataInputOuts.map { $0.value }.reduce(0, +)
     }
     
-    func totalBalance() -> Double {
+    public func totalBalance() -> Double {
          totalIncome() - totalOutcome()
     }
 }
 
 extension AppDatabase: CategoryCreator {
-    func add(category: Category) {
+    public func add(category: Category) {
         categories.append(category)
         notify()
     }
 }
 
 @propertyWrapper
-final class AppStorage<T> where T: Codable, T: Initializable {
+public final class AppStorage<T> where T: Codable, T: Initializable {
     
     private let key: String
     
@@ -77,7 +77,7 @@ final class AppStorage<T> where T: Codable, T: Initializable {
         self.key = key
     }
     
-    var wrappedValue: T {
+    public var wrappedValue: T {
         get {
             guard let stored = UserDefaults.standard.data(forKey: key),
                   let decoded = try? JSONDecoder().decode(T.self, from: stored)
@@ -96,7 +96,7 @@ final class AppStorage<T> where T: Codable, T: Initializable {
     
 }
 
-protocol Initializable {
+public protocol Initializable {
     init()
 }
 extension Array: Initializable {}

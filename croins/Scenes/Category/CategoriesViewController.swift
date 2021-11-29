@@ -1,8 +1,9 @@
 import UIKit
+import CoreCroins
 
 class CategoriesViewController: UIViewController {
     
-    private var categoryList: [Category] = AppDatabase.shared.categories ?? []
+    private var categoryList: [CoreCroins.Category] = AppDatabase.shared.categories ?? []
     
     private lazy var pizzaChartView: PizzaChartView = {
         let view = PizzaChartView()

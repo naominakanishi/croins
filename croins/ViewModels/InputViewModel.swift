@@ -1,4 +1,5 @@
 import Foundation
+import CoreCroins
 
 class InputViewModel {
     private (set) var incomeList: [DataInputIn]

@@ -48,6 +48,16 @@
                ReferencedContainer = "container:croins.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "11A09B092755561100F1F76C"
+               BuildableName = "CoreCroinsTests.xctest"
+               BlueprintName = "CoreCroinsTests"
+               ReferencedContainer = "container:croins.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

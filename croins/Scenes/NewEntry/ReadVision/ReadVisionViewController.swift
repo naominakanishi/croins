@@ -1,6 +1,7 @@
 import UIKit
 import AVFoundation
 import Vision
+import CoreCroins
 
 class ReadVisionViewController: UIViewController {
     

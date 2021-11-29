@@ -1,4 +1,5 @@
 import UIKit
+import CoreCroins
 
 class NewCategoryViewController: UIViewController, UIColorPickerViewControllerDelegate {
     
@@ -224,12 +225,11 @@ private extension NewCategoryViewController {
     func saveButtonTap() {
         guard let title = newCategoryEntryTextField.text
         else { return }
-        AppDatabase.shared.add(category:
-            Category(
-                title: title,
-                target: targetEntryTextField.amount,
-                color: openColorPickerButton.backgroundColor!
-            ))
+        AppDatabase.shared.add(category: .init(
+            title: title,
+            target: targetEntryTextField.amount,
+            color: openColorPickerButton.backgroundColor!
+        ))
         let alert = UIAlertController(title: "Categoria registrada!", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Confirmar", style: .default, handler: { _ in
             self.navigationController?.viewControllers.removeLast()

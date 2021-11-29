@@ -1,4 +1,5 @@
 import UIKit
+import CoreCroins
 
 protocol NewEntryViewDelegate: AnyObject {
     func didTapOnButton(

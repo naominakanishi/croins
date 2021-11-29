@@ -1,4 +1,5 @@
 import UIKit
+import CoreCroins
 
 final class NumberFormattedTextField: TextField, UITextFieldDelegate {
     

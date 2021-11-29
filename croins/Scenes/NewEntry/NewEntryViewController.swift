@@ -1,5 +1,6 @@
 import UIKit
 import Intents
+import CoreCroins
 
 final class NewEntryViewController: UIViewController, NewEntryViewDelegate {
     
