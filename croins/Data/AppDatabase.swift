@@ -8,7 +8,7 @@ protocol DatabaseSubscriber {
     func onDatabaseChange()
 }
 
-final class AppDatabase {
+public final class AppDatabase {
     @AppStorage(key: "categories")
     var categories: [Category]
     

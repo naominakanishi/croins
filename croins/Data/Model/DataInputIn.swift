@@ -1,6 +1,6 @@
 import Foundation
 
-class DataInputIn: Codable {
+public class DataInputIn: Codable {
     let title: String
     let value: Double
     let date: Date
