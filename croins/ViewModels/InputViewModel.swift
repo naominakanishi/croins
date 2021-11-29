@@ -5,8 +5,8 @@ class InputViewModel {
     private (set) var outcomeList: [DataInputOut]
     
     init() {
-        incomeList = []
-        outcomeList = []
+        incomeList = AppDatabase.shared.dataInputIns
+        outcomeList = AppDatabase.shared.dataInputOuts
     }
     
     func addNewIncome(_ income: DataInputIn) {
@@ -74,6 +74,13 @@ class InputViewModel {
     }
     
     func getCurrentBalance() -> String {
-        "R$ 0,00"
+        AppDatabase.shared.totalBalance().currency ?? 0.currency ?? ""
+    }
+}
+
+extension InputViewModel: DatabaseSubscriber {
+    func onDatabaseChange() {
+        incomeList = AppDatabase.shared.dataInputIns
+        outcomeList = AppDatabase.shared.dataInputOuts
     }
 }

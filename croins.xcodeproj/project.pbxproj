@@ -68,7 +68,6 @@
 		49B25254274ECABF00AB4BE6 /* UserDefaultsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B25253274ECABF00AB4BE6 /* UserDefaultsSingleton.swift */; };
 		49C552A72744299800A30E2C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552A62744299800A30E2C /* Category.swift */; };
 		49C552A927442A6E00A30E2C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552A827442A6E00A30E2C /* Goal.swift */; };
-		49C552AD27442B8500A30E2C /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552AC27442B8500A30E2C /* CategoryViewModel.swift */; };
 		49C552B027442BF200A30E2C /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552AF27442BF200A30E2C /* NewCategoryViewController.swift */; };
 		49C552B227443D8300A30E2C /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552B127443D8300A30E2C /* CategoriesViewController.swift */; };
 		49C552B427443FD100A30E2C /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552B327443FD100A30E2C /* CategoryViewCell.swift */; };
@@ -198,7 +197,6 @@
 		49B25253274ECABF00AB4BE6 /* UserDefaultsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSingleton.swift; sourceTree = "<group>"; };
 		49C552A62744299800A30E2C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		49C552A827442A6E00A30E2C /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
-		49C552AC27442B8500A30E2C /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		49C552AF27442BF200A30E2C /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		49C552B127443D8300A30E2C /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		49C552B327443FD100A30E2C /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
@@ -440,7 +438,6 @@
 		119F74A0273EEC9C005DF419 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				49C552AC27442B8500A30E2C /* CategoryViewModel.swift */,
 				49134B48275440720032FB5A /* InputViewModel.swift */,
 			);
 			path = ViewModels;
@@ -763,7 +760,6 @@
 				119F749D273EEA0D005DF419 /* DataInputIn.swift in Sources */,
 				49134B4C275453DA0032FB5A /* Enums.swift in Sources */,
 				118BD3AD274AF50E00B14417 /* PizzaChartView.swift in Sources */,
-				49C552AD27442B8500A30E2C /* CategoryViewModel.swift in Sources */,
 				49EFAC69275006D1000013E0 /* UserDefaults+Extensions.swift in Sources */,
 				118BD3B5274B0A1200B14417 /* DropdownPicker.swift in Sources */,
 				49134B49275440720032FB5A /* InputViewModel.swift in Sources */,

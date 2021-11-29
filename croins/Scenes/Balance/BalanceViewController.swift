@@ -7,7 +7,7 @@ class BalanceViewController: UIViewController, UIAdaptivePresentationControllerD
     var balanceView: BalanceView? { view as? BalanceView }
     
     override func loadView() {
-        view = BalanceView(viewModel: inputViewModel)
+        view = BalanceView()
     }
     
     override func viewDidLoad() {
@@ -18,7 +18,8 @@ class BalanceViewController: UIViewController, UIAdaptivePresentationControllerD
     override func viewDidLayoutSubviews() {
         balanceView?.configure(
             bars: inputViewModel.getMonthlyCharts(),
-            recentTransactions: inputViewModel.getRecentTransactions(maxLength: 8))
+            recentTransactions: inputViewModel.getRecentTransactions(maxLength: 8),
+            balance: inputViewModel.getCurrentBalance())
     }
     
     override func viewDidAppear(_ animated: Bool) {

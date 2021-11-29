@@ -10,11 +10,14 @@ protocol DatabaseSubscriber {
 
 final class AppDatabase {
     @AppStorage(key: "categories")
-    var categories: [Category]?
+    var categories: [Category]
     
     @AppStorage(key: "DataInputOut")
-    var dataInputOuts: [DataInputOut]?
+    var dataInputOuts: [DataInputOut]
     
+    @AppStorage(key: "DataInputIn")
+    var dataInputIns: [DataInputIn]
+
     static let shared = AppDatabase()
     
     private init() {}
@@ -34,17 +37,39 @@ final class AppDatabase {
             .map { $0.value }
             .reduce(0, +)
     }
+    
+    func add(in data: DataInputIn) {
+        defer { notify() }
+        dataInputIns.append(data)
+    }
+    
+    func add(out data: DataInputOut) {
+        defer { notify() }
+        dataInputOuts.append(data)
+    }
+    
+    func totalIncome() -> Double {
+        dataInputIns.map { $0.value }.reduce(0, +)
+    }
+    
+    func totalOutcome() -> Double {
+        dataInputOuts.map { $0.value }.reduce(0, +)
+    }
+    
+    func totalBalance() -> Double {
+         totalIncome() - totalOutcome()
+    }
 }
 
 extension AppDatabase: CategoryCreator {
     func add(category: Category) {
-        categories?.append(category)
+        categories.append(category)
         notify()
     }
 }
 
 @propertyWrapper
-final class AppStorage<T> where T: Codable {
+final class AppStorage<T> where T: Codable, T: Initializable {
     
     private let key: String
     
@@ -52,11 +77,14 @@ final class AppStorage<T> where T: Codable {
         self.key = key
     }
     
-    var wrappedValue: T? {
+    var wrappedValue: T {
         get {
             guard let stored = UserDefaults.standard.data(forKey: key),
                   let decoded = try? JSONDecoder().decode(T.self, from: stored)
-            else { return nil }
+            else {
+                return T.init()
+                
+            }
             return decoded
         }
         set {
@@ -67,3 +95,9 @@ final class AppStorage<T> where T: Codable {
     }
     
 }
+
+protocol Initializable {
+    init()
+}
+extension Array: Initializable {}
+extension NSArray: Initializable {}

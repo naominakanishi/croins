@@ -18,7 +18,6 @@ class NewCategoryViewController: UIViewController, UIColorPickerViewControllerDe
     
     private var headerView: EntryHeader
     
-    var categoryViewModel: CategoryViewModel!
     
     func configureNavigationBar() {
         title = "Nova Categoria"
@@ -225,7 +224,7 @@ private extension NewCategoryViewController {
     func saveButtonTap() {
         guard let title = newCategoryEntryTextField.text
         else { return }
-        categoryViewModel.addNewCategory(
+        AppDatabase.shared.add(category:
             Category(
                 title: title,
                 target: targetEntryTextField.amount,

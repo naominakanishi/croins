@@ -5,13 +5,18 @@ import IntentsUI
 class DashboardViewController: UIViewController, DashboardTransactionRecordDelegate {
     
     var inputViewModel = InputViewModel()
-    var categoryViewModel = CategoryViewModel()
     
     func didTapOnEntryButton() {
         let controller = NewEntryViewController()
         controller.configuration = .init(
             style: .income,
-            onTap: { _, _, _, _ in }
+            onTap: { title, date, value, _ in
+                AppDatabase.shared.add(in: .init(
+                    title: title,
+                    value: value,
+                    date: date))
+                controller.navigationController?.popViewController(animated: true)
+            }
         )
         controller.inputViewModel = inputViewModel
         navigationController?.pushViewController(controller, animated: true)
@@ -21,10 +26,18 @@ class DashboardViewController: UIViewController, DashboardTransactionRecordDeleg
         let controller = NewEntryViewController()
         controller.configuration = .init(
             style: .outcome,
-            onTap: { _, _, _, _ in }
+            onTap: { title, date, value, categoryIndex in
+                guard let categoryIndex = categoryIndex else { return }
+                AppDatabase.shared.add(out: .init(
+                    title: title,
+                    value: value,
+                    date: date,
+                    category: AppDatabase.shared.categories[categoryIndex]))
+                controller.navigationController?.popViewController(animated: true)
+                
+            }
         )
         controller.inputViewModel = inputViewModel
-        controller.categoryViewModel = categoryViewModel
         navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -58,7 +71,7 @@ class DashboardViewController: UIViewController, DashboardTransactionRecordDeleg
     
 
     private lazy var balanceView: BalanceDashboardView = {
-        let view = BalanceDashboardView(balance: "R$ 432.00", monthlyIn: "R$ 10.00", monthlyOut:"R$ 3.00")
+        let view = BalanceDashboardView()
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleBalanceTap)))
         return view
     }()
@@ -141,23 +154,14 @@ class DashboardViewController: UIViewController, DashboardTransactionRecordDeleg
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        categoriesView.configure(using: [
+        onDatabaseChange()
+        categoriesView.configure(using: AppDatabase.shared.categories.map {
             .init(
-                categoryName: "asdasd",
+                categoryName: $0.title,
                 progress: .init(
-                    total: 10,
-                    progress: 4)),
-            .init(
-                categoryName: "asdasd",
-                progress: .init(
-                    total: 10,
-                    progress: 4)),
-            .init(
-                categoryName: "asdasd",
-                progress: .init(
-                    total: 10,
-                    progress: 4)),
-        ])
+                    total: $0.target,
+                    progress: AppDatabase.shared.progress(for: $0)))
+        })
     }
     
     @objc func handleBalanceTap () {
@@ -168,7 +172,6 @@ class DashboardViewController: UIViewController, DashboardTransactionRecordDeleg
     
     @objc func handleCategoryTap () {
         let controller = CategoriesViewController()
-        controller.categoryViewModel = categoryViewModel
         navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -211,7 +214,7 @@ extension DashboardViewController: INUIAddVoiceShortcutViewControllerDelegate {
 extension DashboardViewController: DatabaseSubscriber {
     func onDatabaseChange() {
         let database = AppDatabase.shared
-        categoriesView.configure(using: database.categories!.map{
+        categoriesView.configure(using: (database.categories).map{
             .init(
                 categoryName: $0.title,
                 progress: .init(
@@ -219,5 +222,10 @@ extension DashboardViewController: DatabaseSubscriber {
                     progress: database.progress(for: $0)
                 ))
         })
+        
+        balanceView.configure(
+            balance: database.totalBalance().currency ?? "asdads",
+            monthlyIn: database.totalIncome().currency ?? "asdads",
+            monthlyOut: database.totalOutcome().currency ?? "ewqew")
     }
 }

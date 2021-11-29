@@ -74,7 +74,6 @@ class DashboardCategoriesView: UIView {
             secondCategory,
             thirdCategory
         ]
-        assert(categories.count == views.count)
         zip(categories, views).forEach { $1.configure(using: $0) }
     }
 }

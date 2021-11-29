@@ -4,7 +4,7 @@ import Intents
 final class NewEntryViewController: UIViewController, NewEntryViewDelegate {
     
     var inputViewModel: InputViewModel!
-    var categoryViewModel: CategoryViewModel!
+
     
     struct Configuration {
         let style: Style
@@ -31,11 +31,6 @@ final class NewEntryViewController: UIViewController, NewEntryViewDelegate {
     
     func didTapOnButton(name: String, when: Date, howMuch: Money, categoryIndex: Int?) {
         configuration?.onTap(name, when, howMuch, categoryIndex)
-        newInputAdded(name, when, howMuch, categoryIndex)
-        let controller = SuccessfulRegisterViewController()
-        controller.inputType = configuration?.style
-        navigationController?.present(controller, animated: true, completion: nil)
-        navigationController?.viewControllers.removeLast()
     }
     
     private var newEntryView: NewEntryView? { view as? NewEntryView }
@@ -108,7 +103,7 @@ final class NewEntryViewController: UIViewController, NewEntryViewDelegate {
             let newIcome = DataInputIn(title: name, value: howMuch, date: when)
             inputViewModel.addNewIncome(newIcome)
         case .outcome:
-            let outcome = DataInputOut(title: name, value: howMuch, date: when, category: categoryViewModel.categoryList[categoryIndex ?? 0])
+            let outcome = DataInputOut(title: name, value: howMuch, date: when, category: AppDatabase.shared.categories[categoryIndex ?? 0])
             inputViewModel.addNewOutcome(outcome)
         default:
             fatalError("Input type not configured")
@@ -120,11 +115,11 @@ extension NewEntryViewController: DropdownDataSource {
     func stateDidChange() { }
     
     func numberOfOptions(_ dropdown: DropdownPicker) -> Int {
-        categoryViewModel.categoryList.count
+        AppDatabase.shared.categories.count
     }
     
     func option(_ dropdown: DropdownPicker, at index: IndexPath) -> DropdownOption {
-        let category = categoryViewModel.categoryList[index.row]
+        let category = AppDatabase.shared.categories[index.row]
         return .init(
             name: category.title)
     }

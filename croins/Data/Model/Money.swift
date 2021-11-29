@@ -16,6 +16,7 @@ extension NumberFormatter {
         let formatter = NumberFormatter()
         formatter.locale = Locale.current
         formatter.numberStyle = .currency
+        formatter.usesGroupingSeparator = true
         return formatter
     }
 }

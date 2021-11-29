@@ -2,7 +2,7 @@ import UIKit
 
 class CategoriesViewController: UIViewController {
     
-    var categoryViewModel: CategoryViewModel!
+    private var categoryList: [Category] = AppDatabase.shared.categories ?? []
     
     private lazy var pizzaChartView: PizzaChartView = {
         let view = PizzaChartView()
@@ -76,6 +76,7 @@ class CategoriesViewController: UIViewController {
         configureNavigationBar()
         addSubviews()
         setupConstraints()
+        AppDatabase.shared.subscribe(self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -168,7 +169,7 @@ class CategoriesViewController: UIViewController {
 
 extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryViewModel.categoryList.count
+        return categoryList.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -183,7 +184,7 @@ extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item == 0 {
             let controller = NewCategoryViewController()
-            controller.categoryViewModel = categoryViewModel
+//            controller.categoryViewModel = categoryViewModel //TODO
             navigationController?.pushViewController(controller, animated: true)
         } else {
             navigationController?.pushViewController(ExpandedCategoryViewController(), animated: true)
@@ -191,7 +192,17 @@ extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        (cell as? CategoryViewCell)?.setupAdditionalSettings()
+        let cell = (cell as? CategoryViewCell)
+        guard indexPath.item > 0 else { return }
+        let item = categoryList[indexPath.item - 1]
+        let current = AppDatabase.shared.progress(for: item)
+        
+        cell?.configure(using: .init(
+            title: item.title,
+            target: "\(current)/\(item.target)",
+            progress: .init(
+                total: item.target,
+                progress: current / item.target)))
     }
 }
 
@@ -199,9 +210,15 @@ extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDa
 private extension CategoriesViewController {
     func onAddTapped() {
         let controller = NewCategoryViewController()
-        controller.categoryViewModel = categoryViewModel
+//        controller.categoryViewModel = categoryViewModel // TODO
         navigationController?.pushViewController(controller, animated: true)
     }
 }
 
-
+extension CategoriesViewController: DatabaseSubscriber {
+    func onDatabaseChange() {
+        let db = AppDatabase.shared
+        self.categoryList = db.categories
+        categoriesList.reloadData()
+    }
+}
