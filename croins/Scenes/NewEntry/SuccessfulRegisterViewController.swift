@@ -4,7 +4,7 @@ import IntentsUI
 
 final class SuccessfulRegisterViewController: UIViewController, INUIAddVoiceShortcutViewControllerDelegate {
     
-    var inputViewModel = InputViewModel()
+    var inputType: Style!
     
     private lazy var backgroundView: UIView = {
        let view = UIView()
@@ -13,7 +13,16 @@ final class SuccessfulRegisterViewController: UIViewController, INUIAddVoiceShor
     }()
     
     private lazy var entryHeader: EntryHeader = {
-        EntryHeader(title: inputViewModel.inputModel.title, image: inputViewModel.inputModel.image)
+        var view: EntryHeader
+        switch inputType {
+        case .income:
+            view = EntryHeader(title: "Nova entrada", image: UIImage(named: "up-arrow-fill"))
+        case .outcome:
+            view = EntryHeader(title: "Nova saída", image: UIImage(named: "down-arrow-fill"))
+        default:
+            fatalError("Input type not configured")
+        }
+        return view
     }()
     
     private lazy var confirmationImageView: UIImageView = {
@@ -141,7 +150,7 @@ extension SuccessfulRegisterViewController {
     }
     
     func donateInteraction() {
-        let intent = CreateExpenseIntent()
+        /*let intent = CreateExpenseIntent()
         intent.suggestedInvocationPhrase = inputViewModel.newExpenseDonation.suggestedInvocationPhrase
         intent.title = inputViewModel.newExpenseDonation.title
         intent.value = NSNumber(value: inputViewModel.newExpenseDonation.value)
@@ -154,7 +163,7 @@ extension SuccessfulRegisterViewController {
             } else {
                 print("Successfully donated interaction")
             }
-        }
+        }*/
     }
 }
 
@@ -166,11 +175,11 @@ private extension SuccessfulRegisterViewController {
     }
     
     func handleSiriButtonTap(_ sender: Any) {
-        if let shortcut = INShortcut(intent: inputViewModel.inputModel.siriIntent) {
+        /*if let shortcut = INShortcut(intent: inputViewModel.inputModel.siriIntent) {
             let viewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
             viewController.modalPresentationStyle = .formSheet
             viewController.delegate = self
             present(viewController, animated: true, completion: nil)
-        }
+        }*/
     }
 }

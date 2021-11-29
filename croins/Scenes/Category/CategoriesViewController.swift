@@ -2,8 +2,7 @@ import UIKit
 
 class CategoriesViewController: UIViewController {
     
-    let categoryViewModel = CategoryViewModel()
-    
+    var categoryViewModel: CategoryViewModel!
     
     private lazy var pizzaChartView: PizzaChartView = {
         let view = PizzaChartView()
@@ -88,6 +87,7 @@ class CategoriesViewController: UIViewController {
             .init(percentage: 0.23, color: UIColor(named: "Purple")!),
             .init(percentage: 0.08, color: UIColor(named: "Purple-2")!)
         ])
+        categoriesList.reloadData()
     }
     
     func configureNavigationBar() {
@@ -170,7 +170,7 @@ class CategoriesViewController: UIViewController {
 
 extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return categoryViewModel.categoryList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -184,7 +184,9 @@ extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item == 0 {
-            navigationController?.pushViewController(NewCategoryViewController(), animated: true)
+            let controller = NewCategoryViewController()
+            controller.categoryViewModel = categoryViewModel
+            navigationController?.pushViewController(controller, animated: true)
         } else {
             navigationController?.pushViewController(ExpandedCategoryViewController(), animated: true)
         }
@@ -198,7 +200,9 @@ extension CategoriesViewController: UICollectionViewDelegate, UICollectionViewDa
 @objc
 private extension CategoriesViewController {
     func onAddTapped() {
-        navigationController?.pushViewController(NewCategoryViewController(), animated: true)
+        let controller = NewCategoryViewController()
+        controller.categoryViewModel = categoryViewModel
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 

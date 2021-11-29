@@ -361,7 +361,7 @@
 				</array>
 			</dict>
 			<key>INIntentTitle</key>
-			<string>New Expense</string>
+			<string>Nova Saída</string>
 			<key>INIntentTitleID</key>
 			<string>t9ASik</string>
 			<key>INIntentType</key>

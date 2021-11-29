@@ -1,9 +1,9 @@
 import Foundation
 
 class CategoryViewModel {
-    @Published private (set) var categoryList: [Category]
+    private (set) var categoryList: [Category]
     
-    init() { categoryList = [] }
+    init() { categoryList = [Category(title: "Sem Categoria", target: 0, color: .black)] }
     
     func addNewCategory(_ category: Category) {
         categoryList.append(category)

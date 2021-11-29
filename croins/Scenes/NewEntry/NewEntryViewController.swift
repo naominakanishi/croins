@@ -1,12 +1,12 @@
 import UIKit
-import DropDown
+import Intents
 
 final class NewEntryViewController: UIViewController, NewEntryViewDelegate {
     
+    var inputViewModel: InputViewModel!
+    var categoryViewModel: CategoryViewModel!
+    
     struct Configuration {
-        enum Style {
-            case income, outcome
-        }
         let style: Style
         let onTap: (String, Date, Money, Int?) -> Void
         
@@ -31,13 +31,15 @@ final class NewEntryViewController: UIViewController, NewEntryViewDelegate {
     
     func didTapOnButton(name: String, when: Date, howMuch: Money, categoryIndex: Int?) {
         configuration?.onTap(name, when, howMuch, categoryIndex)
+        newInputAdded(name, when, howMuch, categoryIndex)
+        let controller = SuccessfulRegisterViewController()
+        controller.inputType = configuration?.style
+        navigationController?.present(controller, animated: true, completion: nil)
+        navigationController?.viewControllers.removeLast()
     }
     
     private var newEntryView: NewEntryView? { view as? NewEntryView }
     var configuration: Configuration?
-    
-    /// Populate this array with users category. Whenever categories change, call `newEntryView.reloadCategores()`
-    private var categories: [Category] = []
     
     override func loadView() {
         guard let configuration = configuration else {
@@ -65,17 +67,64 @@ final class NewEntryViewController: UIViewController, NewEntryViewDelegate {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
+    
+    func donateInteractionForStyle(_ style: Style) {
+        switch style {
+        case .income:
+            let intent = CreateIncomeIntent()
+            intent.suggestedInvocationPhrase = "Add new income"
+            intent.title = "New Income"
+            intent.value = 0.0
+            intent.date = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+            let interaction = INInteraction(intent: intent, response: nil)
+            interaction.donate { (error) in
+                if let error = error as NSError? {
+                    print("Interaction donation failed: \(error.description)")
+                } else {
+                    print("Successfully donated interaction")
+                }
+            }
+        case .outcome:
+            let intent = CreateIncomeIntent()
+            intent.suggestedInvocationPhrase = "Add new outcome"
+            intent.title = "New Outcome"
+            intent.value = 0.0
+            intent.date = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+            let interaction = INInteraction(intent: intent, response: nil)
+            interaction.donate { (error) in
+                if let error = error as NSError? {
+                    print("Interaction donation failed: \(error.description)")
+                } else {
+                    print("Successfully donated interaction")
+                }
+            }
+        }
+    }
+    
+    func newInputAdded(_ name: String, _ when: Date, _ howMuch: Money, _ categoryIndex: Int?) {
+        donateInteractionForStyle(configuration!.style)
+        switch configuration?.style {
+        case .income:
+            let newIcome = DataInputIn(title: name, value: howMuch, date: when)
+            inputViewModel.addNewIncome(newIcome)
+        case .outcome:
+            let outcome = DataInputOut(title: name, value: howMuch, date: when, category: categoryViewModel.categoryList[categoryIndex ?? 0])
+            inputViewModel.addNewOutcome(outcome)
+        default:
+            fatalError("Input type not configured")
+        }
+    }
 }
 
 extension NewEntryViewController: DropdownDataSource {
     func stateDidChange() { }
     
     func numberOfOptions(_ dropdown: DropdownPicker) -> Int {
-        categories.count
+        categoryViewModel.categoryList.count
     }
     
     func option(_ dropdown: DropdownPicker, at index: IndexPath) -> DropdownOption {
-        let category = categories[index.row]
+        let category = categoryViewModel.categoryList[index.row]
         return .init(
             name: category.title)
     }

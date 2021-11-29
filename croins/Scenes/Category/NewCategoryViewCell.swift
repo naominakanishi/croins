@@ -1,10 +1,3 @@
-//
-//  NewCategoryViewCell.swift
-//  croins
-//
-//  Created by Daniella Onishi on 27/11/21.
-//
-
 import UIKit
 
 class NewCategoryViewCell: UICollectionViewCell {
@@ -43,13 +36,6 @@ class NewCategoryViewCell: UICollectionViewCell {
         contentView
             .addSubview(newCellLabel)
     }
-    
-//    override func layoutSubviews() {
-//       // super.layoutSubviews()
-//        contentView.layoutSubviews()
-//        _ = contentView.layer.sublayers?.filter({ $0 as? CAShapeLayer != nil }).forEach({ $0.removeFromSuperlayer() })
-//        setupBorder()
-//    }
     
     private lazy var newCellView: UIView = {
         let newCellView = UIView()
@@ -111,8 +97,6 @@ class NewCategoryViewCell: UICollectionViewCell {
             $0.topAnchor.constraint(equalTo: newCellView.bottomAnchor, constant: 10)
             $0.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
             $0.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
-//            $0.leadingAnchor.constraint(equalTo: newCellView.leadingAnchor)
-//            $0.trailingAnchor.constraint(equalTo: newCellView.trailingAnchor)
         }
     }
 }

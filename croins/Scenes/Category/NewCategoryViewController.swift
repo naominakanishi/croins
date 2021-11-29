@@ -17,15 +17,8 @@ class NewCategoryViewController: UIViewController, UIColorPickerViewControllerDe
     }()
     
     private var headerView: EntryHeader
-
     
-    let categoryViewModel = CategoryViewModel()
-    
-//    private lazy var leadingIcon: UIImageView = {
-//        let view = UIImageView()
-//        view.image = UIImage(named: "new-category-fill")
-//        return view
-//    }()
+    var categoryViewModel: CategoryViewModel!
     
     func configureNavigationBar() {
         title = "Nova Categoria"
@@ -106,7 +99,7 @@ class NewCategoryViewController: UIViewController, UIColorPickerViewControllerDe
         view.configuration?.baseBackgroundColor = CroinColor.blue
         view.configuration?.baseForegroundColor = CroinColor.white
         view.configuration?.cornerStyle = .capsule
-        
+        view.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
         return view
     }()
     
@@ -235,8 +228,14 @@ private extension NewCategoryViewController {
         categoryViewModel.addNewCategory(
             Category(
                 title: title,
-                target: targetEntryTextField.amount
+                target: targetEntryTextField.amount,
+                color: openColorPickerButton.backgroundColor!
             ))
+        let alert = UIAlertController(title: "Categoria registrada!", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Confirmar", style: .default, handler: { _ in
+            self.navigationController?.viewControllers.removeLast()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

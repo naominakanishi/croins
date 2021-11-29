@@ -2,10 +2,12 @@ import UIKit
 
 class BalanceViewController: UIViewController, UIAdaptivePresentationControllerDelegate {
     
+    var inputViewModel: InputViewModel!
+    
     var balanceView: BalanceView? { view as? BalanceView }
     
     override func loadView() {
-        view = BalanceView()
+        view = BalanceView(viewModel: inputViewModel)
     }
     
     override func viewDidLoad() {

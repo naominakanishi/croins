@@ -1,13 +1,19 @@
 import UIKit
-//import XCTest
+import Intents
+import IntentsUI
 
 class DashboardViewController: UIViewController, DashboardTransactionRecordDelegate {
+    
+    var inputViewModel = InputViewModel()
+    var categoryViewModel = CategoryViewModel()
+    
     func didTapOnEntryButton() {
         let controller = NewEntryViewController()
         controller.configuration = .init(
             style: .income,
             onTap: { _, _, _, _ in }
         )
+        controller.inputViewModel = inputViewModel
         navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -17,15 +23,18 @@ class DashboardViewController: UIViewController, DashboardTransactionRecordDeleg
             style: .outcome,
             onTap: { _, _, _, _ in }
         )
+        controller.inputViewModel = inputViewModel
+        controller.categoryViewModel = categoryViewModel
         navigationController?.pushViewController(controller, animated: true)
     }
     
     func didTapOnCamera() {
-        // TODO route to camera picker
+        let controller = VisionViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func didTapOnVoiceCommand() {
-        // TODO open siri
+        setupIntentsAlertController()
     }
     
     
@@ -97,9 +106,7 @@ class DashboardViewController: UIViewController, DashboardTransactionRecordDeleg
         headerLogo.layout {
             $0.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Spacing.Horizontal.s3)
             $0.widthAnchor.constraint(equalToConstant: 100)
-//            $0.heightAnchor.constraint(equalToConstant: 20)
             $0.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.Vertical.s2)
-//            $0.trailingAnchor.constraint(equalTo: view.trailingAnchor)
 
         }
         
@@ -111,9 +118,8 @@ class DashboardViewController: UIViewController, DashboardTransactionRecordDeleg
                 equalTo: view.leadingAnchor,
                 constant: Spacing.Vertical.s2)
             $0.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Spacing.Vertical.s2)
-          //  $0.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         }
-//
+
         balanceView.layout {
             $0.topAnchor.constraint(equalTo: welcomeMessage.bottomAnchor, constant: Spacing.Horizontal.s1)
             $0.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Spacing.Vertical.s4)
@@ -155,11 +161,50 @@ class DashboardViewController: UIViewController, DashboardTransactionRecordDeleg
     }
     
     @objc func handleBalanceTap () {
-        navigationController?.pushViewController( BalanceViewController(), animated: true)
+        let controller = BalanceViewController()
+        controller.inputViewModel = inputViewModel
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc func handleCategoryTap () {
-        navigationController?.pushViewController(CategoriesViewController(), animated: true)
+        let controller = CategoriesViewController()
+        controller.categoryViewModel = categoryViewModel
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func setupIntentsAlertController() {
+        let incomeAction = UIAlertAction(title: "Nova Entrada", style: .default) { _ in
+            if let shortcut = INShortcut(intent: CreateIncomeIntent()) {
+                let viewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
+                viewController.modalPresentationStyle = .formSheet
+                viewController.delegate = self
+                self.present(viewController, animated: true, completion: nil)
+            }
+        }
+        
+        let outcomeAction = UIAlertAction(title: "Nova Saída", style: .default) { _ in
+            if let shortcut = INShortcut(intent: CreateExpenseIntent()) {
+                let viewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
+                viewController.modalPresentationStyle = .formSheet
+                viewController.delegate = self
+                self.present(viewController, animated: true, completion: nil)
+            }
+        }
+        
+        let alert = UIAlertController(title: "Criar novo atalho", message: "Selecione o tipo de atalho que deseja cadastrar", preferredStyle: .actionSheet)
+        alert.addAction(incomeAction)
+        alert.addAction(outcomeAction)
+        self.present(alert, animated: true)
+    }
+}
+
+extension DashboardViewController: INUIAddVoiceShortcutViewControllerDelegate {
+    func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 

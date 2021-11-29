@@ -1,48 +1,19 @@
-import UIKit
-import Combine
-import Intents
+import Foundation
 
-final class InputViewModel: ObservableObject {
+class InputViewModel {
+    private (set) var incomeList: [DataInputIn]
+    private (set) var outcomeList: [DataInputOut]
     
-    @Published private (set) var dataInputInList: [DataInputIn]
-    @Published private (set) var inputModel: InputModel
-    
-    private (set) var newExpenseDonation = NewExpenseDonation()
-    private (set) var newIncomeDonation = NewIncomeDonation()
-
     init() {
-        dataInputInList = []
-        inputModel = InputModel(title: "", image: UIImage(), siriIntent: INIntent())
+        incomeList = []
+        outcomeList = []
     }
     
-    func writeIncomeData(title: String, gain: String, method: Method, date: Date, isRecurrent: Bool) {
-        dataInputInList.append(DataInputIn(
-            title: title,
-            gain: gain,
-            date: date))
+    func addNewIncome(_ income: DataInputIn) {
+        incomeList.append(income)
     }
     
-    func setNewInputModel(_ input: InputModel) {
-        inputModel = input
+    func addNewOutcome(_ outcome: DataInputOut) {
+        outcomeList.append(outcome)
     }
-}
-
-struct InputModel {
-    let title: String
-    let image: UIImage
-    let siriIntent: INIntent
-}
-
-struct NewExpenseDonation {
-    let suggestedInvocationPhrase = "Add new expense"
-    let title = "newExpense"
-    let value = 0.0
-    let date = Calendar.current.dateComponents([.year, .month, .day], from: Date())
-}
-
-struct NewIncomeDonation {
-    let suggestedInvocationPhrase = "Add new income"
-    let title = "newIncome"
-    let value = 0.0
-    let date = Calendar.current.dateComponents([.year, .month, .day], from: Date())
 }

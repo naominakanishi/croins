@@ -2,6 +2,8 @@ import UIKit
 
 class BalanceView: UIView {
     
+    var inputViewModel: InputViewModel!
+    
     private let recentTransactionsView = RecentTransactionsView()
     private let chartView = BalanceChartView()
     private lazy var currentBalanceTitle: UILabel = {
@@ -20,7 +22,8 @@ class BalanceView: UIView {
         return view
     }()
     
-    init() {
+    init(viewModel: InputViewModel) {
+        inputViewModel = viewModel
         super.init(frame: .zero)
         addSubviews()
         constraintSubviews()
