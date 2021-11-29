@@ -5,9 +5,6 @@ target 'croins' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for croins
-  pod 'DropDown'
-
   target 'croinsTests' do
     inherit! :search_paths
     # Pods for testing

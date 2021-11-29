@@ -40,17 +40,6 @@ final class Category: Comparable, Codable {
     }
 }
 
-extension UIColor: Encodable {
-    public func encode(to encoder: Encoder) throws {
-        var container = try encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(hexString, forKey: .hex)
-    }
-    
-    enum CodingKeys: String, CodingKey {
-        case hex
-    }
-}
-
 extension UIColor {
     var hexString: String? {
         var red: CGFloat = 0

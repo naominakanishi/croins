@@ -61,9 +61,7 @@ class CategoriesViewController: UIViewController {
         view.dataSource = self
         return view
     }()
-    
  
-    
     init() {
         super.init(nibName: nil, bundle: nil)
     }

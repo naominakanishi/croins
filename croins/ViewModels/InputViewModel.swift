@@ -44,7 +44,7 @@ class InputViewModel {
     
     func getMonthlyCharts() -> [BalanceChartView.Bar] {
         var charts = [BalanceChartView.Bar]()
-        var filteredTransactionsByMonth = [([DataInputIn], Decimal, [DataInputOut], Decimal)]()
+        var filteredTransactionsByMonth = [([DataInputIn], Double, [DataInputOut], Double)]()
         for count in 0..<12 {
             guard let date = Calendar.current.date(byAdding: .month, value: -count, to: Date()) else { return [] }
             filteredTransactionsByMonth.append(
@@ -58,13 +58,13 @@ class InputViewModel {
         guard let highestOutcome = filteredTransactionsByMonth.map({ $0.3 }).max() else { return [] }
         let highestValue = highestIncome > highestOutcome ? highestIncome : highestOutcome
         for month in filteredTransactionsByMonth.filter({ $0.0.count > 0 || $0.2.count > 0 }) {
-            let inPercentage = NSDecimalNumber(decimal: month.1 / highestValue).doubleValue
-            let outPercentage = NSDecimalNumber(decimal: month.3 / highestValue).doubleValue
+            let inPercentage =  month.1 / highestValue
+            let outPercentage = month.3 / highestValue
             charts.append(BalanceChartView.Bar(
                 inPercentage: inPercentage.isNaN ? 0 : inPercentage,
                 outPercentage: outPercentage.isNaN ? 0 : outPercentage,
                 dateRange: month.0.first?.date.dateRange() ?? month.2.first!.date.dateRange(),
-                balance: NSDecimalNumber(decimal: month.1 - month.3).stringValue,
+                balance: (month.1 - month.3).currency!,
                 balanceColor: .systemOrange,
                 isSelected: false,
                 date: month.0.first?.date  ?? month.2.first!.date))
@@ -74,8 +74,6 @@ class InputViewModel {
     }
     
     func getCurrentBalance() -> String {
-        let intMoney = NSDecimalNumber(decimal: (incomeList.map{ $0.value }.reduce(0, +) - outcomeList.map{ $0.value }.reduce(0, +)) * 100).intValue
-        let resultMoney = Money(intMoney) / 100
-        return resultMoney.currency ?? "R$ 0,00"
+        "R$ 0,00"
     }
 }
