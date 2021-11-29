@@ -18,7 +18,7 @@ class BalanceView: UIView {
         let view = UILabel()
         view.textColor = .white
         view.font = .preferredFont(forTextStyle: .title1)
-        view.text = "R$ MOCK"
+        view.text = inputViewModel.getCurrentBalance()
         return view
     }()
     

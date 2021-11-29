@@ -18,7 +18,7 @@ class BalanceViewController: UIViewController, UIAdaptivePresentationControllerD
     override func viewDidLayoutSubviews() {
         balanceView?.configure(
             bars: inputViewModel.getMonthlyCharts(),
-            recentTransactions: inputViewModel.getRecentTransactions())
+            recentTransactions: inputViewModel.getRecentTransactions(maxLength: 8))
     }
     
     override func viewDidAppear(_ animated: Bool) {
