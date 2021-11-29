@@ -71,6 +71,7 @@
 		49C552B027442BF200A30E2C /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552AF27442BF200A30E2C /* NewCategoryViewController.swift */; };
 		49C552B227443D8300A30E2C /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552B127443D8300A30E2C /* CategoriesViewController.swift */; };
 		49C552B427443FD100A30E2C /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C552B327443FD100A30E2C /* CategoryViewCell.swift */; };
+		49C8D8F727554D8F007CA47F /* DataInputIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749C273EEA0D005DF419 /* DataInputIn.swift */; };
 		49E6BA6F2746F25100824746 /* DataInputIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F749C273EEA0D005DF419 /* DataInputIn.swift */; };
 		49EFAC6727500637000013E0 /* ObjectSavable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFAC6627500637000013E0 /* ObjectSavable.swift */; };
 		49EFAC69275006D1000013E0 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFAC68275006D1000013E0 /* UserDefaults+Extensions.swift */; };
@@ -820,6 +821,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49A6EB93274823C8004BA797 /* IntentHandler.swift in Sources */,
+				49C8D8F727554D8F007CA47F /* DataInputIn.swift in Sources */,
 				49A6EB9B2748254B004BA797 /* IncomeIntents.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -996,9 +998,10 @@
 				CODE_SIGN_ENTITLEMENTS = croins/croins.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = UL74FQ825B;
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = croins/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) uses the camera to to scan for phone numbers";
 				INFOPLIST_KEY_NSSiriUsageDescription = "This is a Siri demo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1010,7 +1013,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimi.croins;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lynakano.croins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1027,9 +1030,10 @@
 				CODE_SIGN_ENTITLEMENTS = croins/croins.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = UL74FQ825B;
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = croins/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) uses the camera to to scan for phone numbers";
 				INFOPLIST_KEY_NSSiriUsageDescription = "This is a Siri demo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1041,7 +1045,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimi.croins;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lynakano.croins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1056,7 +1060,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QM43B7QRF9;
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1081,7 +1085,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QM43B7QRF9;
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1150,7 +1154,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = QM43B7QRF9;
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IncomeIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IncomeIntents;
@@ -1161,7 +1165,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimi.croins.IncomeIntents;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lynakano.croins.IncomeIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1175,7 +1179,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = QM43B7QRF9;
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IncomeIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IncomeIntents;
@@ -1186,7 +1190,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimi.croins.IncomeIntents;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lynakano.croins.IncomeIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1201,7 +1205,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QM43B7QRF9;
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpendsIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ExpendsIntents;
@@ -1212,7 +1216,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimi.croins.ExpendsIntents;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lynakano.croins.ExpendsIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -1228,7 +1232,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QM43B7QRF9;
+				DEVELOPMENT_TEAM = 38NCR48QFB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpendsIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ExpendsIntents;
@@ -1239,7 +1243,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.nimi.croins.ExpendsIntents;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lynakano.croins.ExpendsIntents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
